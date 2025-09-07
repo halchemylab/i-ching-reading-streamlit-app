@@ -1150,5 +1150,221 @@
         "line_en": "Six at the top: Restlessness as an enduring condition brings misfortune."
       }
     ]
+  },
+  "33": {
+    "number": 33,
+    "binary_code": "111100",
+    "name_zh": "遯",
+    "name_en": "Retreat",
+    "judgment_zh": "亨，小利貞。",
+    "judgment_en": "Retreat. Success. In what is small, perseverance furthers.",
+    "image_zh": "天下有山，遯。君子以遠小人，不惡而嚴。",
+    "image_en": "Mountain under heaven: the image of Retreat. Thus the superior man keeps the inferior man at a distance, not in anger but with dignity.",
+    "lines": [
+      {
+        "line_zh": "初六，遯尾，厲，勿用有攸往。",
+        "line_en": "Six at the beginning: At the tail in retreat. This is dangerous. One must not wish to undertake anything."
+      },
+      {
+        "line_zh": "六二，執之用黃牛之革，莫之勝說。",
+        "line_en": "Six in the second place: He holds him fast with yellow oxhide. No one can tear him loose."
+      },
+      {
+        "line_zh": "九三，係遯，有疾厲，畜臣妾吉。",
+        "line_en": "Nine in the third place: A retreat that is hindered. There is illness and danger. To retain people as men- and maidservants brings good fortune."
+      },
+      {
+        "line_zh": "九四，好遯，君子吉，小人否。",
+        "line_en": "Nine in the fourth place: Voluntary retreat brings good fortune to the superior man and downfall to the inferior man."
+      },
+      {
+        "line_zh": "九五，嘉遯，貞吉。",
+        "line_en": "Nine in the fifth place: Friendly retreat. Perseverance brings good fortune."
+      },
+      {
+        "line_zh": "上九，肥遯，無不利。",
+        "line_en": "Nine at the top: Cheerful retreat. Everything serves to further."
+      }
+    ]
+  },
+  "34": {
+    "number": 34,
+    "binary_code": "100111",
+    "name_zh": "大壯",
+    "name_en": "The Power of the Great",
+    "judgment_zh": "利貞。",
+    "judgment_en": "The Power of the Great. Perseverance furthers.",
+    "image_zh": "雷在天上，大壯。君子以非禮弗履。",
+    "image_en": "Thunder in heaven above: the image of The Power of the Great. Thus the superior man does not tread upon paths that do not accord with established order.",
+    "lines": [
+      {
+        "line_zh": "初九，壯于趾，征凶，有孚。",
+        "line_en": "Nine at the beginning: Power in the toes. Continuing brings misfortune. This is certainly true."
+      },
+      {
+        "line_zh": "九二，貞吉。",
+        "line_en": "Nine in the second place: Perseverance brings good fortune."
+      },
+      {
+        "line_zh": "九三，小人用壯，君子用罔，貞厲。羝羊觸藩，羸其角。",
+        "line_en": "Nine in the third place: The inferior man uses power; the superior man does not use it. Perseverance is dangerous. A ram butts against a hedge and gets its horns entangled."
+      },
+      {
+        "line_zh": "九四，貞吉悔亡，藩決不羸，壯于大輿之輹。",
+        "line_en": "Nine in the fourth place: Perseverance brings good fortune. Remorse disappears. The hedge opens; there is no entanglement. Power depends upon the axle of a big cart."
+      },
+      {
+        "line_zh": "六五，喪羊于易，無悔。",
+        "line_en": "Six in the fifth place: Loses the goat with ease. No remorse."
+      },
+      {
+        "line_zh": "上六，羝羊觸藩，不能退，不能遂，無攸利，艱則吉。",
+        "line_en": "Six at the top: A ram butts against a hedge. It cannot go backward, it cannot go forward. Nothing serves to further. If one notes the difficulty, this brings good fortune."
+      }
+    ]
+  },
+  "35": {
+    "number": 35,
+    "binary_code": "101000",
+    "name_zh": "晉",
+    "name_en": "Progress",
+    "judgment_zh": "康侯用錫馬蕃庶，晝日三接。",
+    "judgment_en": "Progress. The powerful prince is honored with horses in large numbers. In a single day he is granted audience three times.",
+    "image_zh": "明出地上，晉。君子以自昭明德。",
+    "image_en": "The sun rises over the earth: the image of Progress. Thus the superior man himself brightens his bright virtue.",
+    "lines": [
+      {
+        "line_zh": "初六，晉如摧如，貞吉。罔孚，裕無咎。",
+        "line_en": "Six at the beginning: Progressing, but turned back. Perseverance brings good fortune. If one meets with no confidence, one should remain calm. No blame."
+      },
+      {
+        "line_zh": "六二，晉如愁如，貞吉。受茲介福，于其王母。",
+        "line_en": "Six in the second place: Progressing, but in sorrow. Perseverance brings good fortune. Then one receives great happiness from one's ancestress."
+      },
+      {
+        "line_zh": "六三，眾允，悔亡。",
+        "line_en": "Six in the third place: All are in accord. Remorse disappears."
+      },
+      {
+        "line_zh": "九四，晉如鼫鼠，貞厲。",
+        "line_en": "Nine in the fourth place: Progress like a hamster. Perseverance brings danger."
+      },
+      {
+        "line_zh": "六五，悔亡，失得勿恤，往吉，無不利。",
+        "line_en": "Six in the fifth place: Remorse disappears. Take not gain and loss to heart. Undertakings bring good fortune. Everything serves to further."
+      },
+      {
+        "line_zh": "上九，晉其角，維用伐邑，厲吉無咎，貞吝。",
+        "line_en": "Nine at the top: Making progress with the horns. One is aware of the danger and finds good fortune. No blame. Perseverance brings humiliation."
+      }
+    ]
+  },
+  "36": {
+    "number": 36,
+    "binary_code": "000101",
+    "name_zh": "明夷",
+    "name_en": "Darkening of the Light",
+    "judgment_zh": "利艱貞。",
+    "judgment_en": "Darkening of the Light. In adversity it furthers one to be persevering.",
+    "image_zh": "明入地中，明夷。君子以蒞眾，用晦而明。",
+    "image_en": "The light has sunk into the earth: the image of Darkening of the Light. Thus does the superior man live with the great mass: he veils his light, yet still shines.",
+    "lines": [
+      {
+        "line_zh": "初九，明夷于飛，垂其翼。君子于行，三日不食。有攸往，主人有言。",
+        "line_en": "Nine at the beginning: Darkening of the light during flight. He lowers his wings. The superior man wanders abroad for three days without eating. He has a place to go. The host has occasion to gossip about him."
+      },
+      {
+        "line_zh": "六二，明夷，夷于左股，用拯馬壯，吉。",
+        "line_en": "Six in the second place: Darkening of the light, injures him in the left thigh. He is saved by a powerful horse. Good fortune."
+      },
+      {
+        "line_zh": "九三，明夷于南狩，得其大首，不可疾貞。",
+        "line_en": "Nine in the third place: Darkening of the light during the hunt in the south. Their great leader is captured. One must not expect perseverance too soon."
+      },
+      {
+        "line_zh": "六四，入于左腹，獲明夷之心，于出門庭。",
+        "line_en": "Six in the fourth place: He penetrates into the left side of the belly. One gets at the very heart of the darkening of the light, and leaves gate and courtyard."
+      },
+      {
+        "line_zh": "六五，箕子之明夷，利貞。",
+        "line_en": "Six in the fifth place: Darkening of the light of Prince Chi. Perseverance furthers."
+      },
+      {
+        "line_zh": "上六，不明晦，初登于天，後入于地。",
+        "line_en": "Six at the top: Not light but darkness. First he climbed up to heaven, then he plunged into the depths of the earth."
+      }
+    ]
+  },
+  "37": {
+    "number": 37,
+    "binary_code": "110101",
+    "name_zh": "家人",
+    "name_en": "The Family (The Clan)",
+    "judgment_zh": "利女貞。",
+    "judgment_en": "The Family. The perseverance of the woman furthers.",
+    "image_zh": "風自火出，家人。君子以言有物而行有恆。",
+    "image_en": "Wind comes forth from fire: the image of the Family. Thus the superior man has substance in his words and duration in his way of life.",
+    "lines": [
+      {
+        "line_zh": "初九，閑有家，悔亡。",
+        "line_en": "Nine at the beginning: Firm seclusion within the family. Remorse disappears."
+      },
+      {
+        "line_zh": "六二，無攸遂，在中饋，貞吉。",
+        "line_en": "Six in the second place: She should not follow her whims. She must attend within to the food. Perseverance brings good fortune."
+      },
+      {
+        "line_zh": "九三，家人嗃嗃，悔厲吉。婦子嘻嘻，終吝。",
+        "line_en": "Nine in the third place: When the family is treated with severity, there is remorse. Danger, but good fortune. When women and children dally and laugh, it leads in the end to humiliation."
+      },
+      {
+        "line_zh": "六四，富家，大吉。",
+        "line_en": "Six in the fourth place: She is the treasure of the house. Great good fortune."
+      },
+      {
+        "line_zh": "九五，王假有家，勿恤，吉。",
+        "line_en": "Nine in the fifth place: As a king he approaches his family. Fear not. Good fortune."
+      },
+      {
+        "line_zh": "上九，有孚威如，終吉。",
+        "line_en": "Nine at the top: His work commands respect. In the end good fortune comes."
+      }
+    ]
+  },
+  "38": {
+    "number": 38,
+    "binary_code": "101011",
+    "name_zh": "睽",
+    "name_en": "Opposition",
+    "judgment_zh": "小事吉。",
+    "judgment_en": "Opposition. In small matters, good fortune.",
+    "image_zh": "上火下澤，睽。君子以同而異。",
+    "image_en": "Fire above, the lake below: the image of Opposition. Thus the superior man, in the midst of association, preserves his individuality.",
+    "lines": [
+      {
+        "line_zh": "初九，悔亡。喪馬，勿逐自復。見惡人，無咎。",
+        "line_en": "Nine at the beginning: Remorse disappears. If you lose your horse, do not run after it; it will come back of its own accord. When you see evil people, guard yourself against mistakes."
+      },
+      {
+        "line_zh": "九二，遇主于巷，無咎。",
+        "line_en": "Nine in the second place: One meets his master in a narrow street. No blame."
+      },
+      {
+        "line_zh": "六三，見輿曳，其牛掣，其人天且劓，無初有終。",
+        "line_en": "Six in the third place: One sees the wagon dragged back, the oxen halted, a man's hair and nose cut off. Not a good beginning, but a good end."
+      },
+      {
+        "line_zh": "九四，睽孤，遇元夫，交孚，厲無咎。",
+        "line_en": "Nine in the fourth place: Isolated through opposition, one meets a like-minded man with whom one can associate in good faith. Despite the danger, no blame."
+      },
+      {
+        "line_zh": "六五，悔亡，厥宗噬膚，往何咎。",
+        "line_en": "Six in the fifth place: Remorse disappears. The companion bits his way through the wrappings. If one goes to him, how could it be a mistake?"
+      },
+      {
+        "line_zh": "上九，睽孤，見豕負塗，載鬼一車，先張之弧，後說之弧，匪寇婚媾，往遇雨則吉。",
+        "line_en": "Nine at the top: Isolated through opposition, one sees one's companion as a pig covered with dirt, as a wagon full of devils. First one draws a bow against him, then one lays the bow aside. He is not a robber; he will woo at the right time. As one goes, rain falls; then good fortune comes."
+      }
+    ]
   }
 }
