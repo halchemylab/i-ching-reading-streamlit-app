@@ -2,6 +2,8 @@ import streamlit as st
 import json
 import random
 import openai
+import os
+from dotenv import load_dotenv
 
 # --- Page Configuration ---
 st.set_page_config(
@@ -28,13 +30,15 @@ def load_iching_data():
 def main():
     """Main function to run the Streamlit app."""
     iching_data = load_iching_data()
+    load_dotenv()
     
     # Initialize OpenAI Client
-    try:
-        client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+    api_key = os.getenv("OPENAI_API_KEY")
+    client = None
+    openai_enabled = False
+    if api_key:
+        client = openai.OpenAI(api_key=api_key)
         openai_enabled = True
-    except (FileNotFoundError, KeyError):
-        openai_enabled = False
 
 
     if iching_data:
