@@ -1,6 +1,7 @@
 {
   "1": {
     "number": 1,
+    "binary_code": "111111",
     "name_zh": "乾",
     "name_en": "The Creative",
     "judgment_zh": "元亨利貞。",
@@ -18,6 +19,7 @@
   },
   "2": {
     "number": 2,
+    "binary_code": "000000",
     "name_zh": "坤",
     "name_en": "The Receptive",
     "judgment_zh": "元亨，利牝馬之貞。君子有攸往，先迷後得主，利。西南得朋，東北喪朋。安貞吉。",

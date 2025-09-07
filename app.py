@@ -63,7 +63,7 @@ def main():
                 st.session_state.reading_cast = True
                 st.session_state.ai_interpretation = None # Reset AI interpretation
                 lines = cast_reading()
-                primary_hex_num, secondary_hex_num = get_hexagram_numbers(lines)
+                primary_hex_num, secondary_hex_num = get_hexagram_numbers(lines, iching_data)
                 
                 st.session_state.reading = {
                     "question": question,
@@ -98,21 +98,29 @@ def cast_reading():
     """Simulates casting 3 coins 6 times to get 6 lines."""
     return [random.choice([6, 7, 8, 9]) for _ in range(6)]
 
-def get_hexagram_numbers(lines):
+def get_hexagram_numbers(lines, iching_data):
     """Determines the primary and secondary hexagram numbers from the lines."""
-    hexagram_map = { "111111": 1, "000000": 2 } # Placeholder map
-
     primary_binary = "".join(['1' if l in [7, 9] else '0' for l in reversed(lines)])
     
-    changing_lines = any(line in [6, 9] for line in lines)
-    secondary_binary = None
-    if changing_lines:
+    primary_num = None
+    for key, hex_data in iching_data.items():
+        if hex_data.get('binary_code') == primary_binary:
+            primary_num = hex_data['number']
+            break
+
+    secondary_num = None
+    if any(line in [6, 9] for line in lines):
         secondary_lines = [l if l in [7, 8] else (7 if l == 6 else 8) for l in lines]
         secondary_binary = "".join(['1' if l in [7, 9] else '0' for l in reversed(secondary_lines)])
-
-    primary_num = hexagram_map.get(primary_binary, 1)
-    secondary_num = hexagram_map.get(secondary_binary, 2) if secondary_binary else None
+        for key, hex_data in iching_data.items():
+            if hex_data.get('binary_code') == secondary_binary:
+                secondary_num = hex_data['number']
+                break
     
+    # Default to 1 and 2 if not found, for placeholder data
+    if primary_num is None: primary_num = 1
+    if secondary_num is None and any(line in [6, 9] for line in lines): secondary_num = 2
+
     return primary_num, secondary_num
 
 def display_reading(reading):
