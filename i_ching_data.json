@@ -9,12 +9,30 @@
     "image_zh": "天行健，君子以自強不息。",
     "image_en": "The movement of heaven is full of power. Thus the superior man makes himself strong and untiring.",
     "lines": [
-      { "line_zh": "初九，潛龍勿用。", "line_en": "Nine at the beginning: Hidden dragon. Do not act." },
-      { "line_zh": "九二，見龍在田，利見大人。", "line_en": "Nine in the second place: Dragon appearing in the field. It furthers one to see the great man." },
-      { "line_zh": "九三，君子終日乾乾，夕惕若，厲無咎。", "line_en": "Nine in the third place: All day long the superior man is creatively active. At nightfall his mind is still beset with cares. Danger. No blame." },
-      { "line_zh": "九四，或躍在淵，無咎。", "line_en": "Nine in the fourth place: Wavering flight over the depths. No blame." },
-      { "line_zh": "九五，飛龍在天，利見大人。", "line_en": "Nine in the fifth place: Flying dragon in the heavens. It furthers one to see the great man." },
-      { "line_zh": "上九，亢龍有悔。", "line_en": "Nine at the top: Arrogant dragon will have cause to repent." }
+      {
+        "line_zh": "初九，潛龍勿用。",
+        "line_en": "Nine at the beginning: Hidden dragon. Do not act."
+      },
+      {
+        "line_zh": "九二，見龍在田，利見大人。",
+        "line_en": "Nine in the second place: Dragon appearing in the field. It furthers one to see the great man."
+      },
+      {
+        "line_zh": "九三，君子終日乾乾，夕惕若，厲無咎。",
+        "line_en": "Nine in the third place: All day long the superior man is creatively active. At nightfall his mind is still beset with cares. Danger. No blame."
+      },
+      {
+        "line_zh": "九四，或躍在淵，無咎。",
+        "line_en": "Nine in the fourth place: Wavering flight over the depths. No blame."
+      },
+      {
+        "line_zh": "九五，飛龍在天，利見大人。",
+        "line_en": "Nine in the fifth place: Flying dragon in the heavens. It furthers one to see the great man."
+      },
+      {
+        "line_zh": "上九，亢龍有悔。",
+        "line_en": "Nine at the top: Arrogant dragon will have cause to repent."
+      }
     ]
   },
   "2": {
@@ -27,12 +45,750 @@
     "image_zh": "地勢坤，君子以厚德載物。",
     "image_en": "The earth's condition is receptive devotion. Thus the superior man of broad character carries the outer world.",
     "lines": [
-      { "line_zh": "初六，履霜，堅冰至。", "line_en": "Six at the beginning: When there is frost underfoot, solid ice is not far off." },
-      { "line_zh": "六二，直方大，不習無不利。", "line_en": "Six in the second place: Straight, square, great. Without purpose, yet nothing remains unfurthered." },
-      { "line_zh": "六三，含章可貞，或從王事，無成有終。", "line_en": "Six in the third place: Hidden lines. One is able to remain persevering. If by chance you are in the service of a king, seek not works, but bring to completion." },
-      { "line_zh": "六四，括囊，無咎無譽。", "line_en": "Six in the fourth place: A tied-up sack. No blame, no praise." },
-      { "line_zh": "六五，黃裳，元吉。", "line_en": "Six in the fifth place: A yellow lower garment brings supreme good fortune." },
-      { "line_zh": "上六，龍戰于野，其血玄黃。", "line_en": "Six at the top: Dragons fight in the meadow. Their blood is black and yellow." }
+      {
+        "line_zh": "初六，履霜，堅冰至。",
+        "line_en": "Six at the beginning: When there is frost underfoot, solid ice is not far off."
+      },
+      {
+        "line_zh": "六二，直方大，不習無不利。",
+        "line_en": "Six in the second place: Straight, square, great. Without purpose, yet nothing remains unfurthered."
+      },
+      {
+        "line_zh": "六三，含章可貞，或從王事，無成有終。",
+        "line_en": "Six in the third place: Hidden lines. One is able to remain persevering. If by chance you are in the service of a king, seek not works, but bring to completion."
+      },
+      {
+        "line_zh": "六四，括囊，無咎無譽。",
+        "line_en": "Six in the fourth place: A tied-up sack. No blame, no praise."
+      },
+      {
+        "line_zh": "六五，黃裳，元吉。",
+        "line_en": "Six in the fifth place: A yellow lower garment brings supreme good fortune."
+      },
+      {
+        "line_zh": "上六，龍戰于野，其血玄黃。",
+        "line_en": "Six at the top: Dragons fight in the meadow. Their blood is black and yellow."
+      }
+    ]
+  },
+  "3": {
+    "number": 3,
+    "binary_code": "100010",
+    "name_zh": "屯",
+    "name_en": "Difficulty at the Beginning",
+    "judgment_zh": "元亨利貞，勿用有攸往，利建侯。",
+    "judgment_en": "Difficulty at the Beginning works sublime success, furthering through perseverance. Nothing should be undertaken. It furthers one to appoint helpers.",
+    "image_zh": "雲雷，屯。君子以經綸。",
+    "image_en": "Clouds and thunder: the image of Difficulty at the Beginning. Thus the superior man brings order out of confusion.",
+    "lines": [
+      {
+        "line_zh": "初九，磐桓，利居貞，利建侯。",
+        "line_en": "Nine at the beginning: Hesitation and hindrance. It is favorable to remain persevering. It is favorable to appoint helpers."
+      },
+      {
+        "line_zh": "六二，屯如邅如，乘馬班如，匪寇婚媾。女子貞不字，十年乃字。",
+        "line_en": "Six in the second place: Difficulties pile up. Horse and wagon part. He is not a robber; he will woo her in due time. The maiden is steadfast and does not pledge herself. Ten years--then she pledges herself."
+      },
+      {
+        "line_zh": "六三，即鹿無虞，惟入于林中，君子幾，不如舍，往吝。",
+        "line_en": "Six in the third place: Whoever hunts deer without the forester only loses his way in the forest. The superior man understands the signs of the time and prefers to desist. To go on brings humiliation."
+      },
+      {
+        "line_zh": "六四，乘馬班如，求婚媾，往吉，無不利。",
+        "line_en": "Six in the fourth place: Horse and wagon part. Strive for union. To go brings good fortune. Everything acts to further."
+      },
+      {
+        "line_zh": "九五，屯其膏，小貞吉，大貞凶。",
+        "line_en": "Nine in the fifth place: Difficulties in blessing. Perseverance in small matters brings good fortune. Perseverance in great matters brings misfortune."
+      },
+      {
+        "line_zh": "上六，乘馬班如，泣血漣如。",
+        "line_en": "Six at the top: Horse and wagon part. Bloody tears flow."
+      }
+    ]
+  },
+  "4": {
+    "number": 4,
+    "binary_code": "010001",
+    "name_zh": "蒙",
+    "name_en": "Youthful Folly",
+    "judgment_zh": "匪我求童蒙，童蒙求我。初筮告，再三瀆，瀆則不告。利貞。",
+    "judgment_en": "It is not I who seek the young fool; the young fool seeks me. At the first oracle I inform him. If he asks two or three times, it is importunity. If he is importunate, I give him no information. Perseverance furthers.",
+    "image_zh": "山下出泉，蒙。君子以果行育德。",
+    "image_en": "A spring wells up at the foot of the mountain: the image of Youth. Thus the superior man fosters his character by thoroughness in all that he does.",
+    "lines": [
+      {
+        "line_zh": "初六，發蒙，利用刑人，用說桎梏，以往吝。",
+        "line_en": "Six at the beginning: To bring development to the fool it is advantageous to use punishments. One should remove the fetters. To go on in this way brings humiliation."
+      },
+      {
+        "line_zh": "九二，包蒙，吉。納婦，吉。子克家。",
+        "line_en": "Nine in the second place: To bear with fools in kindliness brings good fortune. To know how to take women brings good fortune. The son is capable of taking charge of the household."
+      },
+      {
+        "line_zh": "六三，勿用取女，見金夫，不有躬，無攸利。",
+        "line_en": "Six in the third place: Take not this maiden to wife. She sees a man of bronze and is not true to herself. Nothing that is done will be advantageous."
+      },
+      {
+        "line_zh": "六四，困蒙，吝。",
+        "line_en": "Six in the fourth place: Entangled folly brings humiliation."
+      },
+      {
+        "line_zh": "六五，童蒙，吉。",
+        "line_en": "Six in the fifth place: Childlike folly brings good fortune."
+      },
+      {
+        "line_zh": "上九，擊蒙，不利為寇，利禦寇。",
+        "line_en": "Nine at the top: Striking the fool. It does not further one to commit transgressions. It furthers one to ward off transgressions."
+      }
+    ]
+  },
+  "5": {
+    "number": 5,
+    "binary_code": "111010",
+    "name_zh": "需",
+    "name_en": "Waiting (Nourishment)",
+    "judgment_zh": "有孚，光亨，貞吉。利涉大川。",
+    "judgment_en": "Waiting. If you are sincere, you have light and success. Perseverance brings good fortune. It furthers one to cross the great water.",
+    "image_zh": "雲上于天，需。君子以飲食宴樂。",
+    "image_en": "Clouds rise up to the heavens: the image of Waiting. Thus the superior man eats and drinks, is joyous and of good cheer.",
+    "lines": [
+      {
+        "line_zh": "初九，需于郊，利用恆，無咎。",
+        "line_en": "Nine at the beginning: Waiting in the meadow. It furthers one to abide in what is enduring. No blame."
+      },
+      {
+        "line_zh": "九二，需于沙，小有言，終吉。",
+        "line_en": "Nine in the second place: Waiting on the sand. There is some gossip. The end brings good fortune."
+      },
+      {
+        "line_zh": "九三，需于泥，致寇至。",
+        "line_en": "Nine in the third place: Waiting in the mud brings about the arrival of the enemy."
+      },
+      {
+        "line_zh": "六四，需于血，出自穴。",
+        "line_en": "Six in the fourth place: Waiting in blood. Get out of the pit."
+      },
+      {
+        "line_zh": "九五，需于酒食，貞吉。",
+        "line_en": "Nine in the fifth place: Waiting at meat and drink. Perseverance brings good fortune."
+      },
+      {
+        "line_zh": "上六，入于穴，有不速之客三人來，敬之終吉。",
+        "line_en": "Six at the top: One falls into the pit. Three uninvited guests arrive. Honor them, and in the end there will be good fortune."
+      }
+    ]
+  },
+  "6": {
+    "number": 6,
+    "binary_code": "010111",
+    "name_zh": "訟",
+    "name_en": "Conflict",
+    "judgment_zh": "有孚，窒惕，中吉，終凶。利見大人，不利涉大川。",
+    "judgment_en": "Conflict. You are sincere and are being obstructed. A cautious halt in the middle of the way brings good fortune. Going through to the end brings misfortune. It furthers one to see the great man. It does not further one to cross the great water.",
+    "image_zh": "天與水違行，訟。君子以作事謀始。",
+    "image_en": "Heaven and water go their opposite ways: the image of Conflict. Thus in all his transactions the superior man carefully considers the beginning.",
+    "lines": [
+      {
+        "line_zh": "初六，不永所事，小有言，終吉。",
+        "line_en": "Six at the beginning: If one does not perpetuate the affair, there is a little gossip. In the end, good fortune comes."
+      },
+      {
+        "line_zh": "九二，不克訟，歸而逋，其邑人三百戶，無眚。",
+        "line_en": "Nine in the second place: One cannot engage in conflict; one returns home, gives way. The people of his town, three hundred households, remain free of guilt."
+      },
+      {
+        "line_zh": "六三，食舊德，貞厲，終吉。或從王事，無成。",
+        "line_en": "Six in the third place: To nourish oneself on ancient virtue induces perseverance. Danger. In the end, good fortune comes. If by chance you are in the service of a king, seek not works."
+      },
+      {
+        "line_zh": "九四，不克訟，復即命，渝安貞，吉。",
+        "line_en": "Nine in the fourth place: One cannot engage in conflict. One turns back and submits to fate, changes one's attitude, and finds peace in perseverance. Good fortune."
+      },
+      {
+        "line_zh": "九五，訟，元吉。",
+        "line_en": "Nine in the fifth place: To contend before the arbitrator brings supreme good fortune."
+      },
+      {
+        "line_zh": "上九，或錫之鞶帶，終朝三褫之。",
+        "line_en": "Nine at the top: Even if by chance a leather belt is bestowed on one, by the end of a morning it will have been snatched away three times."
+      }
+    ]
+  },
+  "7": {
+    "number": 7,
+    "binary_code": "000010",
+    "name_zh": "師",
+    "name_en": "The Army",
+    "judgment_zh": "貞，丈人吉，無咎。",
+    "judgment_en": "The army. The army needs perseverance and a strong man. Good fortune without blame.",
+    "image_zh": "地中有水，師。君子以容民畜眾。",
+    "image_en": "In the middle of the earth is water: the image of the Army. Thus the superior man increases his masses by generosity toward the people.",
+    "lines": [
+      {
+        "line_zh": "初六，師出以律，否臧凶。",
+        "line_en": "Six at the beginning: An army must set forth in proper order. If the order is not good, misfortune threatens."
+      },
+      {
+        "line_zh": "九二，在師中，吉，無咎，王三錫命。",
+        "line_en": "Nine in the second place: In the midst of the army. Good fortune. No blame. The king has bestowed a triple decoration."
+      },
+      {
+        "line_zh": "六三，師或輿尸，凶。",
+        "line_en": "Six in the third place: The army may have to carry corpses in the wagon. Misfortune."
+      },
+      {
+        "line_zh": "六四，師左次，無咎。",
+        "line_en": "Six in the fourth place: The army camps on the left. No blame."
+      },
+      {
+        "line_zh": "六五，田有禽，利執言，無咎。長子帥師，弟子輿尸，貞凶。",
+        "line_en": "Six in the fifth place: There is game in the field. It is favorable to let the eldest lead the army. The younger transports corpses; then perseverance brings misfortune."
+      },
+      {
+        "line_zh": "上六，大君有命，開國承家，小人勿用。",
+        "line_en": "Six at the top: The great prince issues commands, founds states, vests families with fiefs. Inferior people should not be employed."
+      }
+    ]
+  },
+  "8": {
+    "number": 8,
+    "binary_code": "010000",
+    "name_zh": "比",
+    "name_en": "Holding Together (Union)",
+    "judgment_zh": "吉。原筮，元永貞，無咎。不寧方來，後夫凶。",
+    "judgment_en": "Holding together brings good fortune. Inquire of the oracle once again whether you possess sublimity, constancy, and perseverance; then there is no blame. Those who are uncertain gradually join. Whoever comes too late meets with misfortune.",
+    "image_zh": "地上有水，比。先王以建萬國，親諸侯。",
+    "image_en": "On the earth is water: the image of Holding Together. Thus the kings of antiquity bestowed the different states as fiefs and cultivated friendly relations with the feudal lords.",
+    "lines": [
+      {
+        "line_zh": "初六，有孚比之，無咎。有孚盈缶，終來有他，吉。",
+        "line_en": "Six at the beginning: Hold to him in truth and loyalty; this is without blame. Truth, like a full earthen bowl: thus in the end good fortune comes from without."
+      },
+      {
+        "line_zh": "六二，比之自內，貞吉。",
+        "line_en": "Six in the second place: Hold to him inwardly. Perseverance brings good fortune."
+      },
+      {
+        "line_zh": "六三，比之匪人。",
+        "line_en": "Six in the third place: You hold together with the wrong people."
+      },
+      {
+        "line_zh": "六四，外比之，貞吉。",
+        "line_en": "Six in the fourth place: Hold to him outwardly also. Perseverance brings good fortune."
+      },
+      {
+        "line_zh": "九五，顯比，王用三驅，失前禽，邑人不誡，吉。",
+        "line_en": "Nine in the fifth place: Manifestation of holding together. In the hunt the king uses beaters on three sides only and forgoes game that runs off in front. The citizens need no warning. Good fortune."
+      },
+      {
+        "line_zh": "上六，比之無首，凶。",
+        "line_en": "Six at the top: He finds no head for holding together. Misfortune."
+      }
+    ]
+  },
+  "9": {
+    "number": 9,
+    "binary_code": "111011",
+    "name_zh": "小畜",
+    "name_en": "The Taming Power of the Small",
+    "judgment_zh": "亨。密雲不雨，自我西郊。",
+    "judgment_en": "The Taming Power of the Small has success. Dense clouds, no rain from our western region.",
+    "image_zh": "風行天上，小畜。君子以懿文德。",
+    "image_en": "The wind drives over the heavens: the image of the Taming Power of the Small. Thus the superior man refines the outward aspect of his nature.",
+    "lines": [
+      {
+        "line_zh": "初九，復自道，何其咎，吉。",
+        "line_en": "Nine at the beginning: Return to the way. How could there be blame in this? Good fortune."
+      },
+      {
+        "line_zh": "九二，牽復，吉。",
+        "line_en": "Nine in the second place: He allows himself to be drawn into returning. Good fortune."
+      },
+      {
+        "line_zh": "九三，輿說輻，夫妻反目。",
+        "line_en": "Nine in the third place: The spokes burst out of the wagon wheels. Man and wife roll their eyes at each other."
+      },
+      {
+        "line_zh": "六四，有孚，血去惕出，無咎。",
+        "line_en": "Six in the fourth place: If you are sincere, blood vanishes and fear gives way. No blame."
+      },
+      {
+        "line_zh": "九五，有孚攣如，富以其鄰。",
+        "line_en": "Nine in the fifth place: If you are sincere and loyally attached, you are rich in your neighbor."
+      },
+      {
+        "line_zh": "上九，既雨既處，尚德載，婦貞厲。月幾望，君子征凶。",
+        "line_en": "Nine at the top: The rain comes, the resting place is reached; this is due to the lasting effect of character. Perseverance brings the woman into danger. The moon is nearly full. If the superior man persists, misfortune comes."
+      }
+    ]
+  },
+  "10": {
+    "number": 10,
+    "binary_code": "110111",
+    "name_zh": "履",
+    "name_en": "Treading (Conduct)",
+    "judgment_zh": "履虎尾，不咥人，亨。",
+    "judgment_en": "Treading. Treading upon the tail of the tiger. It does not bite the man. Success.",
+    "image_zh": "上天下澤，履。君子以辨上下，定民志。",
+    "image_en": "Heaven above, the lake below: the image of Treading. Thus the superior man discriminates between high and low, and thereby fortifies the thinking of the people.",
+    "lines": [
+      {
+        "line_zh": "初九，素履，往無咎。",
+        "line_en": "Nine at the beginning: Simple conduct. Progress without blame."
+      },
+      {
+        "line_zh": "九二，履道坦坦，幽人貞吉。",
+        "line_en": "Nine in the second place: Treading a smooth, level course. The perseverance of a dark man brings good fortune."
+      },
+      {
+        "line_zh": "六三，眇能視，跛能履，履虎尾，咥人，凶。武人為于大君。",
+        "line_en": "Six in the third place: A one-eyed man can see, a lame man can tread. He treads on the tail of the tiger. The tiger bites the man. Misfortune. Thus does a warrior act on behalf of his great prince."
+      },
+      {
+        "line_zh": "九四，履虎尾，愬愬終吉。",
+        "line_en": "Nine in the fourth place: He treads on the tail of the tiger. Caution and circumspection lead ultimately to good fortune."
+      },
+      {
+        "line_zh": "九五，夬履，貞厲。",
+        "line_en": "Nine in the fifth place: Resolute conduct. Perseverance with awareness of danger."
+      },
+      {
+        "line_zh": "上九，視履考祥，其旋元吉。",
+        "line_en": "Nine at the top: Look to your conduct and weigh the favorable signs. When everything is fulfilled, supreme good fortune comes."
+      }
+    ]
+  },
+  "11": {
+    "number": 11,
+    "binary_code": "000111",
+    "name_zh": "泰",
+    "name_en": "Peace",
+    "judgment_zh": "小往大來，吉亨。",
+    "judgment_en": "Peace. The small departs, the great approaches. Good fortune. Success.",
+    "image_zh": "天地交，泰。后以財成天地之道，輔相天地之宜，以左右民。",
+    "image_en": "Heaven and earth unite: the image of Peace. Thus the ruler fashions and completes the course of heaven and earth, and so gives aid and comfort to the people.",
+    "lines": [
+      {
+        "line_zh": "初九，拔茅茹，以其彙，征吉。",
+        "line_en": "Nine at the beginning: When ribbon grass is pulled up, the sod comes with it. Each according to his kind. Undertakings bring good fortune."
+      },
+      {
+        "line_zh": "九二，包荒，用馮河，不遐遺，朋亡，得尚于中行。",
+        "line_en": "Nine in the second place: Bearing with the uncultured in magnanimity, crossing the river with energy, not neglecting what is distant, not regarding one's companions: thus one may manage to walk in the middle."
+      },
+      {
+        "line_zh": "九三，無平不陂，無往不復，艱貞無咎。勿恤其孚，于食有福。",
+        "line_en": "Nine in the third place: No plain not followed by a slope. No going not followed by a return. He who remains persevering in danger is without blame. Do not complain about this truth; enjoy the good fortune you still possess."
+      },
+      {
+        "line_zh": "六四，翩翩不富，以其鄰，不戒以孚。",
+        "line_en": "Six in the fourth place: He flutters down, not boasting of his wealth, together with his neighbor, guileless and sincere."
+      },
+      {
+        "line_zh": "六五，帝乙歸妹，以祉元吉。",
+        "line_en": "Six in the fifth place: The sovereign I gives his daughter in marriage. This brings blessing and supreme good fortune."
+      },
+      {
+        "line_zh": "上六，城復于隍，勿用師。自邑告命，貞吝。",
+        "line_en": "Six at the top: The wall reverts to the moat. Use no army. Announce your commands to your own town. Perseverance brings humiliation."
+      }
+    ]
+  },
+  "12": {
+    "number": 12,
+    "binary_code": "111000",
+    "name_zh": "否",
+    "name_en": "Standstill (Stagnation)",
+    "judgment_zh": "否之匪人，不利君子貞，大往小來。",
+    "judgment_en": "Standstill. Evil people do not further the perseverance of the superior man. The great departs; the small approaches.",
+    "image_zh": "天地不交，否。君子以儉德辟難，不可榮以祿。",
+    "image_en": "Heaven and earth do not unite: the image of Standstill. Thus the superior man falls back upon his inner worth in order to escape the difficulties. He does not permit himself to be honored with revenue.",
+    "lines": [
+      {
+        "line_zh": "初六，拔茅茹，以其彙，貞吉亨。",
+        "line_en": "Six at the beginning: When ribbon grass is pulled up, the sod comes with it. Each according to his kind. Perseverance brings good fortune and success."
+      },
+      {
+        "line_zh": "六二，包承。小人吉，大人否亨。",
+        "line_en": "Six in the second place: They bear and endure; this means good fortune for inferior people. The standstill serves to help the great man to attain success."
+      },
+      {
+        "line_zh": "六三，包羞。",
+        "line_en": "Six in the third place: They bear shame."
+      },
+      {
+        "line_zh": "九四，有命無咎，疇離祉。",
+        "line_en": "Nine in the fourth place: He who acts at the command of the highest remains without blame. Those of like mind partake of the blessing."
+      },
+      {
+        "line_zh": "九五，休否，大人吉。其亡其亡，系于苞桑。",
+        "line_en": "Nine in the fifth place: Standstill is giving way. Good fortune for the great man. 'What if it should fail, what if it should fail?' In this way he ties it to a cluster of mulberry shoots."
+      },
+      {
+        "line_zh": "上九，傾否，先否後喜。",
+        "line_en": "Nine at the top: The standstill is overthrown. First standstill, then good fortune."
+      }
+    ]
+  },
+  "13": {
+    "number": 13,
+    "binary_code": "101111",
+    "name_zh": "同人",
+    "name_en": "Fellowship",
+    "judgment_zh": "同人于野，亨。利涉大川，利君子貞。",
+    "judgment_en": "Fellowship with men in the open. Success. It furthers one to cross the great water. The perseverance of the superior man furthers.",
+    "image_zh": "天與火，同人。君子以類族辨物。",
+    "image_en": "Heaven together with fire: the image of Fellowship with Men. Thus the superior man organizes the clans and makes distinctions between things.",
+    "lines": [
+      {
+        "line_zh": "初九，同人于門，無咎。",
+        "line_en": "Nine at the beginning: Fellowship with men at the gate. No blame."
+      },
+      {
+        "line_zh": "六二，同人于宗，吝。",
+        "line_en": "Six in the second place: Fellowship with men in the clan. Humiliation."
+      },
+      {
+        "line_zh": "九三，伏戎于莽，升其高陵，三歲不興。",
+        "line_en": "Nine in the third place: He hides weapons in the thicket; he climbs the high hill in front of it. For three years he does not rise up."
+      },
+      {
+        "line_zh": "九四，乘其墉，弗克攻，吉。",
+        "line_en": "Nine in the fourth place: He climbs up on his wall; he cannot attack. Good fortune."
+      },
+      {
+        "line_zh": "九五，同人，先號啕而後笑。大師克相遇。",
+        "line_en": "Nine in the fifth place: Men bound in fellowship first weep and lament, but afterward they laugh. After great struggles they succeed in meeting."
+      },
+      {
+        "line_zh": "上九，同人于郊，無悔。",
+        "line_en": "Nine at the top: Fellowship with men in the meadow. No remorse."
+      }
+    ]
+  },
+  "14": {
+    "number": 14,
+    "binary_code": "111101",
+    "name_zh": "大有",
+    "name_en": "Great Possession",
+    "judgment_zh": "元亨。",
+    "judgment_en": "Possession in Great Measure. Supreme success.",
+    "image_zh": "火在天上，大有。君子以遏惡揚善，順天休命。",
+    "image_en": "Fire in heaven above: the image of Possession in Great Measure. Thus the superior man curbs evil and furthers good, and thereby obeys the benevolent will of heaven.",
+    "lines": [
+      {
+        "line_zh": "初九，無交害，匪咎，艱則無咎。",
+        "line_en": "Nine at the beginning: No relationship with what is harmful; there is no blame in this. If one remains conscious of difficulty, one remains without blame."
+      },
+      {
+        "line_zh": "九二，大車以載，有攸往，無咎。",
+        "line_en": "Nine in the second place: A big wagon for loading. One may undertake something. No blame."
+      },
+      {
+        "line_zh": "九三，公用亨于天子，小人弗克。",
+        "line_en": "Nine in the third place: A prince offers it to the Son of Heaven. A petty man cannot do this."
+      },
+      {
+        "line_zh": "九四，匪其彭，無咎。",
+        "line_en": "Nine in the fourth place: He makes a difference between himself and his neighbor. No blame."
+      },
+      {
+        "line_zh": "六五，厥孚交如，威如，吉。",
+        "line_en": "Six in the fifth place: He whose truth is accessible, yet dignified, has good fortune."
+      },
+      {
+        "line_zh": "上九，自天祐之，吉無不利。",
+        "line_en": "Nine at the top: He is blessed by heaven. Good fortune. Nothing that does not further."
+      }
+    ]
+  },
+  "15": {
+    "number": 15,
+    "binary_code": "001000",
+    "name_zh": "謙",
+    "name_en": "Modesty",
+    "judgment_zh": "亨，君子有終。",
+    "judgment_en": "Modesty creates success. The superior man carries things through.",
+    "image_zh": "地中有山，謙。君子以裒多益寡，稱物平施。",
+    "image_en": "Within the earth, a mountain: the image of Modesty. Thus the superior man reduces that which is too much, and augments that which is too little. He weighs things and makes them equal.",
+    "lines": [
+      {
+        "line_zh": "初六，謙謙君子，用涉大川，吉。",
+        "line_en": "Six at the beginning: A superior man of modesty and humility may cross the great water. Good fortune."
+      },
+      {
+        "line_zh": "六二，鳴謙，貞吉。",
+        "line_en": "Six in the second place: Modesty that comes to expression. Perseverance brings good fortune."
+      },
+      {
+        "line_zh": "九三，勞謙君子，有終，吉。",
+        "line_en": "Nine in the third place: A superior man of modesty and merit carries things to conclusion. Good fortune."
+      },
+      {
+        "line_zh": "六四，無不利，撝謙。",
+        "line_en": "Six in the fourth place: Nothing that would not permit of modesty in movement."
+      },
+      {
+        "line_zh": "六五，不富以其鄰，利用侵伐，無不利。",
+        "line_en": "Six in the fifth place: No boasting of wealth before one's neighbor. It is favorable to attack with force. Nothing that would not further."
+      },
+      {
+        "line_zh": "上六，鳴謙，利用行師，征邑國。",
+        "line_en": "Six at the top: Modesty that comes to expression. It is favorable to set armies marching to chastise one's own city and one's country."
+      }
+    ]
+  },
+  "16": {
+    "number": 16,
+    "binary_code": "000100",
+    "name_zh": "豫",
+    "name_en": "Enthusiasm",
+    "judgment_zh": "利建侯行師。",
+    "judgment_en": "Enthusiasm. It furthers one to install helpers and to set armies marching.",
+    "image_zh": "雷出地奮，豫。先王以作樂崇德，殷薦之上帝，以配祖考。",
+    "image_en": "Thunder comes resounding out of the earth: the image of Enthusiasm. Thus the ancient kings made music in order to honor merit, and offered it with splendor to the Supreme Deity, inviting their ancestors to be present.",
+    "lines": [
+      {
+        "line_zh": "初六，鳴豫，凶。",
+        "line_en": "Six at the beginning: Enthusiasm that expresses itself brings misfortune."
+      },
+      {
+        "line_zh": "六二，介于石，不終日，貞吉。",
+        "line_en": "Six in the second place: Firm as a rock. Not a whole day. Perseverance brings good fortune."
+      },
+      {
+        "line_zh": "六三，盱豫，悔。遲有悔。",
+        "line_en": "Six in the third place: Enthusiasm that looks upward creates remorse. Hesitation brings remorse."
+      },
+      {
+        "line_zh": "九四，由豫，大有得。勿疑。朋盍簪。",
+        "line_en": "Nine in the fourth place: The source of enthusiasm. He achieves great things. Doubt not. You gather friends around you as a hair clasp gathers the hair."
+      },
+      {
+        "line_zh": "六五，貞疾，恆不死。",
+        "line_en": "Six in the fifth place: Persistently ill, and still does not die."
+      },
+      {
+        "line_zh": "上六，冥豫，成有渝，無咎。",
+        "line_en": "Six at the top: Deluded enthusiasm. But if after completion one changes, there is no blame."
+      }
+    ]
+  },
+  "17": {
+    "number": 17,
+    "binary_code": "100110",
+    "name_zh": "隨",
+    "name_en": "Following",
+    "judgment_zh": "元亨利貞，無咎。",
+    "judgment_en": "Following has supreme success. Perseverance furthers. No blame.",
+    "image_zh": "澤中有雷，隨。君子以嚮晦入宴息。",
+    "image_en": "Thunder in the middle of the lake: the image of Following. Thus the superior man at nightfall goes indoors for rest and recuperation.",
+    "lines": [
+      {
+        "line_zh": "初九，官有渝，貞吉。出門交有功。",
+        "line_en": "Nine at the beginning: The standard is changing. Perseverance brings good fortune. To go out of the door in company produces deeds."
+      },
+      {
+        "line_zh": "六二，係小子，失丈夫。",
+        "line_en": "Six in the second place: If one clings to the little boy, one loses the strong man."
+      },
+      {
+        "line_zh": "六三，係丈夫，失小子。隨有求得，利居貞。",
+        "line_en": "Six in the third place: If one clings to the strong man, one loses the little boy. Through following one finds what one seeks. It furthers one to remain persevering."
+      },
+      {
+        "line_zh": "九四，隨有獲，貞凶。有孚在道，以明，何咎。",
+        "line_en": "Nine in the fourth place: Following creates success. Perseverance brings misfortune. To go one's way with sincerity brings clarity. How could there be blame in this?"
+      },
+      {
+        "line_zh": "九五，孚于嘉，吉。",
+        "line_en": "Nine in the fifth place: Sincere in the good. Good fortune."
+      },
+      {
+        "line_zh": "上六，拘係之，乃從維之。王用亨于西山。",
+        "line_en": "Six at the top: He meets with firm allegiance and is still further bound. The king introduces him to the Western Mountain."
+      }
+    ]
+  },
+  "18": {
+    "number": 18,
+    "binary_code": "011001",
+    "name_zh": "蠱",
+    "name_en": "Work on What Has Been Spoiled",
+    "judgment_zh": "元亨，利涉大川。先甲三日，後甲三日。",
+    "judgment_en": "Work on What Has Been Spoiled has supreme success. It furthers one to cross the great water. Before the starting point, three days. After the starting point, three days.",
+    "image_zh": "山下有風，蠱。君子以振民育德。",
+    "image_en": "The wind blows low on the mountain: the image of Decay. Thus the superior man stirs up the people and strengthens their spirit.",
+    "lines": [
+      {
+        "line_zh": "初六，幹父之蠱，有子，考無咎，厲終吉。",
+        "line_en": "Six at the beginning: Setting right what has been spoiled by the father. If there is a son, no blame rests upon the departed father. Danger. In the end good fortune."
+      },
+      {
+        "line_zh": "九二，幹母之蠱，不可貞。",
+        "line_en": "Nine in the second place: Setting right what has been spoiled by the mother. One must not be too persevering."
+      },
+      {
+        "line_zh": "九三，幹父之蠱，小有悔，無大咎。",
+        "line_en": "Nine in the third place: Setting right what has been spoiled by the father. There will be a little remorse. No great blame."
+      },
+      {
+        "line_zh": "六四，裕父之蠱，往見吝。",
+        "line_en": "Six in the fourth place: Tolerating what has been spoiled by the father. In continuing one sees humiliation."
+      },
+      {
+        "line_zh": "六五，幹父之蠱，用譽。",
+        "line_en": "Six in the fifth place: Setting right what has been spoiled by the father. One meets with praise."
+      },
+      {
+        "line_zh": "上九，不事王侯，高尚其事。",
+        "line_en": "Nine at the top: He does not serve kings and princes, sets himself higher goals."
+      }
+    ]
+  },
+  "19": {
+    "number": 19,
+    "binary_code": "110000",
+    "name_zh": "臨",
+    "name_en": "Approach",
+    "judgment_zh": "元亨利貞。至于八月有凶。",
+    "judgment_en": "Approach has supreme success. Perseverance furthers. When the eighth month comes, there will be misfortune.",
+    "image_zh": "澤上有地，臨。君子以教思無窮，容保民無疆。",
+    "image_en": "The earth above the lake: the image of Approach. Thus the superior man is inexhaustible in his will to teach, and without limits in his tolerance and protection of the people.",
+    "lines": [
+      {
+        "line_zh": "初九，咸臨，貞吉。",
+        "line_en": "Nine at the beginning: Joint approach. Perseverance brings good fortune."
+      },
+      {
+        "line_zh": "九二，咸臨，吉無不利。",
+        "line_en": "Nine in the second place: Joint approach. Good fortune. Everything furthers."
+      },
+      {
+        "line_zh": "六三，甘臨，無攸利。既憂之，無咎。",
+        "line_en": "Six in the third place: Comfortable approach. Nothing that would further. If one becomes concerned about it, no blame."
+      },
+      {
+        "line_zh": "六四，至臨，無咎。",
+        "line_en": "Six in the fourth place: Complete approach. No blame."
+      },
+      {
+        "line_zh": "六五，知臨，大君之宜，吉。",
+        "line_en": "Six in the fifth place: Wise approach. This is right for a great prince. Good fortune."
+      },
+      {
+        "line_zh": "上六，敦臨，吉無咎。",
+        "line_en": "Six at the top: Great-hearted approach. Good fortune. No blame."
+      }
+    ]
+  },
+  "20": {
+    "number": 20,
+    "binary_code": "000011",
+    "name_zh": "觀",
+    "name_en": "Contemplation",
+    "judgment_zh": "盥而不薦，有孚顒若。",
+    "judgment_en": "Contemplation. The ablution has been made, but not yet the offering. Full of trust they look up to him.",
+    "image_zh": "風行地上，觀。先王以省方觀民設教。",
+    "image_en": "The wind blows over the earth: the image of Contemplation. Thus the kings of old visited the regions of the world, contemplated the people, and gave them instruction.",
+    "lines": [
+      {
+        "line_zh": "初六，童觀，小人無咎，君子吝。",
+        "line_en": "Six at the beginning: Boylike contemplation. For an inferior man, no blame. For a superior man, humiliation."
+      },
+      {
+        "line_zh": "六二，窺觀，利女貞。",
+        "line_en": "Six in the second place: Contemplation through the crack of the door. Furthering for the perseverance of a woman."
+      },
+      {
+        "line_zh": "六三，觀我生，進退。",
+        "line_en": "Six in the third place: Contemplation of my life decides the choice between advance and retreat."
+      },
+      {
+        "line_zh": "六四，觀國之光，利用賓于王。",
+        "line_en": "Six in the fourth place: Contemplation of the light of the kingdom. It furthers one to exert influence as the guest of a king."
+      },
+      {
+        "line_zh": "九五，觀我生，君子無咎。",
+        "line_en": "Nine in the fifth place: Contemplation of my life. The superior man is without blame."
+      },
+      {
+        "line_zh": "上九，觀其生，君子無咎。",
+        "line_en": "Nine at the top: Contemplation of his character. The superior man is without blame."
+      }
+    ]
+  },
+  "21": {
+    "number": 21,
+    "binary_code": "100101",
+    "name_zh": "噬嗑",
+    "name_en": "Biting Through",
+    "judgment_zh": "亨。利用獄。",
+    "judgment_en": "Biting Through has success. It is favorable to let justice be administered.",
+    "image_zh": "雷電，噬嗑。先王以明罰敕法。",
+    "image_en": "Thunder and lightning: the image of Biting Through. Thus the kings of old made firm the laws through clearly defined penalties.",
+    "lines": [
+      {
+        "line_zh": "初九，屨校滅趾，無咎。",
+        "line_en": "Nine at the beginning: His feet are fastened in the stocks, so that his toes disappear. No blame."
+      },
+      {
+        "line_zh": "六二，噬膚滅鼻，無咎。",
+        "line_en": "Six in the second place: Bites through tender meat, so that his nose disappears. No blame."
+      },
+      {
+        "line_zh": "六三，噬臘肉，遇毒。小吝，無咎。",
+        "line_en": "Six in the third place: Bites on old dried meat and strikes on something poisonous. Slight humiliation. No blame."
+      },
+      {
+        "line_zh": "九四，噬乾胏，得金矢。利艱貞，吉。",
+        "line_en": "Nine in the fourth place: Bites on dried gristly meat. Receives metal arrows. It furthers one to be mindful of difficulties and to be persevering. Good fortune."
+      },
+      {
+        "line_zh": "六五，噬乾肉，得黃金。貞厲，無咎。",
+        "line_en": "Six in the fifth place: Bites on dried lean meat. Receives yellow gold. Perseveringly aware of danger. No blame."
+      },
+      {
+        "line_zh": "上九，何校滅耳，凶。",
+        "line_en": "Nine at the top: His neck is fastened in the wooden cangue, so that his ears disappear. Misfortune."
+      }
+    ]
+  },
+  "22": {
+    "number": 22,
+    "binary_code": "101001",
+    "name_zh": "賁",
+    "name_en": "Grace",
+    "judgment_zh": "亨。小利有攸往。",
+    "judgment_en": "Grace has success. In small matters it is favorable to undertake something.",
+    "image_zh": "山下有火，賁。君子以明庶政，無敢折獄。",
+    "image_en": "Fire at the foot of the mountain: the image of Grace. Thus does the superior man proceed when clearing up current affairs. But he dare not decide controversial issues in this way.",
+    "lines": [
+      {
+        "line_zh": "初九，賁其趾，舍車而徒。",
+        "line_en": "Nine at the beginning: He lends grace to his toes, leaves the carriage, and walks."
+      },
+      {
+        "line_zh": "六二，賁其須。",
+        "line_en": "Six in the second place: Lends grace to the beard on his chin."
+      },
+      {
+        "line_zh": "九三，賁如濡如，永貞吉。",
+        "en": "Nine in the third place: Graceful and moist. Eternal perseverance brings good fortune."
+      },
+      {
+        "line_zh": "六四，賁如皤如，白馬翰如，匪寇婚媾。",
+        "line_en": "Six in the fourth place: Grace or simplicity? A white horse comes as if on wings. He is not a robber, he will woo in due time."
+      },
+      {
+        "line_zh": "六五，賁于丘園，束帛戔戔，吝，終吉。",
+        "line_en": "Six in the fifth place: Grace in the hills and gardens. The roll of silk is meager and small. Humiliation, but in the end good fortune."
+      },
+      {
+        "line_zh": "上九，白賁，無咎。",
+        "line_en": "Nine at the top: Simple grace. No blame."
+      }
     ]
   }
 }
