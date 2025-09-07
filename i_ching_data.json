@@ -1366,5 +1366,365 @@
         "line_en": "Nine at the top: Isolated through opposition, one sees one's companion as a pig covered with dirt, as a wagon full of devils. First one draws a bow against him, then one lays the bow aside. He is not a robber; he will woo at the right time. As one goes, rain falls; then good fortune comes."
       }
     ]
+  },
+  "39": {
+    "number": 39,
+    "binary_code": "010100",
+    "name_zh": "蹇",
+    "name_en": "Obstruction",
+    "judgment_zh": "利西南，不利東北。利見大人，貞吉。",
+    "judgment_en": "Obstruction. The southwest furthers. The northeast does not further. It furthers one to see the great man. Perseverance brings good fortune.",
+    "image_zh": "山上有水，蹇。君子以反身修德。",
+    "image_en": "Water on the mountain: the image of Obstruction. Thus the superior man turns his attention to himself and molds his character.",
+    "lines": [
+      {
+        "line_zh": "初六，往蹇來譽。",
+        "line_en": "Six at the beginning: Going leads to obstructions, coming meets with praise."
+      },
+      {
+        "line_zh": "六二，王臣蹇蹇，匪躬之故。",
+        "line_en": "Six in the second place: The king's servant is beset by obstructions, but it is not his own fault."
+      },
+      {
+        "line_zh": "九三，往蹇來反。",
+        "line_en": "Nine in the third place: He goes into obstructions and comes back."
+      },
+      {
+        "line_zh": "六四，往蹇來連。",
+        "line_en": "Six in the fourth place: Going leads to obstructions, coming leads to union."
+      },
+      {
+        "line_zh": "九五，大蹇朋來。",
+        "line_en": "Nine in the fifth place: In the midst of the greatest obstructions, friends come."
+      },
+      {
+        "line_zh": "上六，往蹇來碩，吉。利見大人。",
+        "line_en": "Six at the top: Going leads to obstructions, coming brings great good fortune. It furthers one to see the great man."
+      }
+    ]
+  },
+  "40": {
+    "number": 40,
+    "binary_code": "001010",
+    "name_zh": "解",
+    "name_en": "Deliverance",
+    "judgment_zh": "利西南。無所往，其來復吉。有攸往，夙吉。",
+    "judgment_en": "Deliverance. The southwest furthers. If there is no longer anything where one has to go, return brings good fortune. If there is still something where one has to go, haste brings good fortune.",
+    "image_zh": "雷雨作，解。君子以赦過宥罪。",
+    "image_en": "Thunder and rain set in: the image of Deliverance. Thus the superior man pardons mistakes and forgives misdeeds.",
+    "lines": [
+      {
+        "line_zh": "初六，無咎。",
+        "line_en": "Six at the beginning: Without blame."
+      },
+      {
+        "line_zh": "九二，田獲三狐，得黃矢，貞吉。",
+        "line_en": "Nine in the second place: One kills three foxes in the field and receives a yellow arrow. Perseverance brings good fortune."
+      },
+      {
+        "line_zh": "六三，負且乘，致寇至，貞吝。",
+        "line_en": "Six in the third place: If a man carries a burden on his back and nonetheless rides in a carriage, he thereby encourages robbers to draw near. Perseverance leads to humiliation."
+      },
+      {
+        "line_zh": "九四，解而拇，朋至斯孚。",
+        "line_en": "Nine in the fourth place: Deliver yourself from your big toe. Then the companion will come, and you can trust him."
+      },
+      {
+        "line_zh": "六五，君子維有解，吉。有孚于小人。",
+        "line_en": "Six in the fifth place: If the superior man can be released, there is good fortune. He proves to the inferior man that he is in earnest."
+      },
+      {
+        "line_zh": "上六，公用射隼于高墉之上，獲之，無不利。",
+        "line_en": "Six at the top: The prince shoots at a hawk on a high wall. He kills it. Everything serves to further."
+      }
+    ]
+  },
+  "41": {
+    "number": 41,
+    "binary_code": "110010",
+    "name_zh": "損",
+    "name_en": "Decrease",
+    "judgment_zh": "有孚，元吉，無咎，可貞，利有攸往。曷之用，二簋可用享。",
+    "judgment_en": "Decrease combined with sincerity brings about supreme good fortune without blame. One may be persevering in this. It furthers one to undertake something. How is this to be carried out? One may use two small bowls for the sacrifice.",
+    "image_zh": "山下有澤，損。君子以懲忿窒欲。",
+    "image_en": "At the foot of the mountain, the lake: the image of Decrease. Thus the superior man controls his anger and restrains his instincts.",
+    "lines": [
+      {
+        "line_zh": "初九，已事遄往，無咎，酌損之。",
+        "line_en": "Nine at the beginning: Going quickly when one's tasks are finished is without blame. But one must reflect on how much one may decrease others."
+      },
+      {
+        "line_zh": "九二，利貞，征凶。弗損益之。",
+        "line_en": "Nine in the second place: Perseverance furthers. To undertake something brings misfortune. Without decreasing oneself, one is able to bring increase to others."
+      },
+      {
+        "line_zh": "六三，三人行，則損一人。一人行，則得其友。",
+        "line_en": "Six in the third place: When three people journey together, their number decreases by one. When one man journeys alone, he finds a companion."
+      },
+      {
+        "line_zh": "六四，損其疾，使遄有喜，無咎。",
+        "line_en": "Six in the fourth place: If a man decreases his faults, it makes the other hasten to rejoice. No blame."
+      },
+      {
+        "line_zh": "六五，或益之，十朋之龜，弗克違，元吉。",
+        "line_en": "Six in the fifth place: Someone increases him. Ten pairs of tortoises cannot oppose it. Supreme good fortune."
+      },
+      {
+        "line_zh": "上九，弗損益之，無咎，貞吉，利有攸往，得臣無家。",
+        "line_en": "Nine at the top: If one increases others without decreasing oneself, there is no blame. Perseverance brings good fortune. It furthers one to undertake something. One obtains servants but no longer has a separate home."
+      }
+    ]
+  },
+  "42": {
+    "number": 42,
+    "binary_code": "011011",
+    "name_zh": "益",
+    "name_en": "Increase",
+    "judgment_zh": "利有攸往，利涉大川。",
+    "judgment_en": "Increase. It furthers one to undertake something. It furthers one to cross the great water.",
+    "image_zh": "風雷，益。君子以見善則遷，有過則改。",
+    "image_en": "Wind and thunder: the image of Increase. Thus the superior man: if he sees good, he imitates it; if he has faults, he rids himself of them.",
+    "lines": [
+      {
+        "line_zh": "初九，利用為大作，元吉，無咎。",
+        "line_en": "Nine at the beginning: It is of advantage to perform a great work. Supreme good fortune. No blame."
+      },
+      {
+        "line_zh": "六二，或益之，十朋之龜，弗克違，永貞吉。王用享于帝，吉。",
+        "line_en": "Six in the second place: Someone increases him. Ten pairs of tortoises cannot oppose it. Constant perseverance brings good fortune. The king presents him before God. Good fortune."
+      },
+      {
+        "line_zh": "六三，益之用凶事，無咎。有孚中行，告公用圭。",
+        "line_en": "Six in the third place: One is enriched through unfortunate events. No blame, if you are sincere and walk in the middle, and report with a seal to the prince."
+      },
+      {
+        "line_zh": "六四，中行，告公從。利用為依遷國。",
+        "line_en": "Six in the fourth place: If you walk in the middle and report to the prince, he will follow. It is favorable to be used in moving the capital."
+      },
+      {
+        "line_zh": "九五，有孚惠心，勿問元吉。有孚惠我德。",
+        "line_en": "Nine in the fifth place: If you are sincere and kindhearted, ask no questions: supreme good fortune. You will be recognized for your kindness."
+      },
+      {
+        "line_zh": "上九，莫益之，或擊之，立心勿恆，凶。",
+        "line_en": "Nine at the top: He brings increase to no one. Indeed, someone even strikes him. He does not keep his heart constantly steady. Misfortune."
+      }
+    ]
+  },
+  "43": {
+    "number": 43,
+    "binary_code": "011111",
+    "name_zh": "夬",
+    "name_en": "Break-through (Resoluteness)",
+    "judgment_zh": "揚于王庭，孚號，有厲，告自邑，不利即戎，利有攸往。",
+    "judgment_en": "Break-through. One must resolutely make the matter known at the court of the king. It must be announced truthfully. Danger. It is necessary to notify one's own city. It does not further to resort to arms. It furthers one to undertake something.",
+    "image_zh": "澤上于天，夬。君子以施祿及下，居德則忌。",
+    "image_en": "The lake has risen up to heaven: the image of Break-through. Thus the superior man dispenses riches downward and refrains from resting on his virtue.",
+    "lines": [
+      {
+        "line_zh": "初九，壯于前趾，往不勝為咎。",
+        "line_en": "Nine at the beginning: Mighty in the forward-striding toes. When one goes and is not equal to the task, one makes a mistake."
+      },
+      {
+        "line_zh": "九二，惕號，莫夜有戎，勿恤。",
+        "line_en": "Nine in the second place: A cry of alarm. Arms at evening and at night. Fear nothing."
+      },
+      {
+        "line_zh": "九三，壯于頄，有凶。君子夬夬獨行，遇雨若濡，有慍，無咎。",
+        "line_en": "Nine in the third place: To be powerful in the cheekbones brings misfortune. The superior man is firmly resolved. He walks alone and is caught in the rain. He is bespattered, and people murmur against him. No blame."
+      },
+      {
+        "line_zh": "九四，臀無膚，其行次且。牽羊悔亡，聞言不信。",
+        "line_en": "Nine in the fourth place: There is no skin on his thighs, and walking is difficult. If one lets oneself be led like a sheep, remorse disappears. But if these words are heard, they will not be believed."
+      },
+      {
+        "line_zh": "九五，莧陸夬夬，中行無咎。",
+        "line_en": "Nine in the fifth place: In dealing with weeds, firm resolution is necessary. Walking in the middle remains free of blame."
+      },
+      {
+        "line_zh": "上六，無號，終有凶。",
+        "line_en": "Six at the top: No cry. In the end misfortune comes."
+      }
+    ]
+  },
+  "44": {
+    "number": 44,
+    "binary_code": "111110",
+    "name_zh": "姤",
+    "name_en": "Coming to Meet",
+    "judgment_zh": "女壯，勿用取女。",
+    "judgment_en": "Coming to Meet. The maiden is powerful. One should not marry such a maiden.",
+    "image_zh": "天下有風，姤。后以施命誥四方。",
+    "image_en": "Under heaven, wind: the image of Coming to Meet. Thus the prince issues his commands and proclaims them to the four quarters of heaven.",
+    "lines": [
+      {
+        "line_zh": "初六，繫于金柅，貞吉。有攸往，見凶。羸豕孚蹢躅。",
+        "line_en": "Six at the beginning: It must be checked with a brake of bronze. Perseverance brings good fortune. If one lets it take its course, one experiences misfortune. Even a lean pig has it in him to rage around."
+      },
+      {
+        "line_zh": "九二，包有魚，無咎，不利賓。",
+        "line_en": "Nine in the second place: There is a fish in the tank. No blame. Does not further guests."
+      },
+      {
+        "line_zh": "九三，臀無膚，其行次且，厲，無大咎。",
+        "line_en": "Nine in the third place: There is no skin on his thighs, and walking is difficult. If one is mindful of the danger, no great mistake is made."
+      },
+      {
+        "line_zh": "九四，包無魚，起凶。",
+        "line_en": "Nine in the fourth place: No fish in the tank. This leads to misfortune."
+      },
+      {
+        "line_zh": "九五，以杞包瓜，含章，有隕自天。",
+        "line_en": "Nine in the fifth place: A melon covered with willow leaves. Hidden lines. Then it drops down to one from heaven."
+      },
+      {
+        "line_zh": "上九，姤其角，吝，無咎。",
+        "line_en": "Nine at the top: He comes to meet with his horns. Humiliation. No blame."
+      }
+    ]
+  },
+  "45": {
+    "number": 45,
+    "binary_code": "011000",
+    "name_zh": "萃",
+    "name_en": "Gathering Together (Massing)",
+    "judgment_zh": "亨。王假有廟，利見大人，亨，利貞。用大牲吉，利有攸往。",
+    "judgment_en": "Gathering Together. Success. The king approaches his temple. It furthers one to see the great man. This brings success. Perseverance furthers. To make great offerings creates good fortune. It furthers one to undertake something.",
+    "image_zh": "澤上于地，萃。君子以除戎器，戒不虞。",
+    "image_en": "Over the earth, the lake: the image of Gathering Together. Thus the superior man renews his weapons in order to meet the unforeseen.",
+    "lines": [
+      {
+        "line_zh": "初六，有孚不終，乃亂乃萃，若號，一握為笑，勿恤，往無咎。",
+        "line_en": "Six at the beginning: If you are sincere, but not to the end, there will sometimes be confusion, sometimes gathering together. If you then cry out, you will afterward be able to laugh. Do not regret it. Go, and you will meet with no blame."
+      },
+      {
+        "line_zh": "六二，引吉，無咎，孚乃利用禴。",
+        "line_en": "Six in the second place: Letting oneself be drawn brings good fortune and remains without blame. If one is sincere, it is rewarding to bring even a small offering."
+      },
+      {
+        "line_zh": "六三，萃如嗟如，無攸利，往無咎，小吝。",
+        "line_en": "Six in the third place: Gathering together, as if sighing. Nothing that would further. Going is without blame. Slight humiliation."
+      },
+      {
+        "line_zh": "九四，大吉，無咎。",
+        "line_en": "Nine in the fourth place: Great good fortune. No blame."
+      },
+      {
+        "line_zh": "九五，萃有位，無咎。匪孚，元永貞，悔亡。",
+        "line_en": "Nine in the fifth place: If in gathering together one has position, this brings no blame. If there are some who are not yet sincerely in the work, they must be won by constant, sincere single-mindedness. Then remorse disappears."
+      },
+      {
+        "line_zh": "上六，齎咨涕洟，無咎。",
+        "line_en": "Six at the top: Lamenting and sighing, floods of tears. No blame."
+      }
+    ]
+  },
+  "46": {
+    "number": 46,
+    "binary_code": "000110",
+    "name_zh": "升",
+    "name_en": "Pushing Upward",
+    "judgment_zh": "元亨，用見大人，勿恤，南征吉。",
+    "judgment_en": "Pushing Upward has supreme success. One must see the great man. Fear not. Departure toward the south brings good fortune.",
+    "image_zh": "地中生木，升。君子以順德，積小以高大。",
+    "image_en": "Within the earth, wood grows: the image of Pushing Upward. Thus the superior man of devoted character heaps up small things in order to achieve something high and great.",
+    "lines": [
+      {
+        "line_zh": "初六，允升，大吉。",
+        "line_en": "Six at the beginning: Pushing upward that meets with confidence brings great good fortune."
+      },
+      {
+        "line_zh": "九二，孚乃利用禴，無咎。",
+        "line_en": "Nine in the second place: If one is sincere, it is rewarding to bring even a small offering. No blame."
+      },
+      {
+        "line_zh": "九三，升虛邑。",
+        "line_en": "Nine in the third place: One pushes upward into an empty city."
+      },
+      {
+        "line_zh": "六四，王用亨于岐山，吉，無咎。",
+        "line_en": "Six in the fourth place: The king offers a sacrifice on Mount Ch'i. Good fortune. No blame."
+      },
+      {
+        "line_zh": "六五，貞吉，升階。",
+        "line_en": "Six in the fifth place: Perseverance brings good fortune. One pushes upward by steps."
+      },
+      {
+        "line_zh": "上六，冥升，利于不息之貞。",
+        "line_en": "Six at the top: Pushing upward in darkness. It is favorable to be unremittingly persevering."
+      }
+    ]
+  },
+  "47": {
+    "number": 47,
+    "binary_code": "010110",
+    "name_zh": "困",
+    "name_en": "Oppression (Exhaustion)",
+    "judgment_zh": "亨，貞，大人吉，無咎。有言不信。",
+    "judgment_en": "Oppression. Success. Perseverance. The great man brings good fortune. No blame. When one has something to say, it is not believed.",
+    "image_zh": "澤無水，困。君子以致命遂志。",
+    "image_en": "There is no water in the lake: the image of Exhaustion. Thus the superior man stakes his life on following his will.",
+    "lines": [
+      {
+        "line_zh": "初六，臀困于株木，入于幽谷，三歲不覿。",
+        "line_en": "Six at the beginning: One's buttocks are oppressed by a stump of a tree. One enters a dark valley. For three years one sees nothing."
+      },
+      {
+        "line_zh": "九二，困于酒食，朱紱方來，利用亨祀。征凶，無咎。",
+        "line_en": "Nine in the second place: One is oppressed while at meat and drink. The man with the scarlet knee bands is just coming. It is favorable to offer sacrifice. To set forth brings misfortune. No blame."
+      },
+      {
+        "line_zh": "六三，困于石，據于蒺藜。入于其宮，不見其妻，凶。",
+        "line_en": "Six in the third place: A man is oppressed by stone, and leans on thorns and thistles. He enters his house and does not see his wife. Misfortune."
+      },
+      {
+        "line_zh": "九四，來徐徐，困于金車，吝，有終。",
+        "line_en": "Nine in the fourth place: He comes very slowly, oppressed in a golden carriage. Humiliation, but the end is reached."
+      },
+      {
+        "line_zh": "九五，劓刖，困于赤紱，乃徐有說，利用祭祀。",
+        "line_en": "Nine in the fifth place: His nose and feet are cut off. Oppression at the hands of the man with the scarlet knee bands. Then slowly there comes release. It is favorable to offer sacrifice."
+      },
+      {
+        "line_zh": "上六，困于葛藟，于臲卼，曰動悔。有悔，征吉。",
+        "line_en": "Six at the top: He is oppressed by creeping vines. He moves uncertainly and says, 'Movement brings remorse.' If one feels remorse for this and sets forth, good fortune comes."
+      }
+    ]
+  },
+  "48": {
+    "number": 48,
+    "binary_code": "010110",
+    "name_zh": "井",
+    "name_en": "The Well",
+    "judgment_zh": "改邑不改井，無喪無得，往來井井。汔至，亦未繘井，羸其瓶，凶。",
+    "judgment_en": "The Well. The town may be changed, but the well cannot be changed. It neither decreases nor increases. They come and go and draw from the well. If one gets down almost to the water and the rope does not go all the way, or the jug breaks, it brings misfortune.",
+    "image_zh": "木上有水，井。君子以勞民勸相。",
+    "image_en": "Water over wood: the image of the Well. Thus the superior man encourages the people at their work, and exhorts them to help one another.",
+    "lines": [
+      {
+        "line_zh": "初六，井泥不食，舊井無禽。",
+        "line_en": "Six at the beginning: One does not drink the mud of the well. No animals come to an old well."
+      },
+      {
+        "line_zh": "九二，井谷射鮒，甕敝漏。",
+        "line_en": "Nine in the second place: In the well shaft one shoots at fishes. The jug is broken and leaks."
+      },
+      {
+        "line_zh": "九三，井渫不食，為我心惻，可用汲，王明，並受其福。",
+        "line_en": "Nine in the third place: The well is cleaned, but no one drinks from it. This is my heart's sorrow, for one might draw from it. If the king were clear-minded, good fortune might be enjoyed in common."
+      },
+      {
+        "line_zh": "六四，井甃，無咎。",
+        "line_en": "Six in the fourth place: The well is being lined. No blame."
+      },
+      {
+        "line_zh": "九五，井冽，寒泉食。",
+        "line_en": "Nine in the fifth place: The well is clear, a cold spring from which one can drink."
+      },
+      {
+        "line_zh": "上六，井收勿幕，有孚元吉。",
+        "line_en": "Six at the top: The well is drawn from and not covered. There is confidence. Supreme good fortune."
+      }
+    ]
   }
 }
