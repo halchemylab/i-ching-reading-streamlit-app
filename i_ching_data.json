@@ -1,0 +1,36 @@
+{
+  "1": {
+    "number": 1,
+    "name_zh": "乾",
+    "name_en": "The Creative",
+    "judgment_zh": "元亨利貞。",
+    "judgment_en": "The Creative works sublime success, furthering through perseverance.",
+    "image_zh": "天行健，君子以自強不息。",
+    "image_en": "The movement of heaven is full of power. Thus the superior man makes himself strong and untiring.",
+    "lines": [
+      { "line_zh": "初九，潛龍勿用。", "line_en": "Nine at the beginning: Hidden dragon. Do not act." },
+      { "line_zh": "九二，見龍在田，利見大人。", "line_en": "Nine in the second place: Dragon appearing in the field. It furthers one to see the great man." },
+      { "line_zh": "九三，君子終日乾乾，夕惕若，厲無咎。", "line_en": "Nine in the third place: All day long the superior man is creatively active. At nightfall his mind is still beset with cares. Danger. No blame." },
+      { "line_zh": "九四，或躍在淵，無咎。", "line_en": "Nine in the fourth place: Wavering flight over the depths. No blame." },
+      { "line_zh": "九五，飛龍在天，利見大人。", "line_en": "Nine in the fifth place: Flying dragon in the heavens. It furthers one to see the great man." },
+      { "line_zh": "上九，亢龍有悔。", "line_en": "Nine at the top: Arrogant dragon will have cause to repent." }
+    ]
+  },
+  "2": {
+    "number": 2,
+    "name_zh": "坤",
+    "name_en": "The Receptive",
+    "judgment_zh": "元亨，利牝馬之貞。君子有攸往，先迷後得主，利。西南得朋，東北喪朋。安貞吉。",
+    "judgment_en": "The Receptive brings about sublime success, furthering through the perseverance of a mare. If the superior man undertakes something and tries to lead, he goes astray; but if he follows, he finds guidance. It is favorable to find friends in the west and south, to forego friends in the east and north. Quiet perseverance brings good fortune.",
+    "image_zh": "地勢坤，君子以厚德載物。",
+    "image_en": "The earth's condition is receptive devotion. Thus the superior man of broad character carries the outer world.",
+    "lines": [
+      { "line_zh": "初六，履霜，堅冰至。", "line_en": "Six at the beginning: When there is frost underfoot, solid ice is not far off." },
+      { "line_zh": "六二，直方大，不習無不利。", "line_en": "Six in the second place: Straight, square, great. Without purpose, yet nothing remains unfurthered." },
+      { "line_zh": "六三，含章可貞，或從王事，無成有終。", "line_en": "Six in the third place: Hidden lines. One is able to remain persevering. If by chance you are in the service of a king, seek not works, but bring to completion." },
+      { "line_zh": "六四，括囊，無咎無譽。", "line_en": "Six in the fourth place: A tied-up sack. No blame, no praise." },
+      { "line_zh": "六五，黃裳，元吉。", "line_en": "Six in the fifth place: A yellow lower garment brings supreme good fortune." },
+      { "line_zh": "上六，龍戰于野，其血玄黃。", "line_en": "Six at the top: Dragons fight in the meadow. Their blood is black and yellow." }
+    ]
+  }
+}
