@@ -54,15 +54,51 @@ def main():
 
         # --- User Input ---
         st.header("Consult the Oracle")
-        question = st.text_area("Focus on your question, then enter it below:", height=100, placeholder="e.g., What should I focus on in my career right now?", key="question_text")
+        
+        sample_questions = [
+            "What is the best approach to my current challenge?",
+            "What underlying energy is at play in my relationship with [Person's Name]?",
+            "How can I find more harmony and balance in my life?",
+            "What should I focus on for my personal growth right now?",
+            "What is the potential outcome if I pursue [Path or Decision]?",
+            "What do I need to understand about my current financial situation?",
+            "How can I be more creative and inspired in my work?",
+            "What is the most important lesson for me to learn at this moment?",
+            "What is the nature of the obstacle I am facing?",
+            "How can I better support my loved ones?",
+            "What new perspective do I need to consider?",
+            "What is the path toward healing in this situation?",
+            "How can I cultivate more joy and peace?",
+            "What is the best way to handle the upcoming changes?",
+            "What aspect of myself do I need to pay more attention to?"
+        ]
 
-        if st.button("Cast Reading", type="primary"):
+        # Initialize session state for the question text
+        if "question_text" not in st.session_state:
+            st.session_state.question_text = ""
+
+        # Handle button clicks BEFORE rendering the text_area
+        col1, col2 = st.columns([1,1])
+        with col1:
+            cast_button_clicked = st.button("Cast Reading", type="primary", use_container_width=True)
+        with col2:
+            if st.button("Suggest a Question", use_container_width=True):
+                st.session_state.question_text = random.choice(sample_questions)
+                st.rerun() # Rerun to update the text area immediately
+
+        question = st.text_area(
+            "Focus on your question, then enter it below:", 
+            height=100, 
+            key="question_text"
+        )
+
+        if cast_button_clicked:
             if question:
                 with st.spinner("Casting the lines..."):
                     import time
-                    time.sleep(1.5) # Simulate the casting process
+                    time.sleep(1.5)
                     st.session_state.reading_cast = True
-                    st.session_state.ai_interpretation = None # Reset AI interpretation
+                    st.session_state.ai_interpretation = None
                     lines = cast_reading()
                     primary_hex_num, secondary_hex_num = get_hexagram_numbers(lines, iching_data)
                     
