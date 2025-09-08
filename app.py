@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 # --- Page Configuration ---
 st.set_page_config(
-    page_title="I Ching - The Book of Changes",
+    page_title="易經 - The Book of Changes",
     page_icon="☯️",
     layout="centered"
 )
@@ -42,7 +42,7 @@ def main():
 
     if iching_data:
         # --- Introduction ---
-        st.title("I Ching - The Book of Changes ☯️")
+        st.title("易經 - The Book of Changes ☯️")
         
         with st.expander("A Quick Guide to the I Ching"):
             st.markdown("""
