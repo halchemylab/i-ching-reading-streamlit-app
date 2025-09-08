@@ -180,7 +180,7 @@ def display_reading(reading):
         st.subheader(f"Primary Hexagram")
         st.markdown(get_hexagram_svg(lines, changing_lines_indices), unsafe_allow_html=True)
         st.subheader(f"{primary_hex['number']}: {primary_hex['name_en']}")
-        st.caption(primary_hex['name_zh'])
+        st.caption(f"{primary_hex['name_zh']} ({primary_hex.get('name_pinyin', '')})")
 
         st.info("This hexagram represents your present situation.", icon="💡")
 
@@ -206,7 +206,7 @@ def display_reading(reading):
             secondary_lines_values = [l if l in [7, 8] else (7 if l == 6 else 8) for l in lines]
             st.markdown(get_hexagram_svg(secondary_lines_values, []), unsafe_allow_html=True)
             st.subheader(f"{secondary_hex['number']}: {secondary_hex['name_en']}")
-            st.caption(secondary_hex['name_zh'])
+            st.caption(f"{secondary_hex['name_zh']} ({secondary_hex.get('name_pinyin', '')})")
             
             st.info("This hexagram shows the direction your situation is moving toward.", icon="💡")
 

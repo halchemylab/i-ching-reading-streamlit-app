@@ -33,7 +33,8 @@
         "line_zh": "上九，亢龍有悔。",
         "line_en": "Nine at the top: Arrogant dragon will have cause to repent."
       }
-    ]
+    ],
+    "name_pinyin": "qián"
   },
   "2": {
     "number": 2,
@@ -69,7 +70,8 @@
         "line_zh": "上六，龍戰于野，其血玄黃。",
         "line_en": "Six at the top: Dragons fight in the meadow. Their blood is black and yellow."
       }
-    ]
+    ],
+    "name_pinyin": "kūn"
   },
   "3": {
     "number": 3,
@@ -105,7 +107,8 @@
         "line_zh": "上六，乘馬班如，泣血漣如。",
         "line_en": "Six at the top: Horse and wagon part. Bloody tears flow."
       }
-    ]
+    ],
+    "name_pinyin": "zhūn"
   },
   "4": {
     "number": 4,
@@ -141,7 +144,8 @@
         "line_zh": "上九，擊蒙，不利為寇，利禦寇。",
         "line_en": "Nine at the top: Striking the fool. It does not further one to commit transgressions. It furthers one to ward off transgressions."
       }
-    ]
+    ],
+    "name_pinyin": "méng"
   },
   "5": {
     "number": 5,
@@ -177,7 +181,8 @@
         "line_zh": "上六，入于穴，有不速之客三人來，敬之終吉。",
         "line_en": "Six at the top: One falls into the pit. Three uninvited guests arrive. Honor them, and in the end there will be good fortune."
       }
-    ]
+    ],
+    "name_pinyin": "xū"
   },
   "6": {
     "number": 6,
@@ -213,7 +218,8 @@
         "line_zh": "上九，或錫之鞶帶，終朝三褫之。",
         "line_en": "Nine at the top: Even if by chance a leather belt is bestowed on one, by the end of a morning it will have been snatched away three times."
       }
-    ]
+    ],
+    "name_pinyin": "sòng"
   },
   "7": {
     "number": 7,
@@ -249,7 +255,8 @@
         "line_zh": "上六，大君有命，開國承家，小人勿用。",
         "line_en": "Six at the top: The great prince issues commands, founds states, vests families with fiefs. Inferior people should not be employed."
       }
-    ]
+    ],
+    "name_pinyin": "shī"
   },
   "8": {
     "number": 8,
@@ -285,7 +292,8 @@
         "line_zh": "上六，比之無首，凶。",
         "line_en": "Six at the top: He finds no head for holding together. Misfortune."
       }
-    ]
+    ],
+    "name_pinyin": "bǐ"
   },
   "9": {
     "number": 9,
@@ -321,7 +329,8 @@
         "line_zh": "上九，既雨既處，尚德載，婦貞厲。月幾望，君子征凶。",
         "line_en": "Nine at the top: The rain comes, the resting place is reached; this is due to the lasting effect of character. Perseverance brings the woman into danger. The moon is nearly full. If the superior man persists, misfortune comes."
       }
-    ]
+    ],
+    "name_pinyin": "xiǎo xù"
   },
   "10": {
     "number": 10,
@@ -357,7 +366,8 @@
         "line_zh": "上九，視履考祥，其旋元吉。",
         "line_en": "Nine at the top: Look to your conduct and weigh the favorable signs. When everything is fulfilled, supreme good fortune comes."
       }
-    ]
+    ],
+    "name_pinyin": "lǚ"
   },
   "11": {
     "number": 11,
@@ -393,7 +403,8 @@
         "line_zh": "上六，城復于隍，勿用師。自邑告命，貞吝。",
         "line_en": "Six at the top: The wall reverts to the moat. Use no army. Announce your commands to your own town. Perseverance brings humiliation."
       }
-    ]
+    ],
+    "name_pinyin": "tài"
   },
   "12": {
     "number": 12,
@@ -429,7 +440,8 @@
         "line_zh": "上九，傾否，先否後喜。",
         "line_en": "Nine at the top: The standstill is overthrown. First standstill, then good fortune."
       }
-    ]
+    ],
+    "name_pinyin": "pǐ"
   },
   "13": {
     "number": 13,
@@ -465,7 +477,8 @@
         "line_zh": "上九，同人于郊，無悔。",
         "line_en": "Nine at the top: Fellowship with men in the meadow. No remorse."
       }
-    ]
+    ],
+    "name_pinyin": "tóng rén"
   },
   "14": {
     "number": 14,
@@ -501,7 +514,8 @@
         "line_zh": "上九，自天祐之，吉無不利。",
         "line_en": "Nine at the top: He is blessed by heaven. Good fortune. Nothing that does not further."
       }
-    ]
+    ],
+    "name_pinyin": "dà yǒu"
   },
   "15": {
     "number": 15,
@@ -537,7 +551,8 @@
         "line_zh": "上六，鳴謙，利用行師，征邑國。",
         "line_en": "Six at the top: Modesty that comes to expression. It is favorable to set armies marching to chastise one's own city and one's country."
       }
-    ]
+    ],
+    "name_pinyin": "qiān"
   },
   "16": {
     "number": 16,
@@ -573,7 +588,8 @@
         "line_zh": "上六，冥豫，成有渝，無咎。",
         "line_en": "Six at the top: Deluded enthusiasm. But if after completion one changes, there is no blame."
       }
-    ]
+    ],
+    "name_pinyin": "yù"
   },
   "17": {
     "number": 17,
@@ -609,7 +625,8 @@
         "line_zh": "上六，拘係之，乃從維之。王用亨于西山。",
         "line_en": "Six at the top: He meets with firm allegiance and is still further bound. The king introduces him to the Western Mountain."
       }
-    ]
+    ],
+    "name_pinyin": "suí"
   },
   "18": {
     "number": 18,
@@ -645,7 +662,8 @@
         "line_zh": "上九，不事王侯，高尚其事。",
         "line_en": "Nine at the top: He does not serve kings and princes, sets himself higher goals."
       }
-    ]
+    ],
+    "name_pinyin": "gǔ"
   },
   "19": {
     "number": 19,
@@ -681,7 +699,8 @@
         "line_zh": "上六，敦臨，吉無咎。",
         "line_en": "Six at the top: Great-hearted approach. Good fortune. No blame."
       }
-    ]
+    ],
+    "name_pinyin": "lín"
   },
   "20": {
     "number": 20,
@@ -717,7 +736,8 @@
         "line_zh": "上九，觀其生，君子無咎。",
         "line_en": "Nine at the top: Contemplation of his character. The superior man is without blame."
       }
-    ]
+    ],
+    "name_pinyin": "guān"
   },
   "21": {
     "number": 21,
@@ -753,7 +773,8 @@
         "line_zh": "上九，何校滅耳，凶。",
         "line_en": "Nine at the top: His neck is fastened in the wooden cangue, so that his ears disappear. Misfortune."
       }
-    ]
+    ],
+    "name_pinyin": "shì kè"
   },
   "22": {
     "number": 22,
@@ -789,7 +810,8 @@
         "line_zh": "上九，白賁，無咎。",
         "line_en": "Nine at the top: Simple grace. No blame."
       }
-    ]
+    ],
+    "name_pinyin": "bì"
   },
   "23": {
     "number": 23,
@@ -825,7 +847,8 @@
         "line_zh": "上九，碩果不食，君子得輿，小人剝廬。",
         "line_en": "Nine at the top: There is a large fruit still uneaten. The superior man receives a carriage. The house of the inferior man is split apart."
       }
-    ]
+    ],
+    "name_pinyin": "bō"
   },
   "24": {
     "number": 24,
@@ -861,7 +884,8 @@
         "line_zh": "上六，迷復，凶，有災眚。用行師，終有大敗，以其國君凶，至于十年不克征。",
         "line_en": "Six at the top: Missing the return. Misfortune. Misfortune from within and without. If armies are set marching in this way, one will in the end suffer a great defeat, disastrous for the ruler of the country. For ten years it will not be possible to attack again."
       }
-    ]
+    ],
+    "name_pinyin": "fù"
   },
   "25": {
     "number": 25,
@@ -933,7 +957,8 @@
         "line_zh": "上九，何天之衢，亨。",
         "line_en": "Nine at the top: One attains the way of heaven. Success."
       }
-    ]
+    ],
+    "name_pinyin": "dà xù"
   },
   "27": {
     "number": 27,
@@ -969,7 +994,8 @@
         "line_zh": "上九，由頤，厲吉，利涉大川。",
         "line_en": "Nine at the top: The source of nourishment. Awareness of danger brings good fortune. It furthers one to cross the great water."
       }
-    ]
+    ],
+    "name_pinyin": "yí"
   },
   "28": {
     "number": 28,
@@ -1005,7 +1031,8 @@
         "line_zh": "上六，過涉滅頂，凶，無咎。",
         "line_en": "Six at the top: One must go through the water. It goes over one's head. Misfortune. No blame."
       }
-    ]
+    ],
+    "name_pinyin": "dà guò"
   },
   "29": {
     "number": 29,
@@ -1041,7 +1068,8 @@
         "line_zh": "上六，係用徽纆，寘于叢棘，三歲不得，凶。",
         "line_en": "Six at the top: Bound with cords and ropes, shut in between thorn-hedged prison walls: for three years one does not find the way. Misfortune."
       }
-    ]
+    ],
+    "name_pinyin": "kǎn"
   },
   "30": {
     "number": 30,
@@ -1077,7 +1105,8 @@
         "line_zh": "上九，王用出征，有嘉折首，獲匪其醜，無咎。",
         "line_en": "Nine at the top: The king uses him to march forth and chastise. Then it is best to kill the leaders and take captive the followers. No blame."
       }
-    ]
+    ],
+    "name_pinyin": "lí"
   },
   "31": {
     "number": 31,
@@ -1113,7 +1142,8 @@
         "line_zh": "上六，咸其輔頰舌。",
         "line_en": "Six at the top: The influence shows itself in the jaws, cheeks, and tongue."
       }
-    ]
+    ],
+    "name_pinyin": "xián"
   },
   "32": {
     "number": 32,
@@ -1149,7 +1179,8 @@
         "line_zh": "上六，振恆，凶。",
         "line_en": "Six at the top: Restlessness as an enduring condition brings misfortune."
       }
-    ]
+    ],
+    "name_pinyin": "héng"
   },
   "33": {
     "number": 33,
@@ -1185,7 +1216,8 @@
         "line_zh": "上九，肥遯，無不利。",
         "line_en": "Nine at the top: Cheerful retreat. Everything serves to further."
       }
-    ]
+    ],
+    "name_pinyin": "dùn"
   },
   "34": {
     "number": 34,
@@ -1221,7 +1253,8 @@
         "line_zh": "上六，羝羊觸藩，不能退，不能遂，無攸利，艱則吉。",
         "line_en": "Six at the top: A ram butts against a hedge. It cannot go backward, it cannot go forward. Nothing serves to further. If one notes the difficulty, this brings good fortune."
       }
-    ]
+    ],
+    "name_pinyin": "dà zhuàng"
   },
   "35": {
     "number": 35,
@@ -1257,7 +1290,8 @@
         "line_zh": "上九，晉其角，維用伐邑，厲吉無咎，貞吝。",
         "line_en": "Nine at the top: Making progress with the horns. One is aware of the danger and finds good fortune. No blame. Perseverance brings humiliation."
       }
-    ]
+    ],
+    "name_pinyin": "jìn"
   },
   "36": {
     "number": 36,
@@ -1293,7 +1327,8 @@
         "line_zh": "上六，不明晦，初登于天，後入于地。",
         "line_en": "Six at the top: Not light but darkness. First he climbed up to heaven, then he plunged into the depths of the earth."
       }
-    ]
+    ],
+    "name_pinyin": "míng yí"
   },
   "37": {
     "number": 37,
@@ -1329,7 +1364,8 @@
         "line_zh": "上九，有孚威如，終吉。",
         "line_en": "Nine at the top: His work commands respect. In the end good fortune comes."
       }
-    ]
+    ],
+    "name_pinyin": "jiā rén"
   },
   "38": {
     "number": 38,
@@ -1365,7 +1401,8 @@
         "line_zh": "上九，睽孤，見豕負塗，載鬼一車，先張之弧，後說之弧，匪寇婚媾，往遇雨則吉。",
         "line_en": "Nine at the top: Isolated through opposition, one sees one's companion as a pig covered with dirt, as a wagon full of devils. First one draws a bow against him, then one lays the bow aside. He is not a robber; he will woo at the right time. As one goes, rain falls; then good fortune comes."
       }
-    ]
+    ],
+    "name_pinyin": "kuí"
   },
   "39": {
     "number": 39,
@@ -1401,7 +1438,8 @@
         "line_zh": "上六，往蹇來碩，吉。利見大人。",
         "line_en": "Six at the top: Going leads to obstructions, coming brings great good fortune. It furthers one to see the great man."
       }
-    ]
+    ],
+    "name_pinyin": "jiǎn"
   },
   "40": {
     "number": 40,
@@ -1437,7 +1475,8 @@
         "line_zh": "上六，公用射隼于高墉之上，獲之，無不利。",
         "line_en": "Six at the top: The prince shoots at a hawk on a high wall. He kills it. Everything serves to further."
       }
-    ]
+    ],
+    "name_pinyin": "xiè"
   },
   "41": {
     "number": 41,
@@ -1473,7 +1512,8 @@
         "line_zh": "上九，弗損益之，無咎，貞吉，利有攸往，得臣無家。",
         "line_en": "Nine at the top: If one increases others without decreasing oneself, there is no blame. Perseverance brings good fortune. It furthers one to undertake something. One obtains servants but no longer has a separate home."
       }
-    ]
+    ],
+    "name_pinyin": "sǔn"
   },
   "42": {
     "number": 42,
@@ -1509,7 +1549,8 @@
         "line_zh": "上九，莫益之，或擊之，立心勿恆，凶。",
         "line_en": "Nine at the top: He brings increase to no one. Indeed, someone even strikes him. He does not keep his heart constantly steady. Misfortune."
       }
-    ]
+    ],
+    "name_pinyin": "yì"
   },
   "43": {
     "number": 43,
@@ -1545,7 +1586,8 @@
         "line_zh": "上六，無號，終有凶。",
         "line_en": "Six at the top: No cry. In the end misfortune comes."
       }
-    ]
+    ],
+    "name_pinyin": "guài"
   },
   "44": {
     "number": 44,
@@ -1581,7 +1623,8 @@
         "line_zh": "上九，姤其角，吝，無咎。",
         "line_en": "Nine at the top: He comes to meet with his horns. Humiliation. No blame."
       }
-    ]
+    ],
+    "name_pinyin": "gòu"
   },
   "45": {
     "number": 45,
@@ -1617,7 +1660,8 @@
         "line_zh": "上六，齎咨涕洟，無咎。",
         "line_en": "Six at the top: Lamenting and sighing, floods of tears. No blame."
       }
-    ]
+    ],
+    "name_pinyin": "cuì"
   },
   "46": {
     "number": 46,
@@ -1653,7 +1697,8 @@
         "line_zh": "上六，冥升，利于不息之貞。",
         "line_en": "Six at the top: Pushing upward in darkness. It is favorable to be unremittingly persevering."
       }
-    ]
+    ],
+    "name_pinyin": "shēng"
   },
   "47": {
     "number": 47,
@@ -1689,7 +1734,8 @@
         "line_zh": "上六，困于葛藟，于臲卼，曰動悔。有悔，征吉。",
         "line_en": "Six at the top: He is oppressed by creeping vines. He moves uncertainly and says, 'Movement brings remorse.' If one feels remorse for this and sets forth, good fortune comes."
       }
-    ]
+    ],
+    "name_pinyin": "kùn"
   },
   "49": {
     "number": 49,
@@ -1725,7 +1771,8 @@
         "line_zh": "上六，君子豹變，小人革面，征凶，居貞吉。",
         "line_en": "The superior man changes like a panther. The inferior man molts in the face. Starting brings misfortune. To remain persevering brings good fortune."
       }
-    ]
+    ],
+    "name_pinyin": "gé"
   },
   "50": {
     "number": 50,
@@ -1761,7 +1808,8 @@
         "line_zh": "上九，鼎玉鉉，大吉，無不利。",
         "line_en": "The cauldron has rings of jade. Great good fortune. Nothing that does not further."
       }
-    ]
+    ],
+    "name_pinyin": "dǐng"
   },
   "51": {
     "number": 51,
@@ -1797,7 +1845,8 @@
         "line_zh": "上六，震索索，視矍矍，征凶。震不于其躬，于其鄰，無咎。婚媾有言。",
         "line_en": "Shock brings ruin and terrified gazing around. Going ahead brings misfortune. If it has not yet touched one's own body but has touched one's neighbor, there is no blame. One's comrades have something to talk about."
       }
-    ]
+    ],
+    "name_pinyin": "zhèn"
   },
   "52": {
     "number": 52,
@@ -1833,7 +1882,8 @@
         "line_zh": "上九，敦艮，吉。",
         "line_en": "Noble-hearted keeping still. Good fortune."
       }
-    ]
+    ],
+    "name_pinyin": "gèn"
   },
   "53": {
     "number": 53,
@@ -1869,7 +1919,8 @@
         "line_zh": "上九，鴻漸于陸，其羽可用為儀，吉。",
         "line_en": "The wild goose gradually draws near the clouds heights. Its feathers can be used for the sacred dance. Good fortune."
       }
-    ]
+    ],
+    "name_pinyin": "jiàn"
   },
   "54": {
     "number": 54,
@@ -1905,7 +1956,8 @@
         "line_zh": "上六，女承筐無實，士刲羊無血，無攸利。",
         "line_en": "The woman holds the basket, but there are no fruits in it. The man stabs the sheep, but no blood flows from it. Nothing that serves to further."
       }
-    ]
+    ],
+    "name_pinyin": "guī mèi"
   },
   "55": {
     "number": 55,
@@ -1941,7 +1993,8 @@
         "line_zh": "上六，豐其屋，蔀其家，窺其戶，闃其無人，三歲不覿，凶。",
         "line_en": "His house is in a state of abundance. He screens off his family. He peers through the gate and no longer perceives anyone. For three years he sees nothing. Misfortune."
       }
-    ]
+    ],
+    "name_pinyin": "fēng"
   },
   "56": {
     "number": 56,
@@ -1977,7 +2030,8 @@
         "line_zh": "上九，鳥焚其巢，旅人先笑後號啕。喪牛于易，凶。",
         "line_en": "The bird's nest burns up. The wanderer laughs at first, then must lament and weep. Through carelessness he loses his cow. Misfortune."
       }
-    ]
+    ],
+    "name_pinyin": "lǚ"
   },
   "57": {
     "number": 57,
@@ -2013,7 +2067,8 @@
         "line_zh": "上九，巽在床下，喪其資斧，貞凶。",
         "line_en": "Penetration under the bed. He loses his property and his ax. Perseverance brings misfortune."
       }
-    ]
+    ],
+    "name_pinyin": "xùn"
   },
   "58": {
     "number": 58,
@@ -2049,7 +2104,8 @@
         "line_zh": "上六，引兌。",
         "line_en": "Seductive joyousness."
       }
-    ]
+    ],
+    "name_pinyin": "duì"
   },
   "59": {
     "number": 59,
@@ -2085,7 +2141,8 @@
         "line_zh": "上九，渙其血，去逖出，無咎。",
         "line_en": "He disperses his blood. Departing, keeping at a distance, going out, is without blame."
       }
-    ]
+    ],
+    "name_pinyin": "huàn"
   },
   "60": {
     "number": 60,
@@ -2121,7 +2178,8 @@
         "line_zh": "上六，苦節，貞凶，悔亡。",
         "line_en": "Galling limitation. Perseverance brings misfortune. Remorse disappears."
       }
-    ]
+    ],
+    "name_pinyin": "jié"
   },
   "61": {
     "number": 61,
@@ -2157,7 +2215,8 @@
         "line_zh": "上九，翰音登于天，貞凶。",
         "line_en": "Cockcrow penetrating to heaven. Perseverance brings misfortune."
       }
-    ]
+    ],
+    "name_pinyin": "zhōng fú"
   },
   "62": {
     "number": 62,
@@ -2193,7 +2252,8 @@
         "line_zh": "上六，弗遇過之，飛鳥離之，凶，是謂災眚。",
         "line_en": "He passes him by, not meeting him. The flying bird leaves him. Misfortune. This means bad luck and injury."
       }
-    ]
+    ],
+    "name_pinyin": "xiǎo guò"
   },
   "63": {
     "number": 63,
@@ -2229,7 +2289,8 @@
         "line_zh": "上六，濡其首，厲。",
         "line_en": "He gets his head in the water. Danger."
       }
-    ]
+    ],
+    "name_pinyin": "jì jì"
   },
   "64": {
     "number": 64,
@@ -2265,6 +2326,7 @@
         "line_zh": "上九，有孚于飲酒，無咎，濡其首，有孚失是。",
         "line_en": "There is drinking of wine in genuine confidence. No blame. But if one wets his head, he loses it, in truth."
       }
-    ]
+    ],
+    "name_pinyin": "wèi jì"
   }
 }
