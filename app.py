@@ -44,33 +44,35 @@ def main():
         # --- Introduction ---
         st.title("易經 - The Book of Changes ☯️")
         
-        with st.expander("A Quick Guide to the I Ching"):
+        with st.expander("A Guide to Divination"):
             st.markdown("""
-            The I Ching, or Book of Changes, is an ancient oracle. You ask a question, and the I Ching answers in the form of a **hexagram**—a figure of six stacked lines.
-            - **Solid lines (Yang)** represent creative, active energy.
-            - **Broken lines (Yin)** represent receptive, passive energy.
-            Sometimes, lines are "changing," which creates a second hexagram, showing how your situation is evolving. This app helps you cast a reading and interpret its wisdom.
+            The I Ching, or Book of Changes, is an ancient text for divination and wisdom. To consult it, you approach it with a sincere question. The oracle responds with a **hexagram**—a figure of six lines—that mirrors the cosmic energies at play in your situation.
+
+            - **Solid lines (Yang)** represent the creative, active principle.
+            - **Broken lines (Yin)** represent the receptive, yielding principle.
+
+            At times, a line may be 'changing,' indicating a dynamic aspect of the present moment. This transformation reveals a second hexagram, offering insight into how the situation may evolve. This app is a vessel for this ancient dialogue, helping you cast a reading and contemplate its meaning.
             """)
 
         # --- User Input ---
         st.header("Consult the Oracle")
         
         sample_questions = [
-            "What is the best approach to my current challenge?",
-            "What underlying energy is at play in my relationship with [Person's Name]?",
-            "How can I find more harmony and balance in my life?",
-            "What should I focus on for my personal growth right now?",
-            "What is the potential outcome if I pursue [Path or Decision]?",
-            "What do I need to understand about my current financial situation?",
-            "How can I be more creative and inspired in my work?",
-            "What is the most important lesson for me to learn at this moment?",
-            "What is the nature of the obstacle I am facing?",
-            "How can I better support my loved ones?",
-            "What new perspective do I need to consider?",
-            "What is the path toward healing in this situation?",
-            "How can I cultivate more joy and peace?",
-            "What is the best way to handle the upcoming changes?",
-            "What aspect of myself do I need to pay more attention to?"
+            "What is the wisest way to approach my current challenge?",
+            "What underlying dynamics are at play in my relationship with [Person's Name]?",
+            "How can I cultivate more harmony and balance within myself?",
+            "What is the most important lesson for me to embrace at this moment?",
+            "What should I focus on for my spiritual growth right now?",
+            "What do I need to understand about the flow of abundance in my life?",
+            "How can I unlock my creative potential in my work?",
+            "What is the nature of the obstacle I am contemplating?",
+            "How can I best support my loved ones with compassion?",
+            "What new perspective is waiting to be revealed?",
+            "What is the path toward healing and integration in this situation?",
+            "How can I cultivate a deeper sense of inner peace?",
+            "What is the most graceful way to navigate the upcoming changes?",
+            "Which aspect of my inner self requires my attention?",
+            "What is the deeper significance of my current circumstances?"
         ]
 
         # Initialize session state for the question text
@@ -87,7 +89,7 @@ def main():
                 st.rerun() # Rerun to update the text area immediately
 
         question = st.text_area(
-            "Focus on your question, then enter it below:", 
+            "Center your mind and enter your inquiry below:",
             height=100, 
             key="question_text"
         )
@@ -117,9 +119,9 @@ def main():
             display_reading(st.session_state.reading)
             
             st.divider()
-            st.header("Deeper Insight")
+            st.header("Contemplative Insight")
             if openai_enabled:
-                if st.button("🤖 Generate AI Interpretation", help="Get a modern interpretation of your reading."):
+                if st.button("🤖 Generate AI-Powered Contemplation", help="Receive a modern contemplation on your reading."):
                     with st.spinner("The AI is consulting the oracle..."):
                         interpretation = get_ai_interpretation(st.session_state.reading, client)
                         st.session_state.ai_interpretation = interpretation
@@ -127,7 +129,7 @@ def main():
                 st.warning("OpenAI API key not found. AI interpretations are disabled.", icon="⚠️")
 
         if 'ai_interpretation' in st.session_state and st.session_state.ai_interpretation:
-            with st.expander("Modern Interpretation", expanded=True):
+            with st.expander("A Modern Contemplation", expanded=True):
                 st.markdown(st.session_state.ai_interpretation)
 
 
@@ -182,7 +184,7 @@ def display_reading(reading):
         st.subheader(f"{primary_hex['number']}: {primary_hex['name_en']}")
         st.caption(f"{primary_hex['name_zh']} ({primary_hex.get('name_pinyin', '')})")
 
-        st.info("This hexagram represents your present situation.", icon="💡")
+        st.info("This hexagram reflects the present energetic landscape of your inquiry.", icon="🧭")
 
         with st.expander("Judgment"):
             display_bilingual_text(None, primary_hex['judgment_zh'], primary_hex['judgment_en'])
@@ -202,13 +204,13 @@ def display_reading(reading):
     # --- Secondary Hexagram ---
     if secondary_hex:
         with col2:
-            st.subheader(f"Transformed Hexagram")
+            st.subheader(f"Evolving Hexagram")
             secondary_lines_values = [l if l in [7, 8] else (7 if l == 6 else 8) for l in lines]
             st.markdown(get_hexagram_svg(secondary_lines_values, []), unsafe_allow_html=True)
             st.subheader(f"{secondary_hex['number']}: {secondary_hex['name_en']}")
             st.caption(f"{secondary_hex['name_zh']} ({secondary_hex.get('name_pinyin', '')})")
             
-            st.info("This hexagram shows the direction your situation is moving toward.", icon="💡")
+            st.info("This hexagram reveals the direction of change and the potential evolution of your situation.", icon="🦋")
 
             with st.expander("Judgment"):
                 display_bilingual_text(None, secondary_hex['judgment_zh'], secondary_hex['judgment_en'])
@@ -269,14 +271,15 @@ def get_ai_interpretation(reading, client):
     secondary_hex = reading['secondary_hex']
     
     prompt = f"""
-You are a wise, modern, and compassionate interpreter of the I Ching, the Book of Changes.
-A user has asked the following question: "{reading['question']}"
+You are a wise and compassionate guide to the I Ching, the Book of Changes. Your purpose is not to predict the future, but to offer timeless wisdom that illuminates the present moment and empowers the user to make conscious choices.
 
-They received the following reading:
-- **Primary Hexagram:** {primary_hex['number']}. {primary_hex['name_en']} ({primary_hex['name_zh']})
+A user has approached you with the following inquiry: "{reading['question']}"
+
+They have received a reading that reflects the energies surrounding their question:
+- **Primary Hexagram:** {primary_hex['number']}. {primary_hex['name_en']} ({primary_hex['name_zh']}) - This represents the current state of things.
 - **Judgment:** {primary_hex['judgment_en']}
 
-The following lines were changing:
+The following lines are in a state of transformation:
     """
     if reading['changing_lines_indices']:
         for i in reading['changing_lines_indices']:
@@ -287,12 +290,12 @@ The following lines were changing:
 
     if secondary_hex:
         prompt += f"""
-This transforms into the following hexagram:
-- **Transformed Hexagram:** {secondary_hex['number']}. {secondary_hex['name_en']} ({secondary_hex['name_zh']})
+This is evolving into a new energetic pattern:
+- **Evolving Hexagram:** {secondary_hex['number']}. {secondary_hex['name_en']} ({secondary_hex['name_zh']}) - This points to the potential direction of change and the lesson to be integrated.
 """
 
     prompt += f"""
-Please provide a thoughtful, modern interpretation. Synthesize the meaning of the primary hexagram, the changing lines, and the transformed hexagram (if any) into a cohesive narrative. Address the user's question directly, offering practical wisdom and insight. Speak in a clear, encouraging, and accessible tone. Structure your answer with paragraphs for readability.
+Please offer a contemplative interpretation. Weave together the meanings of the primary hexagram, the changing lines, and the evolving hexagram into a unified message. Focus on the underlying themes, the psychological and spiritual lessons, and the practical wisdom the user can apply. Avoid definitive predictions. Instead, empower the user to reflect on their own inner wisdom. Use a tone that is serene, insightful, and supportive. Structure the guidance in clear, accessible paragraphs.
     """
 
     try:
