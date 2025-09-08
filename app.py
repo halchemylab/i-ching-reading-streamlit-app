@@ -129,7 +129,6 @@ def get_hexagram_numbers(lines, iching_data):
 def display_reading(reading):
     """Displays the entire classical reading results in a modern, minimalist layout."""
     st.divider()
-    st.success(f'Reading for: *"{reading["question"]}"*')
     st.header("Your Reading")
 
     primary_hex = reading['primary_hex']
@@ -146,6 +145,8 @@ def display_reading(reading):
         st.markdown(get_hexagram_svg(lines, changing_lines_indices), unsafe_allow_html=True)
         st.subheader(f"{primary_hex['number']}: {primary_hex['name_en']}")
         st.caption(primary_hex['name_zh'])
+
+        st.info("This hexagram represents your present situation.", icon="💡")
 
         with st.expander("Judgment"):
             display_bilingual_text(None, primary_hex['judgment_zh'], primary_hex['judgment_en'])
