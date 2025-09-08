@@ -1691,39 +1691,579 @@
       }
     ]
   },
-  "48": {
-    "number": 48,
-    "binary_code": "010110",
-    "name_zh": "井",
-    "name_en": "The Well",
-    "judgment_zh": "改邑不改井，無喪無得，往來井井。汔至，亦未繘井，羸其瓶，凶。",
-    "judgment_en": "The Well. The town may be changed, but the well cannot be changed. It neither decreases nor increases. They come and go and draw from the well. If one gets down almost to the water and the rope does not go all the way, or the jug breaks, it brings misfortune.",
-    "image_zh": "木上有水，井。君子以勞民勸相。",
-    "image_en": "Water over wood: the image of the Well. Thus the superior man encourages the people at their work, and exhorts them to help one another.",
+  "49": {
+    "number": 49,
+    "binary_code": "011110",
+    "name_zh": "革",
+    "name_en": "Revolution (Molting)",
+    "judgment_zh": "大人虎變，未占有孚。",
+    "judgment_en": "Revolution. On your own day, you are believed. Supreme success, furthering through perseverance. Remorse disappears.",
+    "image_zh": "澤中有火，革。君子以治歷明時。",
+    "image_en": "Fire in the lake: the image of Revolution. Thus the superior man sets the calendar in order and makes the seasons clear.",
     "lines": [
       {
-        "line_zh": "初六，井泥不食，舊井無禽。",
-        "line_en": "Six at the beginning: One does not drink the mud of the well. No animals come to an old well."
+        "line_zh": "初九，鞏用黃牛之革。",
+        "line_en": "Wrapped in the hide of a yellow cow."
       },
       {
-        "line_zh": "九二，井谷射鮒，甕敝漏。",
-        "line_en": "Nine in the second place: In the well shaft one shoots at fishes. The jug is broken and leaks."
+        "line_zh": "六二，己日乃革之，征吉，無咎。",
+        "line_en": "When one's own day comes, one may create a revolution. Starting brings good fortune. No blame."
       },
       {
-        "line_zh": "九三，井渫不食，為我心惻，可用汲，王明，並受其福。",
-        "line_en": "Nine in the third place: The well is cleaned, but no one drinks from it. This is my heart's sorrow, for one might draw from it. If the king were clear-minded, good fortune might be enjoyed in common."
+        "line_zh": "九三，征凶，貞厲。革言三就，有孚。",
+        "line_en": "Starting brings misfortune. Perseverance brings danger. When the talk of revolution has gone around three times, one may commit himself, and people will believe him."
       },
       {
-        "line_zh": "六四，井甃，無咎。",
-        "line_en": "Six in the fourth place: The well is being lined. No blame."
+        "line_zh": "九四，悔亡，有孚改命，吉。",
+        "line_en": "Remorse disappears. Men believe him. Changing the form of government brings good fortune."
       },
       {
-        "line_zh": "九五，井冽，寒泉食。",
-        "line_en": "Nine in the fifth place: The well is clear, a cold spring from which one can drink."
+        "line_zh": "九五，大人虎變，未占有孚。",
+        "line_en": "The great man changes like a tiger. Even before he questions the oracle, he is believed."
       },
       {
-        "line_zh": "上六，井收勿幕，有孚元吉。",
-        "line_en": "Six at the top: The well is drawn from and not covered. There is confidence. Supreme good fortune."
+        "line_zh": "上六，君子豹變，小人革面，征凶，居貞吉。",
+        "line_en": "The superior man changes like a panther. The inferior man molts in the face. Starting brings misfortune. To remain persevering brings good fortune."
+      }
+    ]
+  },
+  "50": {
+    "number": 50,
+    "binary_code": "101110",
+    "name_zh": "鼎",
+    "name_en": "The Cauldron",
+    "judgment_zh": "元吉，亨。",
+    "judgment_en": "The Cauldron. Supreme good fortune. Success.",
+    "image_zh": "木上有火，鼎。君子以正位凝命。",
+    "image_en": "Fire over wood: the image of the Cauldron. Thus the superior man consolidates his fate by making his position correct.",
+    "lines": [
+      {
+        "line_zh": "初六，鼎顛趾，利出否，得妾以其子，無咎。",
+        "line_en": "A cauldron with legs upturned. Furthers removal of stagnant stuff. One takes a concubine for the sake of her son. No blame."
+      },
+      {
+        "line_zh": "九二，鼎有實，我仇有疾，不我能即，吉。",
+        "line_en": "There is food in the cauldron. My comrades are envious, but they cannot harm me. Good fortune."
+      },
+      {
+        "line_zh": "九三，鼎耳革，其行塞，雉膏不食，方雨虧悔，終吉。",
+        "line_en": "The handle of the cauldron is altered. One is impeded in his way of life. The fat of the pheasant is not eaten. Once rain falls, remorse is spent. Good fortune comes in the end."
+      },
+      {
+        "line_zh": "九四，鼎折足，覆公餗，其形渥，凶。",
+        "line_en": "The legs of the cauldron are broken. The prince's meal is spilled and his person is soiled. Misfortune."
+      },
+      {
+        "line_zh": "六五，鼎黃耳金鉉，利貞。",
+        "line_en": "The cauldron has yellow handles, golden carrying rings. Perseverance furthers."
+      },
+      {
+        "line_zh": "上九，鼎玉鉉，大吉，無不利。",
+        "line_en": "The cauldron has rings of jade. Great good fortune. Nothing that does not further."
+      }
+    ]
+  },
+  "51": {
+    "number": 51,
+    "binary_code": "100100",
+    "name_zh": "震",
+    "name_en": "The Arousing (Shock, Thunder)",
+    "judgment_zh": "亨。震來虩虩，笑言啞啞。震驚百里，不喪匕鬯。",
+    "judgment_en": "Shock brings success. Shock comes—oh, oh! Laughing words—ha, ha! The shock terrifies for a hundred miles, and he does not let fall the sacrificial spoon and chalice.",
+    "image_zh": "洊雷，震。君子以恐懼修省。",
+    "image_en": "Thunder repeated: the image of Shock. Thus the superior man in fear and trembling sets his life in order and examines himself.",
+    "lines": [
+      {
+        "line_zh": "初九，震來虩虩，後笑言啞啞，吉。",
+        "line_en": "Shock comes—oh, oh! Then follow laughing words—ha, ha! Good fortune."
+      },
+      {
+        "line_zh": "六二，震來厲，億喪貝，躋于九陵，勿逐，七日得。",
+        "line_en": "Shock comes bringing danger. A hundred thousand times you lose your treasures and must climb the nine hills. Do not go in pursuit of them. After seven days you will get them back."
+      },
+      {
+        "line_zh": "六三，震蘇蘇，震行無眚。",
+        "line_en": "Shock is spent. If one acts on the shock, one remains free of misfortune."
+      },
+      {
+        "line_zh": "九四，震遂泥。",
+        "line_en": "Shock is mired."
+      },
+      {
+        "line_zh": "六五，震往來厲，億無喪，有事。",
+        "line_en": "Shock goes hither and thither. Danger. However, nothing is lost. Yet there are things to be done."
+      },
+      {
+        "line_zh": "上六，震索索，視矍矍，征凶。震不于其躬，于其鄰，無咎。婚媾有言。",
+        "line_en": "Shock brings ruin and terrified gazing around. Going ahead brings misfortune. If it has not yet touched one's own body but has touched one's neighbor, there is no blame. One's comrades have something to talk about."
+      }
+    ]
+  },
+  "52": {
+    "number": 52,
+    "binary_code": "001001",
+    "name_zh": "艮",
+    "name_en": "Keeping Still, Mountain",
+    "judgment_zh": "艮其背，不獲其身，行其庭，不見其人，無咎。",
+    "judgment_en": "Keeping Still. Keeping his back still so that he no longer feels his body. He goes into his courtyard and does not see his people. No blame.",
+    "image_zh": "兼山，艮。君子以思不出其位。",
+    "image_en": "Mountains standing close together: the image of Keeping Still. Thus the superior man does not permit his thoughts to go beyond his situation.",
+    "lines": [
+      {
+        "line_zh": "初六，艮其趾，無咎，利永貞。",
+        "line_en": "Keeping his toes still. No blame. Constant perseverance furthers."
+      },
+      {
+        "line_zh": "六二，艮其腓，不拯其隨，其心不快。",
+        "line_en": "Keeping his calves still. He cannot rescue him whom he follows. His heart is not glad."
+      },
+      {
+        "line_zh": "九三，艮其限，列其夤，厲薰心。",
+        "line_en": "Keeping his hips still. Making his sacrum stiff. Dangerous. The heart suffocates."
+      },
+      {
+        "line_zh": "六四，艮其身，無咎。",
+        "line_en": "Keeping his trunk still. No blame."
+      },
+      {
+        "line_zh": "六五，艮其輔，言有序，悔亡。",
+        "line_en": "Keeping his jaws still. The words have order. Remorse disappears."
+      },
+      {
+        "line_zh": "上九，敦艮，吉。",
+        "line_en": "Noble-hearted keeping still. Good fortune."
+      }
+    ]
+  },
+  "53": {
+    "number": 53,
+    "binary_code": "011001",
+    "name_zh": "漸",
+    "name_en": "Development (Gradual Progress)",
+    "judgment_zh": "女歸吉，利貞。",
+    "judgment_en": "Development. The maiden is given in marriage. Good fortune. Perseverance furthers.",
+    "image_zh": "山上有木，漸。君子以居賢德善俗。",
+    "image_en": "On the mountain, a tree: the image of Development. Thus the superior man abides in dignity and virtue, in order to improve the customs.",
+    "lines": [
+      {
+        "line_zh": "初六，鴻漸于干，小子厲，有言，無咎。",
+        "line_en": "The wild goose gradually draws near the shore. The young son is in danger. There is talk. No blame."
+      },
+      {
+        "line_zh": "六二，鴻漸于磐，飲食衎衎，吉。",
+        "line_en": "The wild goose gradually draws near the cliff. Eating and drinking in peace and concord. Good fortune."
+      },
+      {
+        "line_zh": "九三，鴻漸于陸，夫征不復，婦孕不育，凶。利禦寇。",
+        "line_en": "The wild goose gradually draws near the plateau. The husband goes forth and does not return. The wife carries a child but does not bring it forth. Misfortune. It is favorable to ward off robbers."
+      },
+      {
+        "line_zh": "六四，鴻漸于木，或得其桷，無咎。",
+        "line_en": "The wild goose gradually draws near the tree. Perhaps it will find a flat bough. No blame."
+      },
+      {
+        "line_zh": "九五，鴻漸于陵，婦三歲不孕，終莫之勝，吉。",
+        "line_en": "The wild goose gradually draws near the summit. For three years the wife has no child. In the end nothing can hinder her. Good fortune."
+      },
+      {
+        "line_zh": "上九，鴻漸于陸，其羽可用為儀，吉。",
+        "line_en": "The wild goose gradually draws near the clouds heights. Its feathers can be used for the sacred dance. Good fortune."
+      }
+    ]
+  },
+  "54": {
+    "number": 54,
+    "binary_code": "100110",
+    "name_zh": "歸妹",
+    "name_en": "The Marrying Maiden",
+    "judgment_zh": "征凶，無攸利。",
+    "judgment_en": "The Marrying Maiden. Undertakings bring misfortune. Nothing that would further.",
+    "image_zh": "澤上有雷，歸妹。君子以永終知敝。",
+    "image_en": "Thunder over the lake: the image of the Marrying Maiden. Thus the superior man understands the transitory in the light of the eternity of the end.",
+    "lines": [
+      {
+        "line_zh": "初九，歸妹以娣，跛能履，征吉。",
+        "line_en": "The marrying maiden as a concubine. A lame man who is able to tread. Undertakings bring good fortune."
+      },
+      {
+        "line_zh": "九二，眇能視，利幽人之貞。",
+        "line_en": "A one-eyed man who is able to see. The perseverance of a solitary man furthers."
+      },
+      {
+        "line_zh": "六三，歸妹以須，反歸以娣。",
+        "line_en": "The marrying maiden as a slave. She marries as a concubine."
+      },
+      {
+        "line_zh": "九四，歸妹愆期，遲歸有時。",
+        "line_en": "The marrying maiden draws out the allotted time. A late marriage comes in due course."
+      },
+      {
+        "line_zh": "六五，帝乙歸妹，其君之袂，不如其娣之袂良。月幾望，吉。",
+        "line_en": "The sovereign I gives his daughter in marriage. The embroidered garments of the princess were not as gorgeous as those of the serving maid. The moon that is nearly full brings good fortune."
+      },
+      {
+        "line_zh": "上六，女承筐無實，士刲羊無血，無攸利。",
+        "line_en": "The woman holds the basket, but there are no fruits in it. The man stabs the sheep, but no blood flows from it. Nothing that serves to further."
+      }
+    ]
+  },
+  "55": {
+    "number": 55,
+    "binary_code": "101100",
+    "name_zh": "豐",
+    "name_en": "Abundance [Fullness]",
+    "judgment_zh": "亨，王假之，勿憂，宜日中。",
+    "judgment_en": "Abundance has success. The king attains abundance. Be not sad. Be like the sun at midday.",
+    "image_zh": "雷電皆至，豐。君子以折獄致刑。",
+    "image_en": "Both thunder and lightning come: the image of Abundance. Thus the superior man decides lawsuits and carries out punishments.",
+    "lines": [
+      {
+        "line_zh": "初九，遇其配主，雖旬無咎，往有尚。",
+        "line_en": "When a man meets his destined ruler, they can be together ten days, and it is not a mistake. Going meets with recognition."
+      },
+      {
+        "line_zh": "六二，豐其蔀，日中見斗，往得疑疾，有孚發若，吉。",
+        "line_en": "The curtain is of such fullness that the polestars can be seen at noon. Through going one meets with mistrust and hate. If one rouses him through truth, good fortune comes."
+      },
+      {
+        "line_zh": "九三，豐其沛，日中見昧，折其右肱，無咎。",
+        "line_en": "The underbrush is of such richness that the small stars can be seen at noon. He breaks his right arm. No blame."
+      },
+      {
+        "line_zh": "九四，豐其蔀，日中見斗，遇其夷主，吉。",
+        "line_en": "The curtain is of such fullness that the polestars can be seen at noon. He meets his ruler, who is of like kind. Good fortune."
+      },
+      {
+        "line_zh": "六五，來章，有慶譽，吉。",
+        "line_en": "He brings brilliant men to the court. There is blessing and praise. Good fortune."
+      },
+      {
+        "line_zh": "上六，豐其屋，蔀其家，窺其戶，闃其無人，三歲不覿，凶。",
+        "line_en": "His house is in a state of abundance. He screens off his family. He peers through the gate and no longer perceives anyone. For three years he sees nothing. Misfortune."
+      }
+    ]
+  },
+  "56": {
+    "number": 56,
+    "binary_code": "001101",
+    "name_zh": "旅",
+    "name_en": "The Wanderer",
+    "judgment_zh": "小亨，旅貞吉。",
+    "judgment_en": "The Wanderer. Success through smallness. Perseverance brings good fortune to the wanderer.",
+    "image_zh": "山上有火，旅。君子以明慎用刑而不留獄。",
+    "image_en": "Fire on the mountain: the image of the Wanderer. Thus the superior man is clear-minded and cautious in imposing penalties, and does not protract lawsuits.",
+    "lines": [
+      {
+        "line_zh": "初六，旅瑣瑣，斯其所取災。",
+        "line_en": "If the wanderer busies himself with trivial things, he draws down misfortune upon himself."
+      },
+      {
+        "line_zh": "六二，旅即次，懷其資，得童僕貞。",
+        "line_en": "The wanderer comes to an inn. He has money in his possession. He wins the steadfastness of a young servant."
+      },
+      {
+        "line_zh": "九三，旅焚其次，喪其童僕，貞厲。",
+        "line_en": "The wanderer's inn burns down. He loses the steadfastness of his young servant. Danger."
+      },
+      {
+        "line_zh": "九四，旅于處，得其資斧，我心不快。",
+        "line_en": "The wanderer rests in a shelter. He obtains his property and an ax. My heart is not glad."
+      },
+      {
+        "line_zh": "六五，射雉一矢亡，終以譽命。",
+        "line_en": "He shoots a pheasant. It drops with the first arrow. In the end this brings him praise and office."
+      },
+      {
+        "line_zh": "上九，鳥焚其巢，旅人先笑後號啕。喪牛于易，凶。",
+        "line_en": "The bird's nest burns up. The wanderer laughs at first, then must lament and weep. Through carelessness he loses his cow. Misfortune."
+      }
+    ]
+  },
+  "57": {
+    "number": 57,
+    "binary_code": "011011",
+    "name_zh": "巽",
+    "name_en": "The Gentle (The Penetrating, Wind)",
+    "judgment_zh": "小亨，利有攸往，利見大人。",
+    "judgment_en": "The Gentle. Success through what is small. It furthers one to have somewhere to go. It furthers one to see the great man.",
+    "image_zh": "隨風，巽。君子以申命行事。",
+    "image_en": "Winds following one upon the other: the image of the Gentle. Thus the superior man spreads his commands abroad and carries his undertakings to completion.",
+    "lines": [
+      {
+        "line_zh": "初六，進退，利武人之貞。",
+        "line_en": "In advancing and in retreating, the perseverance of a warrior furthers."
+      },
+      {
+        "line_zh": "九二，巽在床下，用史巫紛若，吉無咎。",
+        "line_en": "Penetration under the bed. Priests and magicians are used in great number. Good fortune. No blame."
+      },
+      {
+        "line_zh": "九三，頻巽，吝。",
+        "line_en": "Repeated penetration. Humiliation."
+      },
+      {
+        "line_zh": "六四，悔亡，田獲三品。",
+        "line_en": "Remorse vanishes. In the hunt three kinds of game are caught."
+      },
+      {
+        "line_zh": "九五，貞吉悔亡，無不利。無初有終，先庚三日，後庚三日，吉。",
+        "line_en": "Perseverance brings good fortune. Remorse vanishes. Nothing that does not further. No beginning, but an end. Before the change, three days. After the change, three days. Good fortune."
+      },
+      {
+        "line_zh": "上九，巽在床下，喪其資斧，貞凶。",
+        "line_en": "Penetration under the bed. He loses his property and his ax. Perseverance brings misfortune."
+      }
+    ]
+  },
+  "58": {
+    "number": 58,
+    "binary_code": "110110",
+    "name_zh": "兌",
+    "name_en": "The Joyous, Lake",
+    "judgment_zh": "亨，利貞。",
+    "judgment_en": "The Joyous. Success. Perseverance is favorable.",
+    "image_zh": "麗澤，兌。君子以朋友講習。",
+    "image_en": "Lakes resting one on the other: the image of the Joyous. Thus the superior man joins with his friends for discussion and practice.",
+    "lines": [
+      {
+        "line_zh": "初九，和兌，吉。",
+        "line_en": "Contented joyousness. Good fortune."
+      },
+      {
+        "line_zh": "九二，孚兌，吉，悔亡。",
+        "line_en": "Sincere joyousness. Good fortune. Remorse disappears."
+      },
+      {
+        "line_zh": "六三，來兌，凶。",
+        "line_en": "Coming joyousness. Misfortune."
+      },
+      {
+        "line_zh": "九四，商兌未寧，介疾有喜。",
+        "line_en": "Joyousness that is weighed is not at peace. After ridding himself of his mistakes, a man has joy."
+      },
+      {
+        "line_zh": "九五，孚于剝，有厲。",
+        "line_en": "Sincerity toward disintegrating influences is dangerous."
+      },
+      {
+        "line_zh": "上六，引兌。",
+        "line_en": "Seductive joyousness."
+      }
+    ]
+  },
+  "59": {
+    "number": 59,
+    "binary_code": "010011",
+    "name_zh": "渙",
+    "name_en": "Dispersion [Dissolution]",
+    "judgment_zh": "亨。王假有廟，利涉大川，利貞。",
+    "judgment_en": "Dispersion. Success. The king approaches his temple. It furthers one to cross the great water. Perseverance furthers.",
+    "image_zh": "風行水上，渙。先王以享于帝立廟。",
+    "image_en": "Wind blowing over water: the image of Dispersion. Thus the ancient kings made offerings to God and built temples.",
+    "lines": [
+      {
+        "line_zh": "初六，用拯馬壯，吉。",
+        "line_en": "He brings help with the strength of a horse. Good fortune."
+      },
+      {
+        "line_zh": "九二，渙奔其机，悔亡。",
+        "line_en": "In the midst of dispersion, he hurries to his support. Remorse disappears."
+      },
+      {
+        "line_zh": "六三，渙其躬，無悔。",
+        "line_en": "He disperses his self. No remorse."
+      },
+      {
+        "line_zh": "六四，渙其群，元吉。渙有丘，匪夷所思。",
+        "line_en": "He disperses his group. Supreme good fortune. Dispersion leads in turn to accumulation. This is something that ordinary men do not think of."
+      },
+      {
+        "line_zh": "九五，渙汗其大號，渙王居，無咎。",
+        "line_en": "His loud cries are as dissolving as sweat. Dispersion. A king abides without blame."
+      },
+      {
+        "line_zh": "上九，渙其血，去逖出，無咎。",
+        "line_en": "He disperses his blood. Departing, keeping at a distance, going out, is without blame."
+      }
+    ]
+  },
+  "60": {
+    "number": 60,
+    "binary_code": "110010",
+    "name_zh": "節",
+    "name_en": "Limitation",
+    "judgment_zh": "亨。苦節不可貞。",
+    "judgment_en": "Limitation. Success. Galling limitation must not be persevered in.",
+    "image_zh": "澤上有水，節。君子以制數度，議德行。",
+    "image_en": "Water over lake: the image of Limitation. Thus the superior man creates number and measure, and examines the nature of virtue and correct conduct.",
+    "lines": [
+      {
+        "line_zh": "初九，不出戶庭，無咎。",
+        "line_en": "Not going out of the door and courtyard is without blame."
+      },
+      {
+        "line_zh": "九二，不出門庭，凶。",
+        "line_en": "Not going out of the gate and courtyard brings misfortune."
+      },
+      {
+        "line_zh": "六三，不節若，則嗟若，無咎。",
+        "line_en": "He who knows no limitation will have cause to lament. No blame."
+      },
+      {
+        "line_zh": "六四，安節，亨。",
+        "line_en": "Contented limitation. Success."
+      },
+      {
+        "line_zh": "九五，甘節，吉，往有尚。",
+        "line_en": "Sweet limitation brings good fortune. Going brings esteem."
+      },
+      {
+        "line_zh": "上六，苦節，貞凶，悔亡。",
+        "line_en": "Galling limitation. Perseverance brings misfortune. Remorse disappears."
+      }
+    ]
+  },
+  "61": {
+    "number": 61,
+    "binary_code": "110011",
+    "name_zh": "中孚",
+    "name_en": "Inner Truth",
+    "judgment_zh": "豚魚吉，利涉大川，利貞。",
+    "judgment_en": "Inner Truth. Pigs and fishes. Good fortune. It furthers one to cross the great water. Perseverance furthers.",
+    "image_zh": "澤上有風，中孚。君子以議獄緩死。",
+    "image_en": "Wind over lake: the image of Inner Truth. Thus the superior man discusses criminal cases in order to delay executions.",
+    "lines": [
+      {
+        "line_zh": "初九，虞吉，有他不燕。",
+        "line_en": "Being prepared brings good fortune. If there are secret designs, it is disquieting."
+      },
+      {
+        "line_zh": "九二，鳴鶴在陰，其子和之，我有好爵，吾與爾靡之。",
+        "line_en": "A crane calling in the shade. Its young answers it. I have a good goblet. I will share it with you."
+      },
+      {
+        "line_zh": "六三，得敵，或鼓或罷，或泣或歌。",
+        "line_en": "He finds a comrade. Now he beats the drum, now he stops. Now he weeps, now he sings."
+      },
+      {
+        "line_zh": "六四，月幾望，馬匹亡，無咎。",
+        "line_en": "The moon is nearly full. The team horse goes astray. No blame."
+      },
+      {
+        "line_zh": "九五，有孚攣如，無咎。",
+        "line_en": "He possesses truth, which links together. No blame."
+      },
+      {
+        "line_zh": "上九，翰音登于天，貞凶。",
+        "line_en": "Cockcrow penetrating to heaven. Perseverance brings misfortune."
+      }
+    ]
+  },
+  "62": {
+    "number": 62,
+    "binary_code": "001100",
+    "name_zh": "小過",
+    "name_en": "Preponderance of the Small",
+    "judgment_zh": "亨，利貞，可小事，不可大事。飛鳥遺之音，不宜上，宜下，大吉。",
+    "judgment_en": "Preponderance of the Small. Success. Perseverance furthers. Small things may be done; great things should not be done. The flying bird brings the message: It is not well to strive upward, it is well to remain below. Great good fortune.",
+    "image_zh": "山上有雷，小過。君子以行過乎恭，喪過乎哀，用過乎儉。",
+    "image_en": "Thunder on the mountain: the image of Preponderance of the Small. Thus in his conduct the superior man gives preponderance to reverence. In bereavement he gives preponderance to grief. In his expenditures he gives preponderance to thrift.",
+    "lines": [
+      {
+        "line_zh": "初六，飛鳥以凶。",
+        "line_en": "The bird meets with misfortune through flying."
+      },
+      {
+        "line_zh": "六二，過其祖，遇其妣，不及其君，遇其臣，無咎。",
+        "line_en": "She passes by her ancestor and meets her ancestress. He does not reach his prince and meets the official. No blame."
+      },
+      {
+        "line_zh": "九三，弗過防之，從或戕之，凶。",
+        "line_en": "If one is not extremely careful, somebody may come from behind and strike him. Misfortune."
+      },
+      {
+        "line_zh": "九四，無咎，弗過遇之。往厲必戒，勿用永貞。",
+        "line_en": "No blame. He meets him without passing by. Going brings danger. One must be on guard. Do not act. Be constantly persevering."
+      },
+      {
+        "line_zh": "六五，密雲不雨，自我西郊，公弋取彼在穴。",
+        "line_en": "Dense clouds, no rain from our western territory. The prince shoots and hits him who is in the cave."
+      },
+      {
+        "line_zh": "上六，弗遇過之，飛鳥離之，凶，是謂災眚。",
+        "line_en": "He passes him by, not meeting him. The flying bird leaves him. Misfortune. This means bad luck and injury."
+      }
+    ]
+  },
+  "63": {
+    "number": 63,
+    "binary_code": "101010",
+    "name_zh": "既濟",
+    "name_en": "After Completion",
+    "judgment_zh": "亨，小利貞，初吉終亂。",
+    "judgment_en": "After Completion. Success in small matters. Perseverance furthers. At the beginning good fortune, at the end disorder.",
+    "image_zh": "水在火上，既濟。君子以思患而豫防之。",
+    "image_en": "Water over fire: the image of the state of After Completion. Thus the superior man takes thought of misfortune and arms himself against it in advance.",
+    "lines": [
+      {
+        "line_zh": "初九，曳其輪，濡其尾，無咎。",
+        "line_en": "He brakes his wheels. He gets his tail in the water. No blame."
+      },
+      {
+        "line_zh": "六二，婦喪其茀，勿逐，七日得。",
+        "line_en": "The woman loses the curtain of her carriage. Do not run after it; on the seventh day you will get it."
+      },
+      {
+        "line_zh": "九三，高宗伐鬼方，三年克之，小人勿用。",
+        "line_en": "The Illustrious Ancestor subjugates the devil's country. After three years he conquers it. Inferior people should not be employed."
+      },
+      {
+        "line_zh": "六四，繻有衣袽，終日戒。",
+        "line_en": "The finest clothes turn to rags. Be careful all day long."
+      },
+      {
+        "line_zh": "九五，東鄰殺牛，不如西鄰之禴祭，實受其福。",
+        "line_en": "The neighbor in the east who slaughters an ox does not attain as much real happiness as the neighbor in the west with his small offering."
+      },
+      {
+        "line_zh": "上六，濡其首，厲。",
+        "line_en": "He gets his head in the water. Danger."
+      }
+    ]
+  },
+  "64": {
+    "number": 64,
+    "binary_code": "010101",
+    "name_zh": "未濟",
+    "name_en": "Before Completion",
+    "judgment_zh": "亨，小狐汔濟，濡其尾，無攸利。",
+    "judgment_en": "Before Completion. Success. But if the little fox, after nearly completing the crossing, gets his tail in the water, there is nothing that would further.",
+    "image_zh": "火在水上，未濟。君子以慎辨物居方。",
+    "image_en": "Fire over water: the image of the condition before transition. Thus the superior man is careful in the differentiation of things, so that each finds its place.",
+    "lines": [
+      {
+        "line_zh": "初六，濡其尾，吝。",
+        "line_en": "He gets his tail in the water. Humiliating."
+      },
+      {
+        "line_zh": "九二，曳其輪，貞吉。",
+        "line_en": "He brakes his wheels. Perseverance brings good fortune."
+      },
+      {
+        "line_zh": "六三，未濟，征凶，利涉大川。",
+        "line_en": "Before completion, attack brings misfortune. It furthers one to cross the great water."
+      },
+      {
+        "line_zh": "九四，貞吉悔亡，震用伐鬼方，三年有賞于大國。",
+        "line_en": "Perseverance brings good fortune. Remorse disappears. Shock, in order to punish the devil's country. For three years, great realms are awarded."
+      },
+      {
+        "line_zh": "六五，貞吉，無悔，君子之光，有孚，吉。",
+        "line_en": "Perseverance brings good fortune. No remorse. The light of the superior man is true. Good fortune."
+      },
+      {
+        "line_zh": "上九，有孚于飲酒，無咎，濡其首，有孚失是。",
+        "line_en": "There is drinking of wine in genuine confidence. No blame. But if one wets his head, he loses it, in truth."
       }
     ]
   }
