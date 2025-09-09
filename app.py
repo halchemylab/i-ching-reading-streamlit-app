@@ -3,6 +3,8 @@ import json
 import random
 import openai
 import os
+import pandas as pd
+from datetime import datetime
 from dotenv import load_dotenv
 
 # --- Page Configuration ---
@@ -11,6 +13,9 @@ st.set_page_config(
     page_icon="☯️",
     layout="centered"
 )
+
+# --- Constants ---
+JOURNAL_FILE = "i_ching_journal.csv"
 
 # --- Data Loading ---
 @st.cache_data
@@ -32,29 +37,30 @@ def main():
     iching_data = load_iching_data()
     load_dotenv()
     
-    # Initialize OpenAI Client
     api_key = os.getenv("OPENAI_API_KEY")
     client = None
-    openai_enabled = False
-    if api_key:
+    openai_enabled = True if api_key else False
+    if openai_enabled:
         client = openai.OpenAI(api_key=api_key)
-        openai_enabled = True
 
     if iching_data:
-        # --- Introduction ---
+        if "question_text" not in st.session_state:
+            st.session_state.question_text = ""
+        if "reading_saved" not in st.session_state:
+            st.session_state.reading_saved = False
+
         st.title("易經 - The Book of Changes ☯️")
         
         with st.expander("A Guide to Divination"):
             st.markdown("""
-            The I Ching, or Book of Changes, is an ancient text for divination and wisdom. To consult it, you approach it with a sincere question. The oracle responds with a **hexagram**—a figure of six lines—that mirrors the cosmic energies at play in your situation.
+The I Ching, or Book of Changes, is an ancient text for divination and wisdom. To consult it, you approach it with a sincere question. The oracle responds with a **hexagram**—a figure of six lines—that mirrors the cosmic energies at play in your situation.
 
-            - **Solid lines (Yang)** represent the creative, active principle.
-            - **Broken lines (Yin)** represent the receptive, yielding principle.
+- **Solid lines (Yang)** represent the creative, active principle.
+- **Broken lines (Yin)** represent the receptive, yielding principle.
 
-            At times, a line may be 'changing,' indicating a dynamic aspect of the present moment. This transformation reveals a second hexagram, offering insight into how the situation may evolve. This app is a vessel for this ancient dialogue, helping you cast a reading and contemplate its meaning.
-            """)
+At times, a line may be 'changing,' indicating a dynamic aspect of the present moment. This transformation reveals a second hexagram, offering insight into how the situation may evolve. This app is a vessel for this ancient dialogue, helping you cast a reading and contemplate its meaning.
+""")
 
-        # --- User Input ---
         st.header("Consult the Oracle")
         
         sample_questions = [
@@ -75,18 +81,13 @@ def main():
             "What is the deeper significance of my current circumstances?"
         ]
 
-        # Initialize session state for the question text
-        if "question_text" not in st.session_state:
-            st.session_state.question_text = ""
-
-        # Handle button clicks BEFORE rendering the text_area
         col1, col2 = st.columns([1,1])
         with col1:
             cast_button_clicked = st.button("Cast Reading", type="primary", use_container_width=True)
         with col2:
             if st.button("Suggest a Question", use_container_width=True):
                 st.session_state.question_text = random.choice(sample_questions)
-                st.rerun() # Rerun to update the text area immediately
+                st.rerun()
 
         question = st.text_area(
             "Center your mind and enter your inquiry below:",
@@ -94,43 +95,72 @@ def main():
             key="question_text"
         )
 
-        if cast_button_clicked:
-            if question:
-                with st.spinner("Casting the lines..."):
-                    import time
-                    time.sleep(1.5)
-                    st.session_state.reading_cast = True
-                    st.session_state.ai_interpretation = None
-                    lines = cast_reading()
-                    primary_hex_num, secondary_hex_num = get_hexagram_numbers(lines, iching_data)
-                    
-                    st.session_state.reading = {
-                        "question": question,
-                        "lines": lines,
-                        "primary_hex": iching_data[str(primary_hex_num)],
-                        "secondary_hex": iching_data[str(secondary_hex_num)] if secondary_hex_num else None,
-                        "changing_lines_indices": [i for i, line in enumerate(lines) if line in [6, 9]]
-                    }
-                    st.rerun()
-            else:
-                st.warning("Please enter a question before casting a reading.")
+        if cast_button_clicked and question:
+            with st.spinner("Casting the lines..."):
+                import time
+                time.sleep(1.5)
+                st.session_state.reading_cast = True
+                st.session_state.ai_interpretation = None
+                st.session_state.reading_saved = False
+                lines = cast_reading()
+                primary_hex_num, secondary_hex_num = get_hexagram_numbers(lines, iching_data)
+                
+                st.session_state.reading = {
+                    "question": question,
+                    "lines": lines,
+                    "primary_hex": iching_data[str(primary_hex_num)],
+                    "secondary_hex": iching_data[str(secondary_hex_num)] if secondary_hex_num else None,
+                    "changing_lines_indices": [i for i, line in enumerate(lines) if line in [6, 9]],
+                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                }
+                st.rerun()
 
-        if 'reading' in st.session_state and st.session_state.reading_cast:
+        if st.session_state.get('reading_cast'):
             display_reading(st.session_state.reading)
             
             st.divider()
-            st.header("Contemplative Insight")
-            if openai_enabled:
-                if st.button("🤖 Generate AI-Powered Contemplation", help="Receive a modern contemplation on your reading."):
-                    with st.spinner("The AI is consulting the oracle..."):
-                        interpretation = get_ai_interpretation(st.session_state.reading, client)
-                        st.session_state.ai_interpretation = interpretation
-            else:
-                st.warning("OpenAI API key not found. AI interpretations are disabled.", icon="⚠️")
+            st.header("Contemplation & Journal")
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                if openai_enabled:
+                    if st.button("🤖 Generate AI Contemplation", use_container_width=True):
+                        with st.spinner("The AI is consulting the oracle..."):
+                            interpretation = get_ai_interpretation(st.session_state.reading, client)
+                            st.session_state.ai_interpretation = interpretation
+                            st.session_state.reading['ai_interpretation'] = interpretation
+                            st.rerun()
 
-        if 'ai_interpretation' in st.session_state and st.session_state.ai_interpretation:
-            with st.expander("A Modern Contemplation", expanded=True):
-                st.markdown(st.session_state.ai_interpretation)
+            with col2:
+                if st.button("💾 Save to Journal", use_container_width=True, disabled=st.session_state.reading_saved):
+                    save_reading_to_csv(st.session_state.reading)
+                    st.session_state.reading_saved = True
+                    st.success(f"Reading saved to {JOURNAL_FILE}")
+                    st.rerun()
+
+            if st.session_state.get('ai_interpretation'):
+                with st.expander("A Modern Contemplation", expanded=True):
+                    st.markdown(st.session_state.ai_interpretation)
+
+        st.divider()
+        st.header("Reading Journal")
+        if os.path.exists(JOURNAL_FILE):
+            try:
+                journal_df = pd.read_csv(JOURNAL_FILE)
+                if not journal_df.empty:
+                    for index, row in journal_df.iloc[::-1].iterrows():
+                        reconstructed_reading = reconstruct_reading_from_row(row, iching_data)
+                        with st.expander(f"**{row['Date']}** - {row['Question']}"):
+                            display_reading(reconstructed_reading, is_journal=True)
+                            if pd.notna(row['AI Interpretation']):
+                                st.markdown("**AI Contemplation:**")
+                                st.markdown(row['AI Interpretation'])
+                else:
+                    st.info("Your journal is empty. Saved readings will appear here.")
+            except pd.errors.EmptyDataError:
+                st.info("Your journal is empty. Saved readings will appear here.")
+        else:
+            st.info("Your journal is empty. Saved readings will appear here.")
 
 
 # --- I Ching Logic and Display ---
@@ -158,39 +188,35 @@ def get_hexagram_numbers(lines, iching_data):
                 secondary_num = hex_data['number']
                 break
     
-    # Default to 1 and 2 if not found, for placeholder data
     if primary_num is None: primary_num = 1
     if secondary_num is None and any(line in [6, 9] for line in lines): secondary_num = 2
 
     return primary_num, secondary_num
 
-def display_reading(reading):
-    """Displays the entire classical reading results in a modern, minimalist layout."""
-    st.divider()
-    st.header("Your Reading")
+def display_reading(reading, is_journal=False):
+    """Displays the entire classical reading results."""
+    if not is_journal:
+        st.divider()
+        st.header("Your Reading")
 
     primary_hex = reading['primary_hex']
     secondary_hex = reading['secondary_hex']
     lines = reading['lines']
     changing_lines_indices = reading['changing_lines_indices']
 
-    # --- Layout ---
     col1, col2 = st.columns(2)
 
-    # --- Primary Hexagram ---
     with col1:
-        st.subheader(f"Primary Hexagram")
+        st.subheader("Primary Hexagram")
         st.markdown(get_hexagram_svg(lines, changing_lines_indices), unsafe_allow_html=True)
         st.subheader(f"{primary_hex['number']}: {primary_hex['name_en']}")
         st.caption(f"{primary_hex['name_zh']} ({primary_hex.get('name_pinyin', '')})")
-
-        st.info("This hexagram reflects the present energetic landscape of your inquiry.", icon="🧭")
-
+        if not is_journal:
+            st.info("This hexagram reflects the present energetic landscape of your inquiry.", icon="🧭")
         with st.expander("Judgment"):
             display_bilingual_text(None, primary_hex['judgment_zh'], primary_hex['judgment_en'])
         with st.expander("Image"):
             display_bilingual_text(None, primary_hex['image_zh'], primary_hex['image_en'])
-
         if changing_lines_indices:
             with st.expander("Changing Lines"):
                 for i in changing_lines_indices:
@@ -201,66 +227,46 @@ def display_reading(reading):
                     if i != changing_lines_indices[-1]:
                         st.divider()
 
-    # --- Secondary Hexagram ---
     if secondary_hex:
         with col2:
-            st.subheader(f"Evolving Hexagram")
+            st.subheader("Evolving Hexagram")
             secondary_lines_values = [l if l in [7, 8] else (7 if l == 6 else 8) for l in lines]
             st.markdown(get_hexagram_svg(secondary_lines_values, []), unsafe_allow_html=True)
             st.subheader(f"{secondary_hex['number']}: {secondary_hex['name_en']}")
             st.caption(f"{secondary_hex['name_zh']} ({secondary_hex.get('name_pinyin', '')})")
-            
-            st.info("This hexagram reveals the direction of change and the potential evolution of your situation.", icon="🦋")
-
+            if not is_journal:
+                st.info("This hexagram reveals the direction of change and the potential evolution of your situation.", icon="🦋")
             with st.expander("Judgment"):
                 display_bilingual_text(None, secondary_hex['judgment_zh'], secondary_hex['judgment_en'])
             with st.expander("Image"):
                 display_bilingual_text(None, secondary_hex['image_zh'], secondary_hex['image_en'])
 
 def get_hexagram_svg(lines, changing_indices, line_height=15, line_width=100, gap=10):
-    """Generates an SVG for a hexagram with animations."""
+    """Generates an SVG for a hexagram."""
     svg_height = (line_height + gap) * 6 - gap
     svg_lines = []
-
     for i, line_val in enumerate(reversed(lines)):
         is_changing = (len(lines) - 1 - i) in changing_indices
         y = i * (line_height + gap)
-        
-        # Colors
-        line_color = "#6c757d" # Default color
-        if is_changing:
-            line_color = "#ffc107" # A soft gold for changing lines
-
-        # Animation
+        line_color = "#ffc107" if is_changing else "#6c757d"
         animation = f'<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="{i*0.1}s" fill="freeze" />'
-
-        if line_val in [6, 8]:  # Yin line (broken)
-            svg_lines.append(
-                f'<g transform="translate(0, {y})">'
-                f'<rect x="0" y="0" width="{line_width * 0.45}" height="{line_height}" fill="{line_color}" rx="2">{animation}</rect>'
-                f'<rect x="{line_width * 0.55}" y="0" width="{line_width * 0.45}" height="{line_height}" fill="{line_color}" rx="2">{animation}</rect>'
-                f'</g>'
-            )
-        else:  # Yang line (solid)
-            svg_lines.append(
-                f'<g transform="translate(0, {y})">'
-                f'<rect x="0" y="0" width="{line_width}" height="{line_height}" fill="{line_color}" rx="2">{animation}</rect>'
-                f'</g>'
-            )
-
-    return f'''
+        if line_val in [6, 8]:
+            svg_lines.append(f'<g transform="translate(0, {y})"><rect x="0" y="0" width="{line_width * 0.45}" height="{line_height}" fill="{line_color}" rx="2">{animation}</rect><rect x="{line_width * 0.55}" y="0" width="{line_width * 0.45}" height="{line_height}" fill="{line_color}" rx="2">{animation}</rect></g>')
+        else:
+            svg_lines.append(f'<g transform="translate(0, {y})"><rect x="0" y="0" width="{line_width}" height="{line_height}" fill="{line_color}" rx="2">{animation}</rect></g>')
+    
+    return f"""
         <div style="display: flex; justify-content: center; align-items: center;">
             <svg width="{line_width}" height="{svg_height}" viewbox="0 0 {line_width} {svg_height}">
                 {''.join(svg_lines)}
             </svg>
         </div>
-    ''' 
+    """
 
 def display_bilingual_text(header, text_zh, text_en):
-    """Displays Chinese and English text for a given section with improved styling."""
+    """Displays Chinese and English text."""
     if header:
         st.markdown(f"**{header}:**")
-    
     st.markdown(f"<p style='font-size: 1.2em; font-family: serif;'>{text_zh}</p>", unsafe_allow_html=True)
     st.markdown(f"<p style='font-style: italic; color: #888; border-left: 3px solid #ccc; padding-left: 10px;'>{text_en}</p>", unsafe_allow_html=True)
 
@@ -270,6 +276,23 @@ def get_ai_interpretation(reading, client):
     primary_hex = reading['primary_hex']
     secondary_hex = reading['secondary_hex']
     
+    changing_lines_text = ""
+    if reading['changing_lines_indices']:
+        changing_lines_text += "The following lines are in a state of transformation:\n"
+        for i in reading['changing_lines_indices']:
+            line_data = primary_hex['lines'][i]
+            changing_lines_text += f"- **Line {i+1}:** {line_data['line_en']}\n"
+    else:
+        changing_lines_text = "There are no changing lines.\n"
+
+    evolving_hex_text = ""
+    if secondary_hex:
+        evolving_hex_text = f"""
+This is evolving into a new energetic pattern:
+- **Evolving Hexagram:** {secondary_hex['number']}. {secondary_hex['name_en']} ({secondary_hex['name_zh']}) - This points to the potential direction of change and the lesson to be integrated.
+- **Judgment:** {secondary_hex['judgment_en']}
+"""
+
     prompt = f"""
 You are a wise and compassionate guide to the I Ching, the Book of Changes. Your purpose is not to predict the future, but to offer timeless wisdom that illuminates the present moment and empowers the user to make conscious choices.
 
@@ -279,22 +302,9 @@ They have received a reading that reflects the energies surrounding their questi
 - **Primary Hexagram:** {primary_hex['number']}. {primary_hex['name_en']} ({primary_hex['name_zh']}) - This represents the current state of things.
 - **Judgment:** {primary_hex['judgment_en']}
 
-The following lines are in a state of transformation:
-    """
-    if reading['changing_lines_indices']:
-        for i in reading['changing_lines_indices']:
-            line_data = primary_hex['lines'][i]
-            prompt += f"- **Line {i+1}:** {line_data['line_en']}\n"
-    else:
-        prompt += "- None\n"
+{changing_lines_text}
+{evolving_hex_text}
 
-    if secondary_hex:
-        prompt += f"""
-This is evolving into a new energetic pattern:
-- **Evolving Hexagram:** {secondary_hex['number']}. {secondary_hex['name_en']} ({secondary_hex['name_zh']}) - This points to the potential direction of change and the lesson to be integrated.
-"""
-
-    prompt += f"""
 Please offer a contemplative interpretation. Weave together the meanings of the primary hexagram, the changing lines, and the evolving hexagram into a unified message. Focus on the underlying themes, the psychological and spiritual lessons, and the practical wisdom the user can apply. Avoid definitive predictions. Instead, empower the user to reflect on their own inner wisdom. Use a tone that is serene, insightful, and supportive. Structure the guidance in clear, accessible paragraphs.
     """
 
@@ -310,6 +320,40 @@ Please offer a contemplative interpretation. Weave together the meanings of the 
     except Exception as e:
         st.error(f"An error occurred while contacting the AI: {e}")
         return "Sorry, the AI interpretation could not be generated at this time."
+
+# --- CSV Handling ---
+def save_reading_to_csv(reading):
+    """Appends a single reading to the CSV journal."""
+    primary_hex = reading['primary_hex']
+    secondary_hex = reading.get('secondary_hex')
+    
+    record = {
+        "Date": reading['timestamp'],
+        "Question": reading['question'],
+        "Lines": ",".join(map(str, reading['lines'])),
+        "Primary Hexagram Number": primary_hex['number'],
+        "Evolving Hexagram Number": secondary_hex['number'] if secondary_hex else None,
+        "AI Interpretation": reading.get('ai_interpretation')
+    }
+    
+    df = pd.DataFrame([record])
+    df.to_csv(JOURNAL_FILE, mode='a', header=not os.path.exists(JOURNAL_FILE), index=False)
+
+def reconstruct_reading_from_row(row, iching_data):
+    """Reconstructs a reading dictionary from a DataFrame row."""
+    lines = [int(x) for x in row['Lines'].split(',')]
+    primary_hex_num = row['Primary Hexagram Number']
+    evolving_hex_num = row['Evolving Hexagram Number']
+    
+    reading = {
+        "question": row['Question'],
+        "lines": lines,
+        "primary_hex": iching_data[str(primary_hex_num)],
+        "secondary_hex": iching_data[str(int(evolving_hex_num))] if pd.notna(evolving_hex_num) else None,
+        "changing_lines_indices": [i for i, line in enumerate(lines) if line in [6, 9]],
+        "timestamp": row['Date']
+    }
+    return reading
 
 if __name__ == "__main__":
     main()

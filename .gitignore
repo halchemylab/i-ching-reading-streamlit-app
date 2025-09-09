@@ -60,3 +60,6 @@ penv/
 
 # Streamlit secrets
 .streamlit/secrets.toml
+
+# Application-specific
+i_ching_journal.csv
