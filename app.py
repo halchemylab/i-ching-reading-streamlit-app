@@ -36,7 +36,7 @@ def main():
         if "reading_saved" not in st.session_state:
             st.session_state.reading_saved = False
 
-        st.title("易經 - The Book of Changes ☯️")
+        st.title("☯️ 易經 - The Book of Changes")
         
         with st.expander("A Guide to Divination"):
             st.markdown("""
