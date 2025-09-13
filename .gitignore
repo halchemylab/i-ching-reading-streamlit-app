@@ -62,4 +62,5 @@ penv/
 .streamlit/secrets.toml
 
 # Application-specific
-i_ching_journal.csvvenv/
+i_ching_journal.csv
+venv/
