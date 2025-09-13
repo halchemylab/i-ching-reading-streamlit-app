@@ -8,7 +8,7 @@ A modern and interactive web application for casting and interpreting the I Chin
 
 ## 📸 Screenshots
 
-*(Add screenshots of the application here)*
+![Screenshot of the I Ching Reading App](screenshot/screenshot-1.png)
 
 ## ✨ Features
 
