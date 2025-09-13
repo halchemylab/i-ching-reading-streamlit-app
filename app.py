@@ -22,6 +22,23 @@ st.set_page_config(
 # --- Main Application ---
 def main():
     """Main function to run the Streamlit app."""
+    # --- CSS for Button Feel ---
+    st.markdown("""
+    <style>
+        div[data-testid="stButton"] > button {
+            transition: transform 150ms ease-in-out;
+        }
+
+        div[data-testid="stButton"] > button:hover {
+            transform: scale(1.02);
+        }
+
+        div[data-testid="stButton"] > button:active {
+            transform: scale(0.98);
+        }
+    </style>
+    """, unsafe_allow_html=True)
+    
     iching_data, binary_to_hex_map = load_iching_data()
     load_dotenv()
     
