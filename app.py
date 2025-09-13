@@ -10,6 +10,7 @@ from iching_logic import cast_reading, get_hexagram_numbers
 from file_handler import load_iching_data, save_reading_to_csv, reconstruct_reading_from_row, JOURNAL_FILE
 from ui_components import display_reading
 from ai_integration import get_ai_interpretation
+from constants import SAMPLE_QUESTIONS
 
 # --- Page Configuration ---
 st.set_page_config(
