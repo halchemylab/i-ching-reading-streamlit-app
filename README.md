@@ -4,7 +4,11 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.25.0-ff69b4.svg)](https://streamlit.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A modern and interactive web application for casting and interpreting the I Ching (易經), the ancient Chinese "Book of Changes." This app provides a digital way to consult the oracle, offering wisdom and insight through its timeless hexagrams. It features classic interpretations and an optional AI-powered contemplation for a more contemporary perspective.
+A modern and interactive web application for casting and interpreting the I Ching (易經), the ancient Chinese "Book of Changes." This app provides a digital way to consult the oracle, offering wisdom and insight through its timeless hexagrams. It features classic interpretations, an optional AI-powered contemplation for a more contemporary perspective, and a personal journal to record and reflect on your readings.
+
+## 📸 Screenshots
+
+*(Add screenshots of the application here)*
 
 ## ✨ Features
 
@@ -16,6 +20,7 @@ A modern and interactive web application for casting and interpreting the I Chin
     *   **Changing Lines:** Specific advice for lines that are in a state of transformation.
 *   **Bilingual Display:** All classical texts are presented in both English and the original Chinese.
 *   **AI-Powered Contemplation (Optional):** Leverage the power of modern AI to receive a thoughtful, personalized interpretation of your reading, weaving together the various elements of the hexagrams into a cohesive narrative.
+*   **Reading Journal:** Save your readings to a personal journal to track your journey and reflect on the guidance you've received over time.
 *   **Suggest a Question:** If you're unsure what to ask, the app can suggest a question to help you get started.
 *   **Responsive Design:** The app is designed to work on both desktop and mobile devices.
 
@@ -33,13 +38,14 @@ The application simulates the traditional method of casting I Ching hexagrams us
     *   If any of the lines are "changing" (a 6 or a 9), they transform into their opposite, creating a **secondary (or evolving) hexagram**. This second hexagram provides insight into how the situation is likely to unfold.
 3.  **Displaying the Reading:** The app looks up the corresponding hexagrams in the `i_ching_data.json` file and displays the relevant texts and images.
 4.  **AI Interpretation:** If an OpenAI API key is provided, the app sends the user's question and the details of the reading to the OpenAI API. It then displays the AI-generated interpretation, which offers a modern perspective on the classical reading.
+5.  **Journaling:** Readings can be saved to a local CSV file (`i_ching_journal.csv`), allowing you to revisit them later.
 
 ## 🛠️ Technologies Used
 
 *   **Frontend:** [Streamlit](https://streamlit.io/)
 *   **Backend:** Python
 *   **AI:** [OpenAI API](https://beta.openai.com/docs/)
-*   **Data:** `i_ching_data.json` (custom data file)
+*   **Data:** `i_ching_data.json` (custom data file), `i_ching_journal.csv` (local journal)
 
 ## ⚙️ Installation and Usage
 
@@ -83,8 +89,13 @@ To run this application locally, follow these steps:
 .
 ├── .gitignore
 ├── app.py                  # The main Streamlit application
+├── ai_integration.py       # Handles communication with the OpenAI API
+├── constants.py            # Stores constant values like sample questions
+├── file_handler.py         # Manages loading data and saving journal entries
 ├── i_ching_data.json       # Data for the 64 hexagrams
+├── iching_logic.py         # Core logic for casting and determining hexagrams
 ├── requirements.txt        # Python dependencies
+├── ui_components.py        # Functions for creating Streamlit UI elements
 └── README.md               # This file
 ```
 
@@ -100,4 +111,4 @@ Contributions are welcome! If you have any ideas for improvements or new feature
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details (if one is present).
+This project is licensed under the MIT License.
