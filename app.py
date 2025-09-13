@@ -43,31 +43,13 @@ def main():
 The I Ching, or Book of Changes, is an ancient text for divination and wisdom. To consult it, you approach it with a sincere question. The oracle responds with a **hexagram**—a figure of six lines—that mirrors the cosmic energies at play in your situation.\n\n- **Solid lines (Yang)** represent the creative, active principle.\n- **Broken lines (Yin)** represent the receptive, yielding principle.\n\nAt times, a line may be 'changing,' indicating a dynamic aspect of the present moment. This transformation reveals a second hexagram, offering insight into how the situation may evolve. This app is a vessel for this ancient dialogue, helping you cast a reading and contemplate its meaning.\n""")
 
         st.header("Consult the Oracle")
-        
-        sample_questions = [
-            "What is the wisest way to approach my current challenge?",
-            "What underlying dynamics are at play in my relationship with [Person's Name]?",
-            "How can I cultivate more harmony and balance within myself?",
-            "What is the most important lesson for me to embrace at this moment?",
-            "What should I focus on for my spiritual growth right now?",
-            "What do I need to understand about the flow of abundance in my life?",
-            "How can I unlock my creative potential in my work?",
-            "What is the nature of the obstacle I am contemplating?",
-            "How can I best support my loved ones with compassion?",
-            "What new perspective is waiting to be revealed?",
-            "What is the path toward healing and integration in this situation?",
-            "How can I cultivate a deeper sense of inner peace?",
-            "What is the most graceful way to navigate the upcoming changes?",
-            "Which aspect of my inner self requires my attention?",
-            "What is the deeper significance of my current circumstances?"
-        ]
 
         col1, col2 = st.columns([1,1])
         with col1:
             cast_button_clicked = st.button("Cast Reading", type="primary", use_container_width=True)
         with col2:
             if st.button("Suggest a Question", use_container_width=True):
-                st.session_state.question_text = random.choice(sample_questions)
+                st.session_state.question_text = random.choice(SAMPLE_QUESTIONS)
                 st.rerun()
 
         question = st.text_area(

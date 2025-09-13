@@ -3,7 +3,7 @@ import json
 import os
 import pandas as pd
 
-JOURNAL_FILE = "i_ching_journal.csv"
+from constants import JOURNAL_FILE
 
 @st.cache_data
 def load_iching_data():
