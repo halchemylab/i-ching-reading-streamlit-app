@@ -149,7 +149,7 @@ At times, a line may be 'changing,' indicating a dynamic aspect of the present m
                 st.rerun()
 
         if st.session_state.get('ai_interpretation'):
-            with st.expander("A Modern Contemplation", expanded=True):
+            with st.expander("A Guided Reflection", expanded=True):
                 st.markdown(st.session_state.ai_interpretation)
 
 

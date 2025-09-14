@@ -64,3 +64,4 @@ penv/
 # Application-specific
 i_ching_journal.csv
 venv/
+app.log  
