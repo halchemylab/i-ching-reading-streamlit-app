@@ -35,7 +35,21 @@ They have received a reading that reflects the energies surrounding their questi
 {changing_lines_text}
 {evolving_hex_text}
 
-Please offer a contemplative interpretation. Weave together the meanings of the primary hexagram, the changing lines, and the evolving hexagram into a unified message. Focus on the underlying themes, the psychological and spiritual lessons, and the practical wisdom the user can apply. Avoid definitive predictions. Instead, empower the user to reflect on their own inner wisdom. Use a tone that is serene, insightful, and supportive. Structure the guidance in clear, accessible paragraphs.
+Please offer a contemplative interpretation organized into the following four sections, using the bolded titles exactly as written:
+
+**The Present Situation:**
+Start here. Interpret the primary hexagram and its judgment in the context of the user's question. Describe the current energies at play.
+
+**The Dynamics of Change:**
+Next, explain the significance of the changing lines. If there are no changing lines, briefly state that the situation is stable and focus on the primary hexagram's wisdom.
+
+**The Emerging Direction:**
+Then, interpret the secondary (evolving) hexagram. Describe the potential future, the direction of change, or the lesson to be integrated. If there is no secondary hexagram, you can omit this section.
+
+**Guidance for Reflection:**
+Conclude with a paragraph of practical, supportive advice. Offer questions for reflection or suggest a focus for the user's energy that weaves together all the elements of the reading.
+
+Your tone should be serene, insightful, and supportive throughout.
     """
 
     try:
