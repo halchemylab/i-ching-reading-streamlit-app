@@ -45,6 +45,7 @@ logging.basicConfig(level=logging.INFO, filename='app.log', filemode='a', format
 
 
 def render_journal(iching_data):
+    """Renders the reading journal section, displaying past readings."""
     st.divider()
     st.header("Reading Journal")
     try:
@@ -68,6 +69,7 @@ def render_journal(iching_data):
 
 
 def render_main_ui(iching_data, binary_to_hex_map, openai_enabled, client):
+    """Renders the main user interface for casting and viewing readings."""
     if "question_text" not in st.session_state:
         st.session_state.question_text = ""
     if "reading_saved" not in st.session_state:
