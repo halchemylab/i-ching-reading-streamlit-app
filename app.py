@@ -209,6 +209,15 @@ def render_journal_sidebar_summary(journal_df, filtered_df):
             if pd.notna(latest_date):
                 st.caption(f"Most recent: {latest_date.strftime('%Y-%m-%d')}")
 
+            top_hexagrams = (
+                filtered_df["Primary Hexagram"]
+                .value_counts()
+                .head(5)
+                .rename_axis("Hexagram")
+                .reset_index(name="Readings")
+            )
+            st.bar_chart(top_hexagrams, x="Hexagram", y="Readings", height=180)
+
 
 def render_journal_sidebar_exports(filtered_df):
     """Adds filtered journal export actions to the sidebar."""
