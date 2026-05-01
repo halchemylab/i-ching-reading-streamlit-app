@@ -97,20 +97,39 @@ def render_journal_sidebar(journal_df):
     """Renders sidebar filters and exports, returning the filtered journal."""
     filtered_df = journal_df.copy()
     valid_dates = filtered_df["Date Parsed"].dropna()
+    default_date_range = None
+
+    if not valid_dates.empty:
+        default_date_range = (valid_dates.min().date(), valid_dates.max().date())
 
     with st.sidebar:
         st.header("Journal Tools")
 
-        search_query = st.text_input("Search readings", placeholder="Question or AI text")
+        if st.button("Clear filters", use_container_width=True):
+            st.session_state.journal_search = ""
+            st.session_state.journal_primary = "All"
+            st.session_state.journal_evolving = "All"
+            st.session_state.journal_ai_only = False
+            st.session_state.journal_changing_only = False
+            st.session_state.journal_sort = "Newest first"
+            if default_date_range:
+                st.session_state.journal_date_range = default_date_range
+            st.rerun()
+
+        search_query = st.text_input(
+            "Search readings",
+            placeholder="Question or AI text",
+            key="journal_search",
+        )
 
         if not valid_dates.empty:
-            min_date = valid_dates.min().date()
-            max_date = valid_dates.max().date()
+            min_date, max_date = default_date_range
             date_range = st.date_input(
                 "Date range",
-                value=(min_date, max_date),
+                value=default_date_range,
                 min_value=min_date,
                 max_value=max_date,
+                key="journal_date_range",
             )
         else:
             date_range = None
@@ -122,11 +141,16 @@ def render_journal_sidebar(journal_df):
             [value for value in filtered_df["Evolving Hexagram"].dropna().unique()]
         )
 
-        primary_filter = st.selectbox("Primary hexagram", primary_options)
-        evolving_filter = st.selectbox("Evolving hexagram", evolving_options)
-        ai_only = st.checkbox("With AI contemplation only")
-        changing_only = st.checkbox("With changing lines only")
-        sort_order = st.selectbox("Sort", ["Newest first", "Oldest first"])
+        if st.session_state.get("journal_primary") not in primary_options:
+            st.session_state.journal_primary = "All"
+        if st.session_state.get("journal_evolving") not in evolving_options:
+            st.session_state.journal_evolving = "All"
+
+        primary_filter = st.selectbox("Primary hexagram", primary_options, key="journal_primary")
+        evolving_filter = st.selectbox("Evolving hexagram", evolving_options, key="journal_evolving")
+        ai_only = st.checkbox("With AI contemplation only", key="journal_ai_only")
+        changing_only = st.checkbox("With changing lines only", key="journal_changing_only")
+        sort_order = st.selectbox("Sort", ["Newest first", "Oldest first"], key="journal_sort")
 
     if search_query:
         searchable_text = (
