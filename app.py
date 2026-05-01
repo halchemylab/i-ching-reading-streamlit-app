@@ -103,7 +103,11 @@ def render_journal_sidebar(journal_df):
         default_date_range = (valid_dates.min().date(), valid_dates.max().date())
 
     with st.sidebar:
-        st.header("Journal Tools")
+        stats_container = st.container()
+
+    with st.sidebar:
+        st.divider()
+        st.subheader("Filters")
 
         if st.button("Clear filters", use_container_width=True):
             st.session_state.journal_search = ""
@@ -186,19 +190,17 @@ def render_journal_sidebar(journal_df):
         na_position="last",
     )
 
-    render_journal_sidebar_summary(journal_df, filtered_df)
+    render_journal_sidebar_summary(journal_df, filtered_df, stats_container)
     render_journal_sidebar_exports(filtered_df)
 
     return filtered_df
 
 
-def render_journal_sidebar_summary(journal_df, filtered_df):
+def render_journal_sidebar_summary(journal_df, filtered_df, container):
     """Shows compact journal patterns in the sidebar."""
-    with st.sidebar:
-        st.divider()
-        st.subheader("Patterns")
+    with container:
+        st.subheader("Stats")
         st.metric("Total readings", len(journal_df))
-        st.metric("Matching", len(filtered_df))
 
         if not filtered_df.empty:
             most_common = filtered_df["Primary Hexagram"].mode()
