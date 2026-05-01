@@ -30,9 +30,9 @@ The I Ching, or Book of Changes, is an ancient divination text that has been use
 
 ## 🚀 How It Works
 
-The application simulates the traditional method of casting I Ching hexagrams using yarrow stalks or coins.
+The application simulates the traditional three-coin method of casting I Ching hexagrams.
 
-1.  **Casting the Lines:** The app randomly generates six numbers, each representing a line in the hexagram. The numbers 6, 7, 8, and 9 correspond to the different types of lines (yin, yang, changing yin, changing yang).
+1.  **Casting the Lines:** The app casts three virtual coins six times, producing one line per cast. Coin values are summed so the traditional probabilities are preserved: 6 and 9 each occur 1/8 of the time, while 7 and 8 each occur 3/8 of the time.
 2.  **Determining the Hexagrams:**
     *   The six lines form the **primary hexagram**, which reflects the present moment.
     *   If any of the lines are "changing" (a 6 or a 9), they transform into their opposite, creating a **secondary (or evolving) hexagram**. This second hexagram provides insight into how the situation is likely to unfold.

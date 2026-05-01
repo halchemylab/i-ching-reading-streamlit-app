@@ -1,9 +1,18 @@
 import random
 import streamlit as st
 
+COIN_VALUES = (2, 3)
+
+
+def cast_coin_line(coin_toss=None):
+    """Casts one I Ching line using the traditional three-coin method."""
+    toss = coin_toss or (lambda: random.choice(COIN_VALUES))
+    return sum(toss() for _ in range(3))
+
+
 def cast_reading():
     """Simulates casting 3 coins 6 times to get 6 lines."""
-    return [random.choice([6, 7, 8, 9]) for _ in range(6)]
+    return [cast_coin_line() for _ in range(6)]
 
 def get_hexagram_numbers(lines, binary_to_hex_map):
     """Determines the primary and secondary hexagram numbers from the lines using a pre-computed map."""
