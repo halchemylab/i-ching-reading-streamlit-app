@@ -58,7 +58,7 @@ def render_journal(iching_data):
         return
 
     journal_df = enrich_journal(journal_df, iching_data)
-    filtered_df = render_journal_sidebar(journal_df)
+    filtered_df = render_journal_sidebar(journal_df, iching_data)
 
     if filtered_df.empty:
         st.info("No saved readings match the current journal filters.")
@@ -94,7 +94,7 @@ def render_empty_journal_sidebar():
         st.info("Save a reading to unlock search, filters, patterns, and exports.")
 
 
-def render_journal_sidebar(journal_df):
+def render_journal_sidebar(journal_df, iching_data):
     """Renders sidebar filters and exports, returning the filtered journal."""
     filtered_df = journal_df.copy()
     valid_dates = filtered_df["Date Parsed"].dropna()
@@ -191,13 +191,13 @@ def render_journal_sidebar(journal_df):
         na_position="last",
     )
 
-    render_journal_sidebar_summary(journal_df, filtered_df, stats_container)
+    render_journal_sidebar_summary(journal_df, filtered_df, stats_container, iching_data)
     render_journal_sidebar_exports(filtered_df)
 
     return filtered_df
 
 
-def render_journal_sidebar_summary(journal_df, filtered_df, container):
+def render_journal_sidebar_summary(journal_df, filtered_df, container, iching_data):
     """Shows compact journal patterns in the sidebar."""
     with container:
         st.subheader("Stats")
@@ -206,12 +206,36 @@ def render_journal_sidebar_summary(journal_df, filtered_df, container):
         if not filtered_df.empty:
             hexagram_counts = filtered_df["Primary Hexagram"].value_counts().head(3)
             if not hexagram_counts.empty:
-                st.caption(f"Most common: {hexagram_counts.index[0]}")
+                st.caption("Most common:")
                 st.markdown(build_top_hexagram_bars(hexagram_counts), unsafe_allow_html=True)
+                theme_title, theme_text = get_recurring_theme(filtered_df, iching_data)
+                if theme_title and theme_text:
+                    st.caption(f"Recurring theme: {theme_title}")
+                    st.markdown(f"<p class='theme-summary-text'>{html.escape(theme_text)}</p>", unsafe_allow_html=True)
 
             latest_date = filtered_df["Date Parsed"].dropna().max()
             if pd.notna(latest_date):
                 st.caption(f"Most recent: {latest_date.strftime('%Y-%m-%d')}")
+
+
+def get_recurring_theme(filtered_df, iching_data):
+    """Returns a deterministic theme summary for the most common primary hexagram."""
+    primary_numbers = filtered_df["Primary Hexagram Number"].dropna()
+    if primary_numbers.empty:
+        return None, None
+
+    hexagram_number = int(primary_numbers.value_counts().index[0])
+    hexagram = iching_data.get(str(hexagram_number))
+    if not hexagram:
+        return None, None
+
+    theme_text = HEXAGRAM_THEME_SUMMARIES.get(
+        hexagram_number,
+        "Your journal has recently returned to this hexagram's themes. Revisit its Judgment and Image for the pattern beneath these questions.",
+    )
+
+    return hexagram["name_en"], theme_text
+
 
 def build_top_hexagram_bars(hexagram_counts):
     """Builds a compact horizontal top-3 hexagram chart for the sidebar."""
@@ -244,6 +268,7 @@ def build_top_hexagram_bars(hexagram_counts):
         '.hexagram-stat-track{background:rgba(108,117,125,0.18);border-radius:999px;'
         'height:0.45rem;margin-top:0.25rem;overflow:hidden;}'
         '.hexagram-stat-fill{background:#ffc107;border-radius:999px;height:100%;}'
+        '.theme-summary-text{color:#000;font-size:0.9rem;line-height:1.35;margin:0.25rem 0 0;}'
         '</style>'
         f'<div>{"".join(rows)}</div>'
     )
@@ -374,7 +399,7 @@ from file_handler import (
 )
 from ui_components import display_reading
 from ai_integration import get_ai_interpretation
-from constants import SAMPLE_QUESTIONS
+from constants import HEXAGRAM_THEME_SUMMARIES, SAMPLE_QUESTIONS
 
 # --- Page Configuration ---
 st.set_page_config(
