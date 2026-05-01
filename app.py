@@ -3,6 +3,7 @@ import random
 import openai
 import os
 import pandas as pd
+import html
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -203,22 +204,49 @@ def render_journal_sidebar_summary(journal_df, filtered_df, container):
         st.metric("Total readings", len(journal_df))
 
         if not filtered_df.empty:
-            most_common = filtered_df["Primary Hexagram"].mode()
-            if not most_common.empty:
-                st.caption(f"Most common: {most_common.iloc[0]}")
+            hexagram_counts = filtered_df["Primary Hexagram"].value_counts().head(3)
+            if not hexagram_counts.empty:
+                st.caption(f"Most common: {hexagram_counts.index[0]}")
+                st.markdown(build_top_hexagram_bars(hexagram_counts), unsafe_allow_html=True)
 
             latest_date = filtered_df["Date Parsed"].dropna().max()
             if pd.notna(latest_date):
                 st.caption(f"Most recent: {latest_date.strftime('%Y-%m-%d')}")
 
-            top_hexagrams = (
-                filtered_df["Primary Hexagram"]
-                .value_counts()
-                .head(5)
-                .rename_axis("Hexagram")
-                .reset_index(name="Readings")
-            )
-            st.bar_chart(top_hexagrams, x="Hexagram", y="Readings", height=180)
+def build_top_hexagram_bars(hexagram_counts):
+    """Builds a compact horizontal top-3 hexagram chart for the sidebar."""
+    max_count = int(hexagram_counts.iloc[0])
+    rows = []
+
+    for label, count in hexagram_counts.items():
+        count = int(count)
+        width = 100 if max_count == 0 else int((count / max_count) * 100)
+        safe_label = html.escape(str(label))
+        rows.append(
+            f'<div class="hexagram-stat-row">'
+            f'<div class="hexagram-stat-label">'
+            f'<span>{safe_label}</span>'
+            f'<strong>{count}</strong>'
+            f'</div>'
+            f'<div class="hexagram-stat-track">'
+            f'<div class="hexagram-stat-fill" style="width: {width}%;"></div>'
+            f'</div>'
+            f'</div>'
+        )
+
+    return (
+        '<style>'
+        '.hexagram-stat-row{margin:0.65rem 0;}'
+        '.hexagram-stat-label{align-items:baseline;display:flex;font-size:0.86rem;'
+        'gap:0.5rem;justify-content:space-between;line-height:1.2;}'
+        '.hexagram-stat-label span{overflow-wrap:anywhere;}'
+        '.hexagram-stat-label strong{color:#6c757d;flex:0 0 auto;font-size:0.8rem;}'
+        '.hexagram-stat-track{background:rgba(108,117,125,0.18);border-radius:999px;'
+        'height:0.45rem;margin-top:0.25rem;overflow:hidden;}'
+        '.hexagram-stat-fill{background:#ffc107;border-radius:999px;height:100%;}'
+        '</style>'
+        f'<div>{"".join(rows)}</div>'
+    )
 
 
 def render_journal_sidebar_exports(filtered_df):
