@@ -48,24 +48,167 @@ def render_journal(iching_data):
     """Renders the reading journal section, displaying past readings."""
     st.divider()
     st.header("Reading Journal")
-    try:
-        journal_df = pd.read_csv(JOURNAL_FILE)
-        if not journal_df.empty:
-            for index, row in journal_df.iloc[::-1].iterrows():
-                reconstructed_reading = reconstruct_reading_from_row(row, iching_data)
-                with st.expander(f"**{row['Date']}** - {row['Question']}"):
-                    display_reading(reconstructed_reading, is_journal=True)
-                    if pd.notna(row['AI Interpretation']):
-                        st.markdown("**AI Contemplation:**")
-                        st.markdown(row['AI Interpretation'])
+
+    journal_df = load_journal()
+    if journal_df.empty:
+        logging.info("Journal file is empty or not found.")
+        st.info("Your journal is empty. Saved readings will appear here.")
+        render_empty_journal_sidebar()
+        return
+
+    journal_df = enrich_journal(journal_df, iching_data)
+    filtered_df = render_journal_sidebar(journal_df)
+
+    if filtered_df.empty:
+        st.info("No saved readings match the current journal filters.")
+        return
+
+    for index, row in filtered_df.iterrows():
+        reconstructed_reading = reconstruct_reading_from_row(row, iching_data)
+        title_parts = [
+            str(row["Date"]),
+            str(row["Question"]),
+            str(row.get("Primary Hexagram") or row["Primary Hexagram Number"]),
+        ]
+
+        if pd.notna(row.get("Evolving Hexagram")) and row.get("Evolving Hexagram"):
+            title_parts[-1] = f"{title_parts[-1]} -> {row['Evolving Hexagram']}"
+
+        with st.expander(" | ".join(title_parts)):
+            st.caption(
+                f"Lines: {row['Lines']} | "
+                f"Changing lines: {'Yes' if row['Has Changing Lines'] else 'No'} | "
+                f"AI contemplation: {'Yes' if row['Has AI Contemplation'] else 'No'}"
+            )
+            display_reading(reconstructed_reading, is_journal=True)
+            if pd.notna(row['AI Interpretation']):
+                st.markdown("**AI Contemplation:**")
+                st.markdown(row['AI Interpretation'])
+
+
+def render_empty_journal_sidebar():
+    """Renders a quiet sidebar state before any readings have been saved."""
+    with st.sidebar:
+        st.header("Journal Tools")
+        st.info("Save a reading to unlock search, filters, patterns, and exports.")
+
+
+def render_journal_sidebar(journal_df):
+    """Renders sidebar filters and exports, returning the filtered journal."""
+    filtered_df = journal_df.copy()
+    valid_dates = filtered_df["Date Parsed"].dropna()
+
+    with st.sidebar:
+        st.header("Journal Tools")
+
+        search_query = st.text_input("Search readings", placeholder="Question or AI text")
+
+        if not valid_dates.empty:
+            min_date = valid_dates.min().date()
+            max_date = valid_dates.max().date()
+            date_range = st.date_input(
+                "Date range",
+                value=(min_date, max_date),
+                min_value=min_date,
+                max_value=max_date,
+            )
         else:
-            st.info("Your journal is empty. Saved readings will appear here.")
-    except FileNotFoundError:
-        logging.info("Journal file not found.")
-        st.info("Your journal is empty. Saved readings will appear here.")
-    except pd.errors.EmptyDataError:
-        logging.info("Journal file is empty.")
-        st.info("Your journal is empty. Saved readings will appear here.")
+            date_range = None
+
+        primary_options = ["All"] + sorted(
+            [value for value in filtered_df["Primary Hexagram"].dropna().unique()]
+        )
+        evolving_options = ["All"] + sorted(
+            [value for value in filtered_df["Evolving Hexagram"].dropna().unique()]
+        )
+
+        primary_filter = st.selectbox("Primary hexagram", primary_options)
+        evolving_filter = st.selectbox("Evolving hexagram", evolving_options)
+        ai_only = st.checkbox("With AI contemplation only")
+        changing_only = st.checkbox("With changing lines only")
+        sort_order = st.selectbox("Sort", ["Newest first", "Oldest first"])
+
+    if search_query:
+        searchable_text = (
+            filtered_df["Question"].fillna("") + " " +
+            filtered_df["AI Interpretation"].fillna("")
+        )
+        filtered_df = filtered_df[
+            searchable_text.str.contains(search_query, case=False, na=False)
+        ]
+
+    if date_range and len(date_range) == 2:
+        start_date, end_date = date_range
+        filtered_df = filtered_df[
+            (filtered_df["Date Parsed"].dt.date >= start_date) &
+            (filtered_df["Date Parsed"].dt.date <= end_date)
+        ]
+
+    if primary_filter != "All":
+        filtered_df = filtered_df[filtered_df["Primary Hexagram"] == primary_filter]
+
+    if evolving_filter != "All":
+        filtered_df = filtered_df[filtered_df["Evolving Hexagram"] == evolving_filter]
+
+    if ai_only:
+        filtered_df = filtered_df[filtered_df["Has AI Contemplation"]]
+
+    if changing_only:
+        filtered_df = filtered_df[filtered_df["Has Changing Lines"]]
+
+    filtered_df = filtered_df.sort_values(
+        "Date Parsed",
+        ascending=(sort_order == "Oldest first"),
+        na_position="last",
+    )
+
+    render_journal_sidebar_summary(journal_df, filtered_df)
+    render_journal_sidebar_exports(filtered_df)
+
+    return filtered_df
+
+
+def render_journal_sidebar_summary(journal_df, filtered_df):
+    """Shows compact journal patterns in the sidebar."""
+    with st.sidebar:
+        st.divider()
+        st.subheader("Patterns")
+        st.metric("Total readings", len(journal_df))
+        st.metric("Matching", len(filtered_df))
+
+        if not filtered_df.empty:
+            most_common = filtered_df["Primary Hexagram"].mode()
+            if not most_common.empty:
+                st.caption(f"Most common: {most_common.iloc[0]}")
+
+            latest_date = filtered_df["Date Parsed"].dropna().max()
+            if pd.notna(latest_date):
+                st.caption(f"Most recent: {latest_date.strftime('%Y-%m-%d')}")
+
+
+def render_journal_sidebar_exports(filtered_df):
+    """Adds filtered journal export actions to the sidebar."""
+    export_df = filtered_df.drop(columns=["Date Parsed"], errors="ignore")
+
+    with st.sidebar:
+        st.divider()
+        st.subheader("Export")
+        st.download_button(
+            "Download filtered CSV",
+            data=export_df.to_csv(index=False).encode("utf-8"),
+            file_name="i_ching_journal_filtered.csv",
+            mime="text/csv",
+            use_container_width=True,
+            disabled=filtered_df.empty,
+        )
+        st.download_button(
+            "Download Markdown",
+            data=journal_to_markdown(filtered_df).encode("utf-8"),
+            file_name="i_ching_journal.md",
+            mime="text/markdown",
+            use_container_width=True,
+            disabled=filtered_df.empty,
+        )
 
 
 def render_main_ui(iching_data, binary_to_hex_map, openai_enabled, client):
@@ -136,12 +279,13 @@ At times, a line may be 'changing,' indicating a dynamic aspect of the present m
                     with st.spinner("The AI is consulting the oracle..."):
                         try:
                             interpretation = get_ai_interpretation(st.session_state.reading, client)
-                            st.session_state.ai_interpretation = interpretation
-                            st.session_state.reading['ai_interpretation'] = interpretation
+                            if interpretation:
+                                st.session_state.ai_interpretation = interpretation
+                                st.session_state.reading['ai_interpretation'] = interpretation
+                                st.rerun()
                         except Exception as e:
                             logging.error(f"OpenAI API error: {e}")
                             st.error(f"An error occurred with the AI integration: {e}")
-                        st.rerun()
 
         with col2:
             if st.button("💾 Save to Journal", use_container_width=True, disabled=st.session_state.reading_saved):
@@ -156,7 +300,15 @@ At times, a line may be 'changing,' indicating a dynamic aspect of the present m
 
 
 from iching_logic import cast_reading, get_hexagram_numbers
-from file_handler import load_iching_data, save_reading_to_csv, reconstruct_reading_from_row, JOURNAL_FILE
+from file_handler import (
+    enrich_journal,
+    journal_to_markdown,
+    load_iching_data,
+    load_journal,
+    save_reading_to_csv,
+    reconstruct_reading_from_row,
+    JOURNAL_FILE,
+)
 from ui_components import display_reading
 from ai_integration import get_ai_interpretation
 from constants import SAMPLE_QUESTIONS
