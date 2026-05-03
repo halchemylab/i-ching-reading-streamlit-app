@@ -1,5 +1,4 @@
 import random
-import streamlit as st
 
 COIN_VALUES = (2, 3)
 
@@ -25,11 +24,9 @@ def get_hexagram_numbers(lines, binary_to_hex_map):
         secondary_binary = "".join(['1' if l in [7, 9] else '0' for l in reversed(secondary_lines)])
         secondary_num = binary_to_hex_map.get(secondary_binary)
     
-    if primary_num is None: 
-        st.warning("Could not determine primary hexagram. Defaulting to 1.")
+    if primary_num is None:
         primary_num = 1
-    if secondary_num is None and any(line in [6, 9] for line in lines): 
-        st.warning("Could not determine evolving hexagram. Defaulting to 2.")
+    if secondary_num is None and any(line in [6, 9] for line in lines):
         secondary_num = 2
 
     return primary_num, secondary_num

@@ -1,11 +1,4 @@
-import sys
-import types
 import unittest
-
-sys.modules.setdefault(
-    "streamlit",
-    types.SimpleNamespace(warning=lambda *_args, **_kwargs: None),
-)
 
 from iching_logic import cast_coin_line, cast_reading, get_hexagram_numbers
 
