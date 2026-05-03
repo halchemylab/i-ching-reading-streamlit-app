@@ -45,6 +45,7 @@ htmlcov/
 .cache
 .pytest_cache/
 .hypothesis/
+tmp*/
 
 # Environments
 .env
