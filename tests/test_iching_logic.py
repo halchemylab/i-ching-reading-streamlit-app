@@ -39,6 +39,18 @@ class TestIChingLogic(unittest.TestCase):
         self.assertEqual(primary, 64)
         self.assertEqual(secondary, 63)
 
+    def test_get_hexagram_numbers_raises_for_missing_primary_mapping(self):
+        with self.assertRaisesRegex(ValueError, "primary binary code: 111111"):
+            get_hexagram_numbers([9, 9, 9, 9, 9, 9], {})
+
+    def test_get_hexagram_numbers_raises_for_missing_secondary_mapping(self):
+        binary_to_hex_map = {
+            "111111": 1,
+        }
+
+        with self.assertRaisesRegex(ValueError, "secondary binary code: 000000"):
+            get_hexagram_numbers([9, 9, 9, 9, 9, 9], binary_to_hex_map)
+
 
 if __name__ == "__main__":
     unittest.main()

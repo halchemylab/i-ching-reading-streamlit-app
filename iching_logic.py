@@ -1,6 +1,8 @@
 import random
 
 COIN_VALUES = (2, 3)
+CHANGING_LINES = {6, 9}
+YANG_LINES = {7, 9}
 
 
 def cast_coin_line(coin_toss=None):
@@ -15,18 +17,19 @@ def cast_reading():
 
 def get_hexagram_numbers(lines, binary_to_hex_map):
     """Determines the primary and secondary hexagram numbers from the lines using a pre-computed map."""
-    primary_binary = "".join(['1' if l in [7, 9] else '0' for l in reversed(lines)])
+    primary_binary = "".join("1" if line in YANG_LINES else "0" for line in reversed(lines))
     primary_num = binary_to_hex_map.get(primary_binary)
+    if primary_num is None:
+        raise ValueError(f"No hexagram found for primary binary code: {primary_binary}")
 
     secondary_num = None
-    if any(line in [6, 9] for line in lines):
-        secondary_lines = [l if l in [7, 8] else (7 if l == 6 else 8) for l in lines]
-        secondary_binary = "".join(['1' if l in [7, 9] else '0' for l in reversed(secondary_lines)])
+    if any(line in CHANGING_LINES for line in lines):
+        secondary_lines = [line if line in [7, 8] else (7 if line == 6 else 8) for line in lines]
+        secondary_binary = "".join(
+            "1" if line in YANG_LINES else "0" for line in reversed(secondary_lines)
+        )
         secondary_num = binary_to_hex_map.get(secondary_binary)
-    
-    if primary_num is None:
-        primary_num = 1
-    if secondary_num is None and any(line in [6, 9] for line in lines):
-        secondary_num = 2
+        if secondary_num is None:
+            raise ValueError(f"No hexagram found for secondary binary code: {secondary_binary}")
 
     return primary_num, secondary_num
