@@ -1,12 +1,43 @@
-import streamlit as st
 import random
-import openai
 import os
-import pandas as pd
+import time
+import logging
 from datetime import datetime
+
+import openai
+import pandas as pd
+import streamlit as st
 from dotenv import load_dotenv
 
-# --- Main Application ---
+from ai_integration import get_ai_interpretation
+from constants import SAMPLE_QUESTIONS
+from file_handler import (
+    JOURNAL_FILE,
+    enrich_journal,
+    load_iching_data,
+    load_journal,
+    reconstruct_reading_from_row,
+    save_reading_to_csv,
+)
+from iching_logic import cast_reading, get_hexagram_numbers
+from journal_ui import render_empty_journal_sidebar, render_journal_sidebar
+from ui_components import display_reading
+
+
+logging.basicConfig(
+    level=logging.INFO,
+    filename="app.log",
+    filemode="a",
+    format="%(name)s - %(levelname)s - %(message)s",
+)
+
+st.set_page_config(
+    page_title="易經 - The Book of Changes",
+    page_icon="☯️",
+    layout="centered",
+)
+
+
 def main():
     """Main function to run the Streamlit app."""
     # --- CSS for Button Feel ---
@@ -38,10 +69,6 @@ def main():
     if iching_data and binary_to_hex_map:
         render_main_ui(iching_data, binary_to_hex_map, openai_enabled, client)
         render_journal(iching_data)
-
-import logging
-# --- Logging Configuration ---
-logging.basicConfig(level=logging.INFO, filename='app.log', filemode='a', format='%(name)s - %(levelname)s - %(message)s')
 
 
 def render_journal(iching_data):
@@ -123,7 +150,6 @@ At times, a line may be 'changing,' indicating a dynamic aspect of the present m
 
     if cast_button_clicked and question:
         with st.spinner("Casting the lines..."):
-            import time
             time.sleep(1.5)
             st.session_state.reading_cast = True
             st.session_state.ai_interpretation = None
@@ -172,30 +198,6 @@ At times, a line may be 'changing,' indicating a dynamic aspect of the present m
         if st.session_state.get('ai_interpretation'):
             with st.expander("A Guided Reflection", expanded=True):
                 st.markdown(st.session_state.ai_interpretation)
-
-
-from iching_logic import cast_reading, get_hexagram_numbers
-from file_handler import (
-    enrich_journal,
-    load_iching_data,
-    load_journal,
-    save_reading_to_csv,
-    reconstruct_reading_from_row,
-    JOURNAL_FILE,
-)
-from journal_ui import render_empty_journal_sidebar, render_journal_sidebar
-from ui_components import display_reading
-from ai_integration import get_ai_interpretation
-from constants import SAMPLE_QUESTIONS
-
-# --- Page Configuration ---
-st.set_page_config(
-    page_title="易經 - The Book of Changes",
-    page_icon="☯️",
-    layout="centered"
-)
-
-# --- Main Application ---
 
 if __name__ == "__main__":
     main()
