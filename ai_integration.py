@@ -1,5 +1,13 @@
-import streamlit as st
 import openai
+
+
+class AIInterpretationError(Exception):
+    """Raised when the AI interpretation cannot be generated."""
+
+
+class AIRateLimitError(AIInterpretationError):
+    """Raised when the OpenAI API rate limit or quota is reached."""
+
 
 def get_ai_interpretation(reading, client):
     """Constructs a prompt and gets an interpretation from OpenAI."""
@@ -94,6 +102,7 @@ By adhering to this policy, you ensure that the user's experience is one of empo
             ]
         )
         return response.choices[0].message.content
+    except openai.RateLimitError as e:
+        raise AIRateLimitError(f"OpenAI API rate limit exceeded or insufficient quota: {e}") from e
     except Exception as e:
-        st.error(f"An error occurred while contacting the AI: {e}")
-        return "Sorry, the AI interpretation could not be generated at this time."
+        raise AIInterpretationError(f"An error occurred while contacting the AI: {e}") from e

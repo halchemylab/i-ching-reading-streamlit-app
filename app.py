@@ -9,10 +9,11 @@ import pandas as pd
 import streamlit as st
 from dotenv import load_dotenv
 
-from ai_integration import get_ai_interpretation
+from ai_integration import AIRateLimitError, AIInterpretationError, get_ai_interpretation
 from constants import SAMPLE_QUESTIONS
 from file_handler import (
     JOURNAL_FILE,
+    IChingDataError,
     enrich_journal,
     load_iching_data,
     load_journal,
@@ -57,7 +58,12 @@ def main():
     </style>
     """, unsafe_allow_html=True)
     
-    iching_data, binary_to_hex_map = load_iching_data()
+    try:
+        iching_data, binary_to_hex_map = load_iching_data()
+    except IChingDataError as e:
+        st.error(f"Error: {e}")
+        return
+
     load_dotenv()
     
     api_key = os.getenv("OPENAI_API_KEY")
@@ -184,9 +190,12 @@ At times, a line may be 'changing,' indicating a dynamic aspect of the present m
                                 st.session_state.ai_interpretation = interpretation
                                 st.session_state.reading['ai_interpretation'] = interpretation
                                 st.rerun()
-                        except Exception as e:
+                        except AIRateLimitError as e:
+                            logging.error(f"OpenAI API rate limit error: {e}")
+                            st.error(str(e))
+                        except AIInterpretationError as e:
                             logging.error(f"OpenAI API error: {e}")
-                            st.error(f"An error occurred with the AI integration: {e}")
+                            st.error(str(e))
 
         with col2:
             if st.button("💾 Save to Journal", use_container_width=True, disabled=st.session_state.reading_saved):

@@ -1,11 +1,17 @@
-import streamlit as st
 import json
 import os
+from functools import lru_cache
+
 import pandas as pd
 
 from constants import JOURNAL_FILE
 
-@st.cache_data
+
+class IChingDataError(Exception):
+    """Raised when the I Ching source data cannot be loaded."""
+
+
+@lru_cache(maxsize=1)
 def load_iching_data():
     """Loads the I Ching data and creates a binary-to-hexagram map for efficient lookups."""
     try:
@@ -19,12 +25,14 @@ def load_iching_data():
         }
         
         return iching_data, binary_to_hex_map
-    except FileNotFoundError:
-        st.error("Error: i_ching_data.json not found. Please make sure the data file is in the same directory as the app.")
-        return None, None
-    except json.JSONDecodeError:
-        st.error("Error: Could not decode i_ching_data.json. Please check the file for formatting errors.")
-        return None, None
+    except FileNotFoundError as e:
+        raise IChingDataError(
+            "i_ching_data.json not found. Please make sure the data file is in the same directory as the app."
+        ) from e
+    except json.JSONDecodeError as e:
+        raise IChingDataError(
+            "Could not decode i_ching_data.json. Please check the file for formatting errors."
+        ) from e
 
 def save_reading_to_csv(reading):
     """Appends a single reading to the CSV journal."""
