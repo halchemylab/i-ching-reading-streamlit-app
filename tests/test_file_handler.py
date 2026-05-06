@@ -6,9 +6,11 @@ from unittest.mock import patch
 import pandas as pd
 
 from file_handler import (
+    JournalValidationError,
     enrich_journal,
     journal_to_markdown,
     load_journal,
+    parse_lines,
     reconstruct_reading_from_row,
     save_reading_to_csv,
 )
@@ -84,6 +86,19 @@ class TestFileHandler(unittest.TestCase):
 
             with patch("file_handler.JOURNAL_FILE", str(journal_path)):
                 self.assertTrue(load_journal().empty)
+
+    def test_load_journal_adds_missing_columns_for_partial_csv(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            journal_path = Path(temp_dir) / "journal.csv"
+            pd.DataFrame([{"Date": "2026-05-03 14:30:00"}]).to_csv(journal_path, index=False)
+
+            with patch("file_handler.JOURNAL_FILE", str(journal_path)):
+                loaded_df = load_journal()
+
+        self.assertIn("Question", loaded_df.columns)
+        self.assertIn("Lines", loaded_df.columns)
+        self.assertIn("AI Interpretation", loaded_df.columns)
+        self.assertIsNone(loaded_df.loc[0, "Question"])
 
     def test_enrich_journal_adds_display_and_filter_fields(self):
         journal_df = pd.DataFrame(
@@ -161,6 +176,41 @@ class TestFileHandler(unittest.TestCase):
         self.assertEqual(reading["secondary_hex"], SAMPLE_ICHING_DATA["2"])
         self.assertEqual(reading["changing_lines_indices"], [0, 3])
         self.assertEqual(reading["timestamp"], "2026-05-03 14:30:00")
+
+    def test_parse_lines_rejects_malformed_readings(self):
+        self.assertEqual(parse_lines("6,7,8,9,7,8"), [6, 7, 8, 9, 7, 8])
+
+        with self.assertRaisesRegex(JournalValidationError, "exactly six lines"):
+            parse_lines("6,7,8")
+
+        with self.assertRaisesRegex(JournalValidationError, "Invalid values"):
+            parse_lines("6,7,8,9,7,10")
+
+    def test_save_reading_rejects_missing_required_fields(self):
+        reading = {
+            "timestamp": "2026-05-03 14:30:00",
+            "question": "",
+            "lines": [6, 7, 8, 9, 7, 8],
+            "primary_hex": SAMPLE_ICHING_DATA["1"],
+            "secondary_hex": None,
+        }
+
+        with self.assertRaisesRegex(JournalValidationError, "question"):
+            save_reading_to_csv(reading)
+
+    def test_reconstruct_reading_rejects_unknown_hexagram(self):
+        row = pd.Series(
+            {
+                "Date": "2026-05-03 14:30:00",
+                "Question": "What needs attention?",
+                "Lines": "6,7,8,9,7,8",
+                "Primary Hexagram Number": 99,
+                "Evolving Hexagram Number": None,
+            }
+        )
+
+        with self.assertRaisesRegex(JournalValidationError, "Unknown primary hexagram"):
+            reconstruct_reading_from_row(row, SAMPLE_ICHING_DATA)
 
 
 if __name__ == "__main__":

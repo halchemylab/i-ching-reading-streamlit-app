@@ -14,6 +14,7 @@ from constants import SAMPLE_QUESTIONS
 from file_handler import (
     JOURNAL_FILE,
     IChingDataError,
+    JournalValidationError,
     enrich_journal,
     load_iching_data,
     load_journal,
@@ -97,7 +98,13 @@ def render_journal(iching_data):
         return
 
     for index, row in filtered_df.iterrows():
-        reconstructed_reading = reconstruct_reading_from_row(row, iching_data)
+        try:
+            reconstructed_reading = reconstruct_reading_from_row(row, iching_data)
+        except JournalValidationError as e:
+            logging.warning(f"Skipping invalid journal row {index}: {e}")
+            st.warning(f"Skipped an invalid journal entry from {row.get('Date', 'an unknown date')}.")
+            continue
+
         title_parts = [
             str(row["Date"]),
             str(row["Question"]),
@@ -199,10 +206,14 @@ At times, a line may be 'changing,' indicating a dynamic aspect of the present m
 
         with col2:
             if st.button("💾 Save to Journal", use_container_width=True, disabled=st.session_state.reading_saved):
-                save_reading_to_csv(st.session_state.reading)
-                st.session_state.reading_saved = True
-                st.success(f"Reading saved to {JOURNAL_FILE}")
-                st.rerun()
+                try:
+                    save_reading_to_csv(st.session_state.reading)
+                    st.session_state.reading_saved = True
+                    st.success(f"Reading saved to {JOURNAL_FILE}")
+                    st.rerun()
+                except JournalValidationError as e:
+                    logging.error(f"Journal save validation error: {e}")
+                    st.error(f"Could not save this reading: {e}")
 
         if st.session_state.get('ai_interpretation'):
             with st.expander("A Guided Reflection", expanded=True):
