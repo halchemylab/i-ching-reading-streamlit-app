@@ -105,16 +105,13 @@ def render_journal(iching_data):
             st.warning(f"Skipped an invalid journal entry from {row.get('Date', 'an unknown date')}.")
             continue
 
-        title_parts = [
-            str(row["Date"]),
-            str(row["Question"]),
-            str(row.get("Primary Hexagram") or row["Primary Hexagram Number"]),
-        ]
-
+        primary_label = str(row.get("Primary Hexagram") or row["Primary Hexagram Number"])
+        hexagram_path = primary_label
         if pd.notna(row.get("Evolving Hexagram")) and row.get("Evolving Hexagram"):
-            title_parts[-1] = f"{title_parts[-1]} -> {row['Evolving Hexagram']}"
+            hexagram_path = f"{hexagram_path} -> {row['Evolving Hexagram']}"
 
-        with st.expander(" | ".join(title_parts)):
+        with st.expander(f"{row['Date']} | {hexagram_path}"):
+            st.markdown(f"**Question:** {row['Question']}")
             st.caption(
                 f"Lines: {row['Lines']} | "
                 f"Changing lines: {'Yes' if row['Has Changing Lines'] else 'No'} | "
