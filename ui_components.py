@@ -21,6 +21,7 @@ def display_guided_reading(reading):
     st.divider()
     st.header("Your Guided Reading")
     display_inquiry_anchor(reading)
+    display_key_takeaway(reading)
     display_reading_path(reading)
     display_primary_hexagram_step(reading)
     display_changing_lines_step(reading)
@@ -150,6 +151,11 @@ def inject_reading_styles():
                 border-color: rgba(255, 193, 7, 0.4);
             }
 
+            .takeaway-card {
+                background: linear-gradient(135deg, rgba(255, 193, 7, 0.14), rgba(108, 117, 125, 0.08));
+                border-color: rgba(255, 193, 7, 0.5);
+            }
+
             @media (max-width: 760px) {
                 .reading-path {
                     grid-template-columns: 1fr;
@@ -159,6 +165,56 @@ def inject_reading_styles():
         """,
         unsafe_allow_html=True,
     )
+
+
+def display_key_takeaway(reading):
+    """Displays a concise summary before the full reading detail."""
+    st.markdown(
+        f"""
+        <div class="reading-card takeaway-card">
+            <p class="eyebrow">Key Takeaway</p>
+            <p>{html.escape(get_key_takeaway(reading))}</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def get_key_takeaway(reading):
+    """Returns a concise, plain-language summary of the reading."""
+    primary_hex = reading["primary_hex"]
+    secondary_hex = reading["secondary_hex"]
+    changing_lines_indices = reading["changing_lines_indices"]
+    primary_name = primary_hex["name_en"]
+
+    if changing_lines_indices:
+        line_label = format_changing_lines(changing_lines_indices)
+        if secondary_hex:
+            return (
+                f"This reading begins with {primary_name} and moves toward "
+                f"{secondary_hex['name_en']}. The active pressure is in {line_label}, "
+                "so focus on the part of the situation that is already shifting."
+            )
+
+        return (
+            f"This reading centers on {primary_name}. The active pressure is in "
+            f"{line_label}, so look for the specific place where a response is needed."
+        )
+
+    return (
+        f"This reading centers on {primary_name}. With no changing lines, the counsel "
+        "is to stay with the present pattern and let its guidance settle before forcing movement."
+    )
+
+
+def format_changing_lines(changing_lines_indices):
+    """Formats zero-based changing line indices for reader-facing copy."""
+    line_numbers = [str(index + 1) for index in changing_lines_indices]
+    if len(line_numbers) == 1:
+        return f"line {line_numbers[0]}"
+    if len(line_numbers) == 2:
+        return f"lines {line_numbers[0]} and {line_numbers[1]}"
+    return f"lines {', '.join(line_numbers[:-1])}, and {line_numbers[-1]}"
 
 
 def display_inquiry_anchor(reading):
