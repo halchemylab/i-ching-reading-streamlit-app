@@ -4,7 +4,7 @@ from functools import lru_cache
 
 import pandas as pd
 
-from constants import JOURNAL_FILE
+from constants import ICHING_DATA_FILE, JOURNAL_FILE
 
 
 class IChingDataError(Exception):
@@ -30,7 +30,7 @@ REQUIRED_JOURNAL_COLUMNS = [
 def load_iching_data():
     """Loads the I Ching data and creates a binary-to-hexagram map for efficient lookups."""
     try:
-        with open('i_ching_data.json', 'r', encoding='utf-8') as f:
+        with open(ICHING_DATA_FILE, 'r', encoding='utf-8') as f:
             iching_data = json.load(f)
         
         binary_to_hex_map = {

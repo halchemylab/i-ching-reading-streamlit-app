@@ -1,6 +1,12 @@
 """Central place for constants."""
 
-JOURNAL_FILE = "i_ching_journal.csv"
+from pathlib import Path
+
+
+BASE_DIR = Path(__file__).resolve().parent
+ICHING_DATA_FILE = BASE_DIR / "i_ching_data.json"
+JOURNAL_FILE = BASE_DIR / "i_ching_journal.csv"
+LOG_FILE = BASE_DIR / "app.log"
 
 HEXAGRAM_THEME_SUMMARIES = {
     1: "Your journal has recently emphasized creative force, initiative, discipline, and acting with clarity.",

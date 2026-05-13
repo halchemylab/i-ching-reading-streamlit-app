@@ -10,7 +10,7 @@ import streamlit as st
 from dotenv import load_dotenv
 
 from ai_integration import AIRateLimitError, AIInterpretationError, get_ai_interpretation
-from constants import SAMPLE_QUESTIONS
+from constants import LOG_FILE, SAMPLE_QUESTIONS
 from file_handler import (
     JOURNAL_FILE,
     IChingDataError,
@@ -28,7 +28,7 @@ from ui_components import display_reading
 
 logging.basicConfig(
     level=logging.INFO,
-    filename="app.log",
+    filename=LOG_FILE,
     filemode="a",
     format="%(name)s - %(levelname)s - %(message)s",
 )
