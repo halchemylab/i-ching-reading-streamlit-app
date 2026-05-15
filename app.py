@@ -115,7 +115,7 @@ def render_journal(iching_data):
         favorite_label = "★ " if row.get("Favorite", False) else ""
         archived_label = " [Archived]" if row.get("Archived", False) else ""
 
-        with st.expander(f"{favorite_label}{row['Date']} | {hexagram_path}{archived_label}"):
+        with st.expander(f"{favorite_label}**{row['Date']}** | {hexagram_path}{archived_label}"):
             st.markdown(f"**Question:** {row['Question']}")
             st.caption(
                 f"Lines: {row['Lines']} | "
