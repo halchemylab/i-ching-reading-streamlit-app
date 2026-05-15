@@ -13,6 +13,7 @@ from file_handler import (
     parse_lines,
     reconstruct_reading_from_row,
     save_reading_to_csv,
+    update_journal_entry_flags,
 )
 
 
@@ -74,6 +75,9 @@ class TestFileHandler(unittest.TestCase):
         self.assertEqual(loaded_df.loc[0, "Primary Hexagram Number"], 1)
         self.assertEqual(loaded_df.loc[0, "Evolving Hexagram Number"], 2)
         self.assertEqual(loaded_df.loc[0, "AI Interpretation"], "Notice the pattern.")
+        self.assertFalse(loaded_df.loc[0, "Favorite"])
+        self.assertFalse(loaded_df.loc[0, "Archived"])
+        self.assertTrue(str(loaded_df.loc[0, "Entry ID"]).strip())
 
     def test_load_journal_returns_empty_dataframe_for_missing_or_empty_file(self):
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -98,7 +102,12 @@ class TestFileHandler(unittest.TestCase):
         self.assertIn("Question", loaded_df.columns)
         self.assertIn("Lines", loaded_df.columns)
         self.assertIn("AI Interpretation", loaded_df.columns)
+        self.assertIn("Favorite", loaded_df.columns)
+        self.assertIn("Archived", loaded_df.columns)
+        self.assertIn("Entry ID", loaded_df.columns)
         self.assertIsNone(loaded_df.loc[0, "Question"])
+        self.assertFalse(loaded_df.loc[0, "Favorite"])
+        self.assertFalse(loaded_df.loc[0, "Archived"])
 
     def test_enrich_journal_adds_display_and_filter_fields(self):
         journal_df = pd.DataFrame(
@@ -132,6 +141,27 @@ class TestFileHandler(unittest.TestCase):
         self.assertFalse(enriched_df.loc[1, "Has AI Contemplation"])
         self.assertFalse(enriched_df.loc[1, "Has Changing Lines"])
         self.assertTrue(pd.isna(enriched_df.loc[1, "Date Parsed"]))
+
+    def test_update_journal_entry_flags_persists_favorite_and_archive_state(self):
+        reading = {
+            "timestamp": "2026-05-03 14:30:00",
+            "question": "What needs attention?",
+            "lines": [6, 7, 8, 9, 7, 8],
+            "primary_hex": SAMPLE_ICHING_DATA["1"],
+            "secondary_hex": None,
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            journal_path = Path(temp_dir) / "journal.csv"
+
+            with patch("file_handler.JOURNAL_FILE", str(journal_path)):
+                save_reading_to_csv(reading)
+                entry_id = load_journal().loc[0, "Entry ID"]
+                update_journal_entry_flags(entry_id, favorite=True, archived=True)
+                loaded_df = load_journal()
+
+        self.assertTrue(loaded_df.loc[0, "Favorite"])
+        self.assertTrue(loaded_df.loc[0, "Archived"])
 
     def test_journal_to_markdown_includes_hexagram_labels_and_ai_text(self):
         journal_df = pd.DataFrame(

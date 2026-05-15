@@ -1,5 +1,7 @@
 import json
 import os
+import hashlib
+import uuid
 from functools import lru_cache
 
 import pandas as pd
@@ -17,12 +19,15 @@ class JournalValidationError(Exception):
 
 VALID_LINE_VALUES = {6, 7, 8, 9}
 REQUIRED_JOURNAL_COLUMNS = [
+    "Entry ID",
     "Date",
     "Question",
     "Lines",
     "Primary Hexagram Number",
     "Evolving Hexagram Number",
     "AI Interpretation",
+    "Favorite",
+    "Archived",
 ]
 
 
@@ -56,12 +61,15 @@ def save_reading_to_csv(reading):
     secondary_hex = reading.get('secondary_hex')
     
     record = {
+        "Entry ID": uuid.uuid4().hex,
         "Date": require_text(reading.get("timestamp"), "timestamp"),
         "Question": require_text(reading.get("question"), "question"),
         "Lines": ",".join(map(str, validated_lines)),
         "Primary Hexagram Number": primary_hex['number'],
         "Evolving Hexagram Number": secondary_hex['number'] if secondary_hex else None,
-        "AI Interpretation": reading.get('ai_interpretation')
+        "AI Interpretation": reading.get('ai_interpretation'),
+        "Favorite": False,
+        "Archived": False,
     }
     
     df = pd.DataFrame([record])
@@ -95,7 +103,58 @@ def ensure_journal_columns(journal_df):
         if column not in journal_df.columns:
             journal_df[column] = None
 
+    missing_entry_ids = journal_df["Entry ID"].isna() | (
+        journal_df["Entry ID"].astype(str).str.strip() == ""
+    )
+    if missing_entry_ids.any():
+        journal_df.loc[missing_entry_ids, "Entry ID"] = journal_df[missing_entry_ids].apply(
+            make_legacy_entry_id,
+            axis=1,
+        )
+
+    journal_df["Favorite"] = journal_df["Favorite"].apply(normalize_bool)
+    journal_df["Archived"] = journal_df["Archived"].apply(normalize_bool)
+
     return journal_df
+
+def make_legacy_entry_id(row):
+    """Builds a stable ID for journal rows created before IDs existed."""
+    identity_parts = [
+        row.get("Date", ""),
+        row.get("Question", ""),
+        row.get("Lines", ""),
+        row.get("Primary Hexagram Number", ""),
+        row.get("Evolving Hexagram Number", ""),
+    ]
+    identity_text = "|".join("" if pd.isna(part) else str(part) for part in identity_parts)
+    return hashlib.sha256(identity_text.encode("utf-8")).hexdigest()[:16]
+
+def normalize_bool(value):
+    """Normalizes CSV boolean-ish values for journal metadata."""
+    if isinstance(value, bool):
+        return value
+    if pd.isna(value):
+        return False
+
+    return str(value).strip().lower() in {"true", "1", "yes", "y"}
+
+def update_journal_entry_flags(entry_id, favorite=None, archived=None):
+    """Updates favorite/archive metadata for a single journal entry."""
+    journal_df = load_journal()
+    if journal_df.empty:
+        raise JournalValidationError("Journal is empty.")
+
+    entry_id = require_text(entry_id, "entry_id")
+    matches = journal_df["Entry ID"].astype(str) == entry_id
+    if not matches.any():
+        raise JournalValidationError(f"Unknown journal entry ID: {entry_id}")
+
+    if favorite is not None:
+        journal_df.loc[matches, "Favorite"] = bool(favorite)
+    if archived is not None:
+        journal_df.loc[matches, "Archived"] = bool(archived)
+
+    journal_df.to_csv(JOURNAL_FILE, index=False, encoding="utf-8")
 
 def require_text(value, field_name):
     """Validates required text fields before persistence."""

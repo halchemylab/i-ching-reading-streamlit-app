@@ -20,6 +20,7 @@ from file_handler import (
     load_journal,
     reconstruct_reading_from_row,
     save_reading_to_csv,
+    update_journal_entry_flags,
 )
 from iching_logic import cast_reading, get_hexagram_numbers
 from journal_ui import render_empty_journal_sidebar, render_journal_sidebar
@@ -110,17 +111,45 @@ def render_journal(iching_data):
         if pd.notna(row.get("Evolving Hexagram")) and row.get("Evolving Hexagram"):
             hexagram_path = f"{hexagram_path} -> {row['Evolving Hexagram']}"
 
-        with st.expander(f"{row['Date']} | {hexagram_path}"):
+        entry_id = str(row["Entry ID"])
+        favorite_label = "★ " if row.get("Favorite", False) else ""
+        archived_label = " [Archived]" if row.get("Archived", False) else ""
+
+        with st.expander(f"{favorite_label}{row['Date']} | {hexagram_path}{archived_label}"):
             st.markdown(f"**Question:** {row['Question']}")
             st.caption(
                 f"Lines: {row['Lines']} | "
                 f"Changing lines: {'Yes' if row['Has Changing Lines'] else 'No'} | "
                 f"AI contemplation: {'Yes' if row['Has AI Contemplation'] else 'No'}"
             )
+            render_journal_entry_actions(entry_id, row)
             display_reading(reconstructed_reading, is_journal=True)
             if pd.notna(row['AI Interpretation']):
                 st.markdown("**AI Contemplation:**")
                 st.markdown(row['AI Interpretation'])
+
+
+def render_journal_entry_actions(entry_id, row):
+    """Renders favorite and archive controls for a saved journal reading."""
+    col1, col2 = st.columns([1, 1])
+    favorite_key = f"journal_favorite_{entry_id}"
+    favorite_value = bool(row.get("Favorite", False))
+
+    with col1:
+        selected_favorite = st.checkbox("Favorite", value=favorite_value, key=favorite_key)
+        if selected_favorite != favorite_value:
+            update_journal_entry_flags(entry_id, favorite=selected_favorite)
+            st.rerun()
+
+    with col2:
+        if row.get("Archived", False):
+            if st.button("Restore", key=f"journal_restore_{entry_id}", use_container_width=True):
+                update_journal_entry_flags(entry_id, archived=False)
+                st.rerun()
+        else:
+            if st.button("Archive", key=f"journal_archive_{entry_id}", use_container_width=True):
+                update_journal_entry_flags(entry_id, archived=True)
+                st.rerun()
 
 
 def render_main_ui(iching_data, binary_to_hex_map, openai_enabled, client):

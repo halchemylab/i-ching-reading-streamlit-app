@@ -36,6 +36,8 @@ def render_journal_sidebar(journal_df, iching_data):
             st.session_state.journal_evolving = "All"
             st.session_state.journal_ai_only = False
             st.session_state.journal_changing_only = False
+            st.session_state.journal_favorites_only = False
+            st.session_state.journal_show_archived = False
             st.session_state.journal_sort = "Newest first"
             if default_date_range:
                 st.session_state.journal_date_range = default_date_range
@@ -73,6 +75,8 @@ def render_journal_sidebar(journal_df, iching_data):
 
         primary_filter = st.selectbox("Primary hexagram", primary_options, key="journal_primary")
         evolving_filter = st.selectbox("Evolving hexagram", evolving_options, key="journal_evolving")
+        favorites_only = st.checkbox("Favorites only", key="journal_favorites_only")
+        show_archived = st.checkbox("Show archived readings", key="journal_show_archived")
         ai_only = st.checkbox("With AI contemplation only", key="journal_ai_only")
         changing_only = st.checkbox("With changing lines only", key="journal_changing_only")
         sort_order = st.selectbox("Sort", ["Newest first", "Oldest first"], key="journal_sort")
@@ -83,6 +87,8 @@ def render_journal_sidebar(journal_df, iching_data):
         date_range=date_range,
         primary_filter=primary_filter,
         evolving_filter=evolving_filter,
+        favorites_only=favorites_only,
+        show_archived=show_archived,
         ai_only=ai_only,
         changing_only=changing_only,
         sort_order=sort_order,
@@ -100,12 +106,17 @@ def apply_journal_filters(
     date_range=None,
     primary_filter="All",
     evolving_filter="All",
+    favorites_only=False,
+    show_archived=False,
     ai_only=False,
     changing_only=False,
     sort_order="Newest first",
 ):
     """Applies journal filters independently of Streamlit widgets."""
     filtered_df = journal_df.copy()
+
+    if not show_archived:
+        filtered_df = filtered_df[~filtered_df["Archived"]]
 
     if search_query:
         searchable_text = (
@@ -128,6 +139,9 @@ def apply_journal_filters(
 
     if evolving_filter != "All":
         filtered_df = filtered_df[filtered_df["Evolving Hexagram"] == evolving_filter]
+
+    if favorites_only:
+        filtered_df = filtered_df[filtered_df["Favorite"]]
 
     if ai_only:
         filtered_df = filtered_df[filtered_df["Has AI Contemplation"]]
