@@ -161,14 +161,14 @@ def render_main_ui(iching_data, binary_to_hex_map, openai_enabled, client):
 
     st.title("☯️ 易經 - The Book of Changes")
     
-    with st.expander("A Guide to Divination"):
+    with st.expander("A Guide to Divination", expanded=True):
         st.markdown("""
-    The I Ching, or Book of Changes, is an ancient text for divination and wisdom. To consult it, you approach it with a sincere question. The oracle responds with a **hexagram**—a figure of six lines—that mirrors the cosmic energies at play in your situation.\
-\
-- **Solid lines (Yang)** represent the creative, active principle.\
-- **Broken lines (Yin)** represent the receptive, yielding principle.\
-\
-At times, a line may be 'changing,' indicating a dynamic aspect of the present moment. This transformation reveals a second hexagram, offering insight into how the situation may evolve. This app is a vessel for this ancient dialogue, helping you cast a reading and contemplate its meaning.\
+    The I Ching, or Book of Changes, is an ancient text for divination and wisdom. To consult it, you approach it with a sincere question. The oracle responds with a **hexagram**—a figure of six lines—that mirrors the cosmic energies at play in your situation.
+
+- **Solid lines (Yang)** represent the creative, active principle.
+- **Broken lines (Yin)** represent the receptive, yielding principle.
+
+At times, a line may be 'changing,' indicating a dynamic aspect of the present moment. This transformation reveals a second hexagram, offering insight into how the situation may evolve. This app is a vessel for this ancient dialogue, helping you cast a reading and contemplate its meaning.
 """)
 
     st.header("Consult the Oracle")
