@@ -94,6 +94,7 @@ To run this application locally, follow these steps:
 ├── file_handler.py         # Manages loading data and saving journal entries
 ├── i_ching_data.json       # Data for the 64 hexagrams
 ├── iching_logic.py         # Core logic for casting and determining hexagrams
+├── reading_service.py      # Pure reading construction helpers
 ├── requirements.txt        # Python dependencies
 ├── ui_components.py        # Functions for creating Streamlit UI elements
 └── README.md               # This file

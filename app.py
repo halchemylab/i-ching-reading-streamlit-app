@@ -22,8 +22,9 @@ from file_handler import (
     save_reading_to_csv,
     update_journal_entry_flags,
 )
-from iching_logic import cast_reading, get_hexagram_numbers
+from iching_logic import cast_reading
 from journal_ui import render_empty_journal_sidebar, render_journal_sidebar
+from reading_service import create_reading
 from ui_components import display_reading
 
 
@@ -189,16 +190,13 @@ def render_main_ui(iching_data, binary_to_hex_map, openai_enabled, client):
             st.session_state.ai_interpretation = None
             st.session_state.reading_saved = False
             lines = cast_reading()
-            primary_hex_num, secondary_hex_num = get_hexagram_numbers(lines, binary_to_hex_map)
-            
-            st.session_state.reading = {
-                "question": question,
-                "lines": lines,
-                "primary_hex": iching_data[str(primary_hex_num)],
-                "secondary_hex": iching_data[str(secondary_hex_num)] if secondary_hex_num else None,
-                "changing_lines_indices": [i for i, line in enumerate(lines) if line in [6, 9]],
-                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            }
+            st.session_state.reading = create_reading(
+                question=question,
+                lines=lines,
+                iching_data=iching_data,
+                binary_to_hex_map=binary_to_hex_map,
+                timestamp=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            )
             st.rerun()
 
     if st.session_state.get('reading_cast'):
