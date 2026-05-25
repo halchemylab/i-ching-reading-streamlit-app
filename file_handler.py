@@ -1,8 +1,10 @@
 import json
 import os
 import hashlib
+import tempfile
 import uuid
 from functools import lru_cache
+from pathlib import Path
 
 import pandas as pd
 
@@ -55,7 +57,7 @@ def load_iching_data():
         ) from e
 
 def save_reading_to_csv(reading):
-    """Appends a single reading to the CSV journal."""
+    """Persists a single reading to the CSV journal."""
     validated_lines = parse_lines(reading.get("lines"))
     primary_hex = reading['primary_hex']
     secondary_hex = reading.get('secondary_hex')
@@ -72,14 +74,14 @@ def save_reading_to_csv(reading):
         "Archived": False,
     }
     
-    df = pd.DataFrame([record])
-    df.to_csv(
-        JOURNAL_FILE,
-        mode='a',
-        header=not os.path.exists(JOURNAL_FILE),
-        index=False,
-        encoding="utf-8",
+    journal_df = load_journal()
+    record_df = pd.DataFrame([record])
+    updated_df = pd.concat(
+        [journal_df, record_df],
+        ignore_index=True,
+        sort=False,
     )
+    write_journal_df(updated_df)
 
 def load_journal():
     """Loads the reading journal as a DataFrame."""
@@ -154,7 +156,29 @@ def update_journal_entry_flags(entry_id, favorite=None, archived=None):
     if archived is not None:
         journal_df.loc[matches, "Archived"] = bool(archived)
 
-    journal_df.to_csv(JOURNAL_FILE, index=False, encoding="utf-8")
+    write_journal_df(journal_df)
+
+def write_journal_df(journal_df):
+    """Atomically writes the journal DataFrame to disk."""
+    journal_path = Path(JOURNAL_FILE)
+    journal_path.parent.mkdir(parents=True, exist_ok=True)
+    temp_path = None
+
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            newline="",
+            dir=journal_path.parent,
+            delete=False,
+        ) as temp_file:
+            temp_path = Path(temp_file.name)
+            journal_df.to_csv(temp_file, index=False)
+
+        os.replace(temp_path, journal_path)
+    finally:
+        if temp_path and temp_path.exists():
+            temp_path.unlink()
 
 def require_text(value, field_name):
     """Validates required text fields before persistence."""

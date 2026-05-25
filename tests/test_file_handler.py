@@ -79,6 +79,35 @@ class TestFileHandler(unittest.TestCase):
         self.assertFalse(loaded_df.loc[0, "Archived"])
         self.assertTrue(str(loaded_df.loc[0, "Entry ID"]).strip())
 
+    def test_save_reading_preserves_existing_journal_entries(self):
+        first_reading = {
+            "timestamp": "2026-05-03 14:30:00",
+            "question": "What needs attention?",
+            "lines": [6, 7, 8, 9, 7, 8],
+            "primary_hex": SAMPLE_ICHING_DATA["1"],
+            "secondary_hex": None,
+        }
+        second_reading = {
+            "timestamp": "2026-05-04 09:15:00",
+            "question": "Where should I wait?",
+            "lines": [7, 7, 8, 8, 7, 8],
+            "primary_hex": SAMPLE_ICHING_DATA["2"],
+            "secondary_hex": None,
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            journal_path = Path(temp_dir) / "journal.csv"
+
+            with patch("file_handler.JOURNAL_FILE", str(journal_path)):
+                save_reading_to_csv(first_reading)
+                save_reading_to_csv(second_reading)
+                loaded_df = load_journal()
+
+        self.assertEqual(
+            list(loaded_df["Question"]),
+            ["What needs attention?", "Where should I wait?"],
+        )
+
     def test_load_journal_returns_empty_dataframe_for_missing_or_empty_file(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             journal_path = Path(temp_dir) / "missing.csv"

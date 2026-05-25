@@ -58,6 +58,17 @@ class TestJournalUI(unittest.TestCase):
 
         self.assertEqual(list(filtered_df["Question"]), ["What should I continue?"])
 
+    def test_apply_journal_filters_treats_search_query_as_literal_text(self):
+        journal_df = self.make_journal_df()
+        journal_df.loc[0, "Question"] = "What should I continue [literally]?"
+
+        filtered_df = apply_journal_filters(journal_df, search_query="[literally]")
+
+        self.assertEqual(
+            list(filtered_df["Question"]),
+            ["What should I continue [literally]?"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

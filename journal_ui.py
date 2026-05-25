@@ -124,7 +124,12 @@ def apply_journal_filters(
             filtered_df["AI Interpretation"].fillna("")
         )
         filtered_df = filtered_df[
-            searchable_text.str.contains(search_query, case=False, na=False)
+            searchable_text.str.contains(
+                search_query,
+                case=False,
+                na=False,
+                regex=False,
+            )
         ]
 
     if date_range and len(date_range) == 2:
