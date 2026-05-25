@@ -1,7 +1,7 @@
 # I Ching Reading Streamlit App ☯️
 
 [![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.25.0-ff69b4.svg)](https://streamlit.io)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.49.1-ff69b4.svg)](https://streamlit.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A modern and interactive web application for casting and interpreting the I Ching (易經), the ancient Chinese "Book of Changes." This app provides a digital way to consult the oracle, offering wisdom and insight through its timeless hexagrams. It features classic interpretations, an optional AI-powered contemplation for a more contemporary perspective, and a personal journal to record and reflect on your readings.
@@ -66,7 +66,7 @@ To run this application locally, follow these steps:
 
 3.  **Install the dependencies:**
     ```bash
-    pip install -r requirements.txt
+    make install-dev
     ```
 
 4.  **Set up your OpenAI API Key (Optional):**
@@ -79,9 +79,14 @@ To run this application locally, follow these steps:
 
 5.  **Run the Streamlit app:**
     ```bash
-    streamlit run app.py
+    make run
     ```
     The application will open in your default web browser.
+
+6.  **Run the test suite:**
+    ```bash
+    make test
+    ```
 
 ## 📂 Project Structure
 
@@ -94,7 +99,9 @@ To run this application locally, follow these steps:
 ├── file_handler.py         # Manages loading data and saving journal entries
 ├── i_ching_data.json       # Data for the 64 hexagrams
 ├── iching_logic.py         # Core logic for casting and determining hexagrams
+├── Makefile                # Common local development commands
 ├── reading_service.py      # Pure reading construction helpers
+├── requirements-dev.txt    # Development dependency entrypoint
 ├── requirements.txt        # Python dependencies
 ├── ui_components.py        # Functions for creating Streamlit UI elements
 └── README.md               # This file

@@ -1,4 +1,4 @@
-streamlit
-openai
-python-dotenv
-pandas
+streamlit==1.49.1
+openai==1.107.2
+python-dotenv==1.1.1
+pandas==2.3.2
