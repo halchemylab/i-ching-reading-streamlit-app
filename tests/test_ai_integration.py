@@ -3,8 +3,11 @@ from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 from ai_integration import (
+    AIConfigurationError,
+    AISettings,
     AIInterpretationError,
     AIRateLimitError,
+    build_ai_config,
     get_ai_interpretation,
 )
 
@@ -85,6 +88,67 @@ class TestAIIntegration(unittest.TestCase):
         self.assertIn("**Line 5:** The sovereign gives his daughter in marriage.", prompt)
         self.assertIn("**Evolving Hexagram:** 32. Duration (恆)", prompt)
         self.assertIn("**Judgment:** Perseverance furthers.", prompt)
+
+    def test_get_ai_interpretation_uses_configured_request_settings(self):
+        client = make_client()
+        settings = AISettings(
+            model="gpt-test-model",
+            max_tokens=450,
+            temperature=0.2,
+            timeout_seconds=12.5,
+            max_retries=1,
+        )
+
+        get_ai_interpretation(make_reading(), client, settings=settings)
+
+        create_kwargs = client.chat.completions.create.call_args.kwargs
+        self.assertEqual(create_kwargs["model"], "gpt-test-model")
+        self.assertEqual(create_kwargs["max_tokens"], 450)
+        self.assertEqual(create_kwargs["temperature"], 0.2)
+        self.assertEqual(create_kwargs["timeout"], 12.5)
+
+    def test_build_ai_config_reads_secrets_before_environment(self):
+        config = build_ai_config(
+            secrets={
+                "openai": {
+                    "api_key": "sk-secret",
+                    "model": "gpt-secret",
+                    "max_tokens": "500",
+                    "temperature": "0.3",
+                    "timeout_seconds": "45",
+                    "max_retries": "4",
+                }
+            },
+            environ={
+                "OPENAI_API_KEY": "sk-env",
+                "OPENAI_MODEL": "gpt-env",
+                "OPENAI_MAX_TOKENS": "300",
+            },
+        )
+
+        self.assertTrue(config.enabled)
+        self.assertEqual(config.api_key, "sk-secret")
+        self.assertEqual(config.settings.model, "gpt-secret")
+        self.assertEqual(config.settings.max_tokens, 500)
+        self.assertEqual(config.settings.temperature, 0.3)
+        self.assertEqual(config.settings.timeout_seconds, 45)
+        self.assertEqual(config.settings.max_retries, 4)
+
+    def test_build_ai_config_supports_flat_secret_keys(self):
+        config = build_ai_config(
+            secrets={
+                "OPENAI_API_KEY": "sk-flat-secret",
+                "OPENAI_MODEL": "gpt-flat-secret",
+            },
+            environ={"OPENAI_API_KEY": "sk-env"},
+        )
+
+        self.assertEqual(config.api_key, "sk-flat-secret")
+        self.assertEqual(config.settings.model, "gpt-flat-secret")
+
+    def test_build_ai_config_rejects_invalid_numeric_settings(self):
+        with self.assertRaisesRegex(AIConfigurationError, "OPENAI_MAX_TOKENS must be an integer"):
+            build_ai_config(secrets=None, environ={"OPENAI_MAX_TOKENS": "many"})
 
     def test_prompt_handles_reading_without_changing_lines_or_evolving_hexagram(self):
         client = make_client()

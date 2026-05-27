@@ -1,5 +1,4 @@
 import random
-import os
 import time
 import logging
 from datetime import datetime
@@ -9,7 +8,13 @@ import pandas as pd
 import streamlit as st
 from dotenv import load_dotenv
 
-from ai_integration import AIRateLimitError, AIInterpretationError, get_ai_interpretation
+from ai_integration import (
+    AIConfigurationError,
+    AIRateLimitError,
+    AIInterpretationError,
+    build_ai_config,
+    get_ai_interpretation,
+)
 from constants import LOG_FILE, SAMPLE_QUESTIONS
 from file_handler import (
     JOURNAL_FILE,
@@ -69,14 +74,27 @@ def main():
 
     load_dotenv()
     
-    api_key = os.getenv("OPENAI_API_KEY")
     client = None
-    openai_enabled = True if api_key else False
+    ai_config_error = None
+    try:
+        ai_config = build_ai_config(secrets=st.secrets)
+    except AIConfigurationError as e:
+        ai_config = None
+        ai_config_error = str(e)
+
+    openai_enabled = bool(ai_config and ai_config.enabled)
     if openai_enabled:
-        client = openai.OpenAI(api_key=api_key)
+        client = openai.OpenAI(**ai_config.client_kwargs())
 
     if iching_data and binary_to_hex_map:
-        render_main_ui(iching_data, binary_to_hex_map, openai_enabled, client)
+        render_main_ui(
+            iching_data,
+            binary_to_hex_map,
+            openai_enabled,
+            client,
+            ai_config=ai_config,
+            ai_config_error=ai_config_error,
+        )
         render_journal(iching_data)
 
 
@@ -153,7 +171,14 @@ def render_journal_entry_actions(entry_id, row):
                 st.rerun()
 
 
-def render_main_ui(iching_data, binary_to_hex_map, openai_enabled, client):
+def render_main_ui(
+    iching_data,
+    binary_to_hex_map,
+    openai_enabled,
+    client,
+    ai_config=None,
+    ai_config_error=None,
+):
     """Renders the main user interface for casting and viewing readings."""
     if "question_text" not in st.session_state:
         st.session_state.question_text = ""
@@ -208,10 +233,15 @@ def render_main_ui(iching_data, binary_to_hex_map, openai_enabled, client):
         col1, col2 = st.columns(2)
         with col1:
             if openai_enabled:
-                if st.button("🤖 Generate AI Contemplation", use_container_width=True):
+                button_label = f"🤖 Generate AI Contemplation ({ai_config.settings.model})"
+                if st.button(button_label, use_container_width=True):
                     with st.spinner("The AI is consulting the oracle..."):
                         try:
-                            interpretation = get_ai_interpretation(st.session_state.reading, client)
+                            interpretation = get_ai_interpretation(
+                                st.session_state.reading,
+                                client,
+                                settings=ai_config.settings,
+                            )
                             if interpretation:
                                 st.session_state.ai_interpretation = interpretation
                                 st.session_state.reading['ai_interpretation'] = interpretation
@@ -222,6 +252,14 @@ def render_main_ui(iching_data, binary_to_hex_map, openai_enabled, client):
                         except AIInterpretationError as e:
                             logging.error(f"OpenAI API error: {e}")
                             st.error(str(e))
+            else:
+                st.button("🤖 Generate AI Contemplation", use_container_width=True, disabled=True)
+                if ai_config_error:
+                    st.caption(f"AI contemplation is disabled: {ai_config_error}")
+                else:
+                    st.caption(
+                        "Add OPENAI_API_KEY to .env or .streamlit/secrets.toml to enable AI contemplation."
+                    )
 
         with col2:
             if st.button("💾 Save to Journal", use_container_width=True, disabled=st.session_state.reading_saved):

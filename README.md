@@ -44,7 +44,7 @@ The application simulates the traditional three-coin method of casting I Ching h
 
 *   **Frontend:** [Streamlit](https://streamlit.io/)
 *   **Backend:** Python
-*   **AI:** [OpenAI API](https://beta.openai.com/docs/)
+*   **AI:** [OpenAI API](https://platform.openai.com/docs)
 *   **Data:** `i_ching_data.json` (custom data file), `i_ching_journal.csv` (local journal)
 
 ## ⚙️ Installation and Usage
@@ -69,12 +69,30 @@ To run this application locally, follow these steps:
     make install-dev
     ```
 
-4.  **Set up your OpenAI API Key (Optional):**
-    To use the AI-powered contemplation feature, you need an OpenAI API key.
+4.  **Set up AI contemplation (Optional):**
+    To use the AI-powered contemplation feature, you need an OpenAI API key. The app reads configuration from `.streamlit/secrets.toml` first, then from `.env`.
     *   Create a file named `.env` in the root of the project.
     *   Add your API key to the `.env` file as follows:
         ```
         OPENAI_API_KEY='your-api-key-here'
+        ```
+    *   Or create `.streamlit/secrets.toml`:
+        ```toml
+        [openai]
+        api_key = "your-api-key-here"
+        model = "gpt-4o-mini"
+        max_tokens = 900
+        temperature = 0.7
+        timeout_seconds = 30
+        max_retries = 2
+        ```
+    *   Optional `.env` settings:
+        ```
+        OPENAI_MODEL='gpt-4o-mini'
+        OPENAI_MAX_TOKENS=900
+        OPENAI_TEMPERATURE=0.7
+        OPENAI_TIMEOUT_SECONDS=30
+        OPENAI_MAX_RETRIES=2
         ```
 
 5.  **Run the Streamlit app:**
