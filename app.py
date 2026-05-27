@@ -103,7 +103,12 @@ def render_journal(iching_data):
     st.divider()
     st.header("Reading Journal")
 
-    journal_df = load_journal()
+    try:
+        journal_df = load_journal()
+    except JournalValidationError as e:
+        logging.error(f"Journal load validation error: {e}")
+        st.error(str(e))
+        return
     if journal_df.empty:
         logging.info("Journal file is empty or not found.")
         st.info("Your journal is empty. Saved readings will appear here.")

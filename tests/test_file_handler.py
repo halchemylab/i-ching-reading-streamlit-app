@@ -120,6 +120,44 @@ class TestFileHandler(unittest.TestCase):
             with patch("file_handler.JOURNAL_FILE", str(journal_path)):
                 self.assertTrue(load_journal().empty)
 
+    def test_load_journal_raises_for_malformed_csv(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            journal_path = Path(temp_dir) / "journal.csv"
+            journal_path.write_text(
+                'Date,Question\n2026-05-03,"unterminated question\n',
+                encoding="utf-8",
+            )
+
+            with patch("file_handler.JOURNAL_FILE", str(journal_path)):
+                with self.assertRaisesRegex(
+                    JournalValidationError,
+                    "Could not parse journal file",
+                ):
+                    load_journal()
+
+    def test_save_reading_does_not_overwrite_malformed_journal(self):
+        reading = {
+            "timestamp": "2026-05-03 14:30:00",
+            "question": "What needs attention?",
+            "lines": [6, 7, 8, 9, 7, 8],
+            "primary_hex": SAMPLE_ICHING_DATA["1"],
+            "secondary_hex": None,
+        }
+        malformed_csv = 'Date,Question\n2026-05-03,"unterminated question\n'
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            journal_path = Path(temp_dir) / "journal.csv"
+            journal_path.write_text(malformed_csv, encoding="utf-8")
+
+            with patch("file_handler.JOURNAL_FILE", str(journal_path)):
+                with self.assertRaisesRegex(
+                    JournalValidationError,
+                    "Could not parse journal file",
+                ):
+                    save_reading_to_csv(reading)
+
+            self.assertEqual(journal_path.read_text(encoding="utf-8"), malformed_csv)
+
     def test_load_journal_adds_missing_columns_for_partial_csv(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             journal_path = Path(temp_dir) / "journal.csv"

@@ -173,12 +173,17 @@ def save_reading_to_csv(reading):
 def load_journal():
     """Loads the reading journal as a DataFrame."""
     try:
-        journal_df = pd.read_csv(JOURNAL_FILE, on_bad_lines="skip")
+        journal_df = pd.read_csv(JOURNAL_FILE)
         return ensure_journal_columns(journal_df)
     except FileNotFoundError:
         return empty_journal_df()
-    except (pd.errors.EmptyDataError, pd.errors.ParserError):
+    except pd.errors.EmptyDataError:
         return empty_journal_df()
+    except pd.errors.ParserError as e:
+        raise JournalValidationError(
+            f"Could not parse journal file {JOURNAL_FILE}. "
+            "The existing journal was left unchanged."
+        ) from e
 
 def empty_journal_df():
     """Returns an empty journal DataFrame with the expected schema."""
