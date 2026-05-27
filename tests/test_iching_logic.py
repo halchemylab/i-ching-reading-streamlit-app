@@ -27,8 +27,8 @@ class TestIChingLogic(unittest.TestCase):
         binary_to_hex_map = {
             "111111": 1,
             "000000": 2,
-            "010101": 63,
-            "101010": 64,
+            "101010": 63,
+            "010101": 64,
         }
 
         primary, secondary = get_hexagram_numbers(

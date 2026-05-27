@@ -21,8 +21,8 @@ class TestReadingService(unittest.TestCase):
     def test_create_reading_builds_primary_and_secondary_hexagrams(self):
         lines = [6, 7, 8, 9, 7, 8]
         binary_to_hex_map = {
-            "011010": 1,
-            "010011": 2,
+            "010110": 1,
+            "110010": 2,
         }
 
         reading = create_reading(
@@ -45,7 +45,7 @@ class TestReadingService(unittest.TestCase):
             question="Where should I wait?",
             lines=[7, 7, 8, 8, 7, 8],
             iching_data=SAMPLE_ICHING_DATA,
-            binary_to_hex_map={"010011": 2},
+            binary_to_hex_map={"110010": 2},
             timestamp="2026-05-24 09:45:00",
         )
 

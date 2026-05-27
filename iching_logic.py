@@ -16,8 +16,8 @@ def cast_reading():
     return [cast_coin_line() for _ in range(6)]
 
 def get_hexagram_numbers(lines, binary_to_hex_map):
-    """Determines the primary and secondary hexagram numbers from the lines using a pre-computed map."""
-    primary_binary = "".join("1" if line in YANG_LINES else "0" for line in reversed(lines))
+    """Determines hexagram numbers from bottom-to-top line values."""
+    primary_binary = "".join("1" if line in YANG_LINES else "0" for line in lines)
     primary_num = binary_to_hex_map.get(primary_binary)
     if primary_num is None:
         raise ValueError(f"No hexagram found for primary binary code: {primary_binary}")
@@ -26,7 +26,7 @@ def get_hexagram_numbers(lines, binary_to_hex_map):
     if any(line in CHANGING_LINES for line in lines):
         secondary_lines = [line if line in [7, 8] else (7 if line == 6 else 8) for line in lines]
         secondary_binary = "".join(
-            "1" if line in YANG_LINES else "0" for line in reversed(secondary_lines)
+            "1" if line in YANG_LINES else "0" for line in secondary_lines
         )
         secondary_num = binary_to_hex_map.get(secondary_binary)
         if secondary_num is None:

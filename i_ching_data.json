@@ -1184,7 +1184,7 @@
   },
   "33": {
     "number": 33,
-    "binary_code": "111100",
+    "binary_code": "001111",
     "name_zh": "遯",
     "name_en": "Retreat",
     "judgment_zh": "亨，小利貞。",
@@ -1221,7 +1221,7 @@
   },
   "34": {
     "number": 34,
-    "binary_code": "100111",
+    "binary_code": "111100",
     "name_zh": "大壯",
     "name_en": "The Power of the Great",
     "judgment_zh": "利貞。",
@@ -1480,7 +1480,7 @@
   },
   "41": {
     "number": 41,
-    "binary_code": "110010",
+    "binary_code": "110001",
     "name_zh": "損",
     "name_en": "Decrease",
     "judgment_zh": "有孚，元吉，無咎，可貞，利有攸往。曷之用，二簋可用享。",
@@ -1517,7 +1517,7 @@
   },
   "42": {
     "number": 42,
-    "binary_code": "011011",
+    "binary_code": "100011",
     "name_zh": "益",
     "name_en": "Increase",
     "judgment_zh": "利有攸往，利涉大川。",
@@ -1737,9 +1737,46 @@
     ],
     "name_pinyin": "kùn"
   },
+  "48": {
+    "number": 48,
+    "binary_code": "011010",
+    "name_zh": "井",
+    "name_en": "The Well",
+    "judgment_zh": "改邑不改井，無喪無得，往來井井。汔至，亦未繘井，羸其瓶，凶。",
+    "judgment_en": "The Well. The town may be changed, but the well cannot be changed. It neither decreases nor increases. They come and go and draw from the well. If one gets down almost to the water and the rope does not go all the way, or the jug breaks, it brings misfortune.",
+    "image_zh": "木上有水，井。君子以勞民勸相。",
+    "image_en": "Water over wood: the image of the Well. Thus the superior man encourages the people at their work, and exhorts them to help one another.",
+    "lines": [
+      {
+        "line_zh": "初六，井泥不食，舊井無禽。",
+        "line_en": "Six at the beginning: One does not drink the mud of the well. No animals come to an old well."
+      },
+      {
+        "line_zh": "九二，井谷射鮒，甕敝漏。",
+        "line_en": "Nine in the second place: At the well hole one shoots fishes. The jug is broken and leaks."
+      },
+      {
+        "line_zh": "九三，井渫不食，為我心惻，可用汲，王明，並受其福。",
+        "line_en": "Nine in the third place: The well is cleaned, but no one drinks from it. This is my heart's sorrow, for one might draw from it. If the king were clear-minded, good fortune might be enjoyed in common."
+      },
+      {
+        "line_zh": "六四，井甃，無咎。",
+        "line_en": "Six in the fourth place: The well is being lined. No blame."
+      },
+      {
+        "line_zh": "九五，井冽，寒泉食。",
+        "line_en": "Nine in the fifth place: In the well there is a clear, cold spring from which one can drink."
+      },
+      {
+        "line_zh": "上六，井收勿幕，有孚元吉。",
+        "line_en": "Six at the top: One draws from the well without hindrance. It is dependable. Supreme good fortune."
+      }
+    ],
+    "name_pinyin": "jǐng"
+  },
   "49": {
     "number": 49,
-    "binary_code": "011110",
+    "binary_code": "101110",
     "name_zh": "革",
     "name_en": "Revolution (Molting)",
     "judgment_zh": "大人虎變，未占有孚。",
@@ -1776,7 +1813,7 @@
   },
   "50": {
     "number": 50,
-    "binary_code": "101110",
+    "binary_code": "011101",
     "name_zh": "鼎",
     "name_en": "The Cauldron",
     "judgment_zh": "元吉，亨。",
@@ -1887,7 +1924,7 @@
   },
   "53": {
     "number": 53,
-    "binary_code": "011001",
+    "binary_code": "001011",
     "name_zh": "漸",
     "name_en": "Development (Gradual Progress)",
     "judgment_zh": "女歸吉，利貞。",
@@ -1924,7 +1961,7 @@
   },
   "54": {
     "number": 54,
-    "binary_code": "100110",
+    "binary_code": "110100",
     "name_zh": "歸妹",
     "name_en": "The Marrying Maiden",
     "judgment_zh": "征凶，無攸利。",

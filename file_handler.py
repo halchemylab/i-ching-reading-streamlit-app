@@ -20,6 +20,19 @@ class JournalValidationError(Exception):
 
 
 VALID_LINE_VALUES = {6, 7, 8, 9}
+EXPECTED_HEXAGRAM_COUNT = 64
+EXPECTED_BINARY_CODES = {format(number, "06b") for number in range(64)}
+REQUIRED_HEXAGRAM_FIELDS = [
+    "number",
+    "binary_code",
+    "name_zh",
+    "name_en",
+    "judgment_zh",
+    "judgment_en",
+    "image_zh",
+    "image_en",
+    "lines",
+]
 REQUIRED_JOURNAL_COLUMNS = [
     "Entry ID",
     "Date",
@@ -39,6 +52,8 @@ def load_iching_data():
     try:
         with open(ICHING_DATA_FILE, 'r', encoding='utf-8') as f:
             iching_data = json.load(f)
+
+        validate_iching_data(iching_data)
         
         binary_to_hex_map = {
             hex_data['binary_code']: hex_data['number'] 
@@ -55,6 +70,78 @@ def load_iching_data():
         raise IChingDataError(
             "Could not decode i_ching_data.json. Please check the file for formatting errors."
         ) from e
+
+def validate_iching_data(iching_data):
+    """Validates the source hexagram data before the app uses it."""
+    if not isinstance(iching_data, dict):
+        raise IChingDataError("i_ching_data.json must contain a hexagram object.")
+
+    if len(iching_data) != EXPECTED_HEXAGRAM_COUNT:
+        missing_numbers = sorted(
+            set(range(1, EXPECTED_HEXAGRAM_COUNT + 1)) -
+            {int(key) for key in iching_data if str(key).isdigit()}
+        )
+        missing_text = f" Missing entries: {missing_numbers}." if missing_numbers else ""
+        raise IChingDataError(
+            f"i_ching_data.json must contain {EXPECTED_HEXAGRAM_COUNT} hexagrams."
+            f"{missing_text}"
+        )
+
+    binary_codes = {}
+    for key, hexagram in iching_data.items():
+        if not isinstance(hexagram, dict):
+            raise IChingDataError(f"Hexagram {key} must be an object.")
+
+        missing_fields = [
+            field for field in REQUIRED_HEXAGRAM_FIELDS
+            if field not in hexagram
+        ]
+        if missing_fields:
+            raise IChingDataError(
+                f"Hexagram {key} is missing required fields: {missing_fields}"
+            )
+
+        if str(hexagram["number"]) != str(key):
+            raise IChingDataError(
+                f"Hexagram key {key} does not match its number field."
+            )
+
+        binary_code = hexagram["binary_code"]
+        if (
+            not isinstance(binary_code, str) or
+            len(binary_code) != 6 or
+            any(bit not in {"0", "1"} for bit in binary_code)
+        ):
+            raise IChingDataError(
+                f"Hexagram {key} has an invalid binary_code: {binary_code}"
+            )
+
+        binary_codes.setdefault(binary_code, []).append(key)
+
+        lines = hexagram["lines"]
+        if not isinstance(lines, list) or len(lines) != 6:
+            raise IChingDataError(f"Hexagram {key} must contain exactly six lines.")
+
+        for line_index, line in enumerate(lines, start=1):
+            if not isinstance(line, dict) or "line_en" not in line:
+                raise IChingDataError(
+                    f"Hexagram {key} line {line_index} is missing line text."
+                )
+
+    duplicate_codes = {
+        code: keys for code, keys in binary_codes.items()
+        if len(keys) > 1
+    }
+    if duplicate_codes:
+        raise IChingDataError(
+            f"i_ching_data.json contains duplicate binary codes: {duplicate_codes}"
+        )
+
+    missing_codes = sorted(EXPECTED_BINARY_CODES - set(binary_codes))
+    if missing_codes:
+        raise IChingDataError(
+            f"i_ching_data.json is missing binary codes: {missing_codes}"
+        )
 
 def save_reading_to_csv(reading):
     """Persists a single reading to the CSV journal."""
